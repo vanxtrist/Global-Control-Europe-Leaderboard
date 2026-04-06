@@ -19,7 +19,7 @@ body {
   align-items: center;
   background: #151c2e;
   border-radius: 14px;
-  padding: 14px 16px;
+  padding: 16px 18px;
   margin-bottom: 10px;
 
   border: 1px solid rgba(255,255,255,0.05);
@@ -29,7 +29,7 @@ body {
   overflow: hidden;
 }
 
-/* GLOW EFFECT (animated like real site) */
+/* GLOW EFFECT */
 .card::before {
   content: "";
   position: absolute;
@@ -48,32 +48,22 @@ body {
   transform: translateY(-2px) scale(1.01);
 }
 
-/* THUMBNAIL */
-.thumbnail {
-  width: 88px;
-  height: 88px;
-  border-radius: 12px;
-  object-fit: cover;
-  margin-right: 16px;
-  flex-shrink: 0;
-  position: relative;
-}
-
-/* VERIFIED BADGE */
+/* THUMB WRAP (bigger square images) */
 .thumb-wrap {
-  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-right: 18px;
+  flex-shrink: 0;
 }
 
-.badge {
-  position: absolute;
-  bottom: 6px;
-  left: 6px;
-  font-size: 10px;
-  padding: 3px 6px;
-  background: rgba(0,0,0,0.6);
-  border-radius: 6px;
-  color: #fff;
-  backdrop-filter: blur(4px);
+/* IMAGE */
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
 /* INFO */
@@ -105,7 +95,7 @@ body {
   letter-spacing: 0.2px;
 }
 
-/* GRADIENT TITLE (like Amethyst) */
+/* GRADIENT TITLES */
 .gradient {
   background: linear-gradient(90deg, #7c3aed, #22d3ee, #a78bfa);
   -webkit-background-clip: text;
@@ -128,6 +118,32 @@ body {
   color: #7f8bb3;
 }
 
+/* HIGHLIGHT (verifier) */
+.highlight {
+  color: #36d399;
+  font-weight: 500;
+}
+
+/* DOT */
+.dot {
+  opacity: 0.4;
+}
+
+/* POINTS */
+.points {
+  color: #4da3ff;
+  font-weight: 500;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2a44;
+  border-radius: 10px;
+}
 /* HIGHLIGHT */
 .highlight {
   color: #36d399;
