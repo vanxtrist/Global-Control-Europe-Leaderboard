@@ -1,75 +1,115 @@
+/* GLOBAL */
 body {
   margin: 0;
   background: #0b1220;
-  color: white;
-  font-family: Arial, sans-serif;
+  color: #e6ecff;
+  font-family: Inter, system-ui, Arial, sans-serif;
 }
 
-/* MAIN WIDTH (this controls bar size like the website) */
+/* CONTAINER (matches site width) */
 .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 40px auto;
+  width: 68%;
+  max-width: 980px;
+  margin: 28px auto;
 }
 
-/* CARD (the bars) */
+/* CARD */
 .card {
   display: flex;
   align-items: center;
-  background: #1a2235;
-  border-radius: 18px;
-  padding: 18px 22px;
-  margin-bottom: 18px;
-  transition: 0.2s ease;
-  box-shadow: 0 0 0 transparent;
-}
-
-/* HOVER EFFECT (like glow) */
-.card:hover {
-  background: #202a44;
-  transform: scale(1.01);
-  box-shadow: 0 0 20px rgba(77, 163, 255, 0.15);
-}
-
-/* IMAGE (square like your screenshot) */
-.thumbnail {
-  width: 110px;
-  height: 110px;
+  background: #151c2e;
   border-radius: 14px;
-  object-fit: cover;
-  margin-right: 22px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+
+  border: 1px solid rgba(255,255,255,0.05);
+
+  transition: all 0.18s ease;
 }
 
-/* TEXT AREA */
+/* HOVER */
+.card:hover {
+  background: #1a2338;
+  transform: scale(1.008);
+  box-shadow: 0 0 18px rgba(77, 163, 255, 0.12);
+}
+
+/* THUMBNAIL */
+.thumbnail {
+  width: 88px;
+  height: 88px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
+/* INFO BLOCK */
 .info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  justify-content: center;
+}
+
+/* TOP ROW (rank + title inline) */
+.top-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 /* RANK */
 .rank {
   color: #4da3ff;
-  font-weight: bold;
-  font-size: 14px;
+  font-weight: 600;
+  font-size: 13px;
 }
 
 /* TITLE */
 .title {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
-  letter-spacing: 0.3px;
+  color: #eaf1ff;
+  letter-spacing: 0.2px;
 }
 
-/* CREATOR TEXT */
+/* META */
 .meta {
-  color: #9aa4c7;
-  font-size: 14px;
+  margin-top: 2px;
+  font-size: 13px;
+  color: #7f8bb3;
+}
+
+/* CREATOR HIGHLIGHT (Zoink color) */
+.meta span {
+  color: #36d399;
+  font-weight: 500;
 }
 
 /* POINTS (right side) */
 .points {
   margin-left: auto;
+  font-size: 13px;
   color: #4da3ff;
   font-weight: 500;
+  white-space: nowrap;
+}
+
+/* OPTIONAL: subtle divider feel between cards */
+.card + .card {
+  margin-top: 10px;
+}
+
+/* SCROLLBAR (optional but matches feel) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2a44;
+  border-radius: 10px;
 }
