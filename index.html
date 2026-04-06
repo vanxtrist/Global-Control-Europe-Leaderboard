@@ -3,33 +3,145 @@
 <head>
   <meta charset="UTF-8">
   <title>Leaderboard</title>
-  
+
+  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container" id="leaderboard"></div>
 
- <div class="card">
-  <img class="thumbnail" src="assets/images/space.jpg">
+<script>
+const data = [
+  {
+    rank: 1,
+    title: "Thinking Space II",
+    creator: "CairoX",
+    verifier: "Zoink",
+    points: "250 – 1000 pts",
+    img: "assets/images/space.jpg"
+  },
+  {
+    rank: 2,
+    title: "Amethyst",
+    gradient: true,
+    creator: "iMist",
+    verifier: "wPopoff",
+    points: "245 – 980 pts",
+    img: "assets/images/amethyst.jpg"
+  },
+  {
+    rank: 3,
+    title: "Flamewall",
+    creator: "UNarwall",
+    verifier: "CuatrocientosYT",
+    points: "240 – 960 pts",
+    img: "assets/images/flamewall.jpg"
+  },
+  {
+    rank: 4,
+    title: "Tidal Wave",
+    creator: "OniLinkCD",
+    verifier: "Zoink",
+    points: "235 – 940 pts",
+    img: "assets/images/tidal.jpg"
+  },
+  {
+    rank: 5,
+    title: "Acheron",
+    gradient: true,
+    creator: "Ryamu",
+    verifier: "Zoink",
+    points: "230 – 920 pts",
+    img: "assets/images/acheron.jpg"
+  },
+  {
+    rank: 6,
+    title: "Silent Clubstep",
+    creator: "Sailent",
+    verifier: "Trick",
+    points: "225 – 900 pts",
+    img: "assets/images/silent.jpg"
+  },
+  {
+    rank: 7,
+    title: "Slaughterhouse",
+    gradient: true,
+    creator: "Icecave",
+    verifier: "Doggie",
+    points: "220 – 880 pts",
+    img: "assets/images/slaughterhouse.jpg"
+  },
+  {
+    rank: 8,
+    title: "Firework",
+    creator: "Endevvor",
+    verifier: "Trick",
+    points: "215 – 860 pts",
+    img: "assets/images/firework.jpg"
+  },
+  {
+    rank: 9,
+    title: "Sakupen Circles",
+    gradient: true,
+    creator: "Noobas",
+    verifier: "Diamond",
+    points: "210 – 840 pts",
+    img: "assets/images/sakupen.jpg"
+  },
+  {
+    rank: 10,
+    title: "Kyouki",
+    creator: "Demishio",
+    verifier: "Zoink",
+    points: "205 – 820 pts",
+    img: "assets/images/kyouki.jpg"
+  }
+];
 
-  <div class="info">
-    <div class="top-row">
-      <div class="rank">#1</div>
-      <div class="title">Thinking Space II</div>
+const container = document.getElementById("leaderboard");
+
+data.forEach(item => {
+  const card = document.createElement("div");
+  card.className = "card";
+
+  card.innerHTML = `
+    <div class="thumb-wrap">
+      <img class="thumbnail" src="${item.img}">
+      <div class="badge">VERIFIED</div>
     </div>
 
-    <div class="meta">
-      <span class="creator">CairoX</span>
-      <span>|</span>
-      <span class="highlight">Zoink</span>
-      <span class="dot">•</span>
-      <span class="points">250 – 1000 pts</span>
+    <div class="info">
+      <div class="top-row">
+        <div class="rank">#${item.rank}</div>
+        <div class="title ${item.gradient ? 'gradient' : ''}">
+          ${item.title}
+        </div>
+      </div>
+
+      <div class="meta">
+        <span class="creator">${item.creator}</span>
+        <span>|</span>
+        <span class="highlight">${item.verifier}</span>
+        <span class="dot">•</span>
+        <span class="points">${item.points}</span>
+      </div>
     </div>
-  </div>
-</div>
+  `;
+
+  /* mouse glow tracking */
+  card.addEventListener("mousemove", e => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty("--x", (e.clientX - rect.left) + "px");
+    card.style.setProperty("--y", (e.clientY - rect.top) + "px");
+  });
+
+  container.appendChild(card);
+});
+</script>
 
 </body>
 </html>
