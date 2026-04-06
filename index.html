@@ -10,17 +10,17 @@
 
   <!-- NAVBAR -->
   <div class="navbar">
-    <div class="nav-left">
-      🌐
-      <span>Global CE Leaderboard</span>
-    </div>
-
-    <div class="nav-right">
-      <a href="https://discord.gg/YOURCODE" target="_blank" rel="noopener noreferrer">
-        Join the LB
-      </a>
-    </div>
+  <div class="nav-left">
+    <span class="logo">🌐</span>
+    <span class="title-text">Global CE Leaderboard</span>
   </div>
+
+  <div class="nav-right">
+    <a href="https://discord.gg/YOURCODE" target="_blank" rel="noopener noreferrer">
+      Join the LB
+    </a>
+  </div>
+</div>
 
 <div class="container" id="leaderboard"></div>
 
@@ -118,28 +118,28 @@ data.forEach(item => {
   const card = document.createElement("div");
   card.className = "card";
 
-  card.innerHTML = `
-    <div class="thumb-wrap">
-      <img class="thumbnail" src="${item.img}">
-    </div>
+ card.innerHTML = `
+  <div class="thumb-wrap">
+    <img class="thumbnail" src="${item.img}">
+  </div>
 
-    <div class="info">
-      <div class="top-row">
-        <div class="rank">#${item.rank}</div>
-        <div class="title ${item.gradient ? 'gradient' : ''}">
-          ${item.title}
-        </div>
-      </div>
-
-      <div class="meta">
-        <span class="creator">${item.creator}</span>
-        <span>|</span>
-        <span class="highlight">${item.verifier}</span>
-        <span class="dot">•</span>
-        <span class="points">${item.points}</span>
+  <div class="info">
+    <div class="top-row">
+      <div class="rank">#${item.rank}</div>
+      <div class="title ${item.gradient ? 'gradient' : ''}">
+        ${item.title}
       </div>
     </div>
-  `;
+
+    <div class="meta">
+      <span class="creator">${item.creator}</span>
+      <span>|</span>
+      <span class="highlight">${item.verifier}</span>
+    </div>
+  </div>
+
+  <div class="points">${item.points}</div>
+`;
 
   /* mouse glow tracking */
   card.addEventListener("mousemove", e => {
