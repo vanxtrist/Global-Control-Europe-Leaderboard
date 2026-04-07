@@ -16,10 +16,10 @@
   </div>
 
   <div class="nav-center">
-  <a href="#" onclick="showPage('main')">Leaderboard</a>
-  <a href="#" onclick="showPage('clans')">Clans</a>
-  <a href="#" onclick="showPage('lore')">Clan Lore</a>
-  <a href="#" onclick="showPage('events')">Event Wins</a>
+ <a href="#" onclick="showPage('main'); return false;">Leaderboard</a>
+<a href="#" onclick="showPage('clans'); return false;">Clans</a>
+<a href="#" onclick="showPage('lore'); return false;">Clan Lore</a>
+<a href="#" onclick="showPage('events'); return false;">Event Wins</a>
 </div>
     
   <div class="nav-right">
@@ -177,11 +177,21 @@ data.forEach(item => {
 
 <script>
 function showPage(pageId) {
+  // hide all pages
   document.querySelectorAll('.page').forEach(page => {
     page.style.display = 'none';
   });
 
+  // show selected page
   document.getElementById(pageId).style.display = 'block';
+
+  // remove active from all buttons
+  document.querySelectorAll('.nav-center a').forEach(link => {
+    link.classList.remove('active');
+  });
+
+  // add active to clicked one
+  event.target.classList.add('active');
 }
 </script>
   
