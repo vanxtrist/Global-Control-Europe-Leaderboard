@@ -329,51 +329,67 @@ body::after {
 .clan-card {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
 
   background: #0f172a;
   border: 1px solid rgba(255,255,255,0.05);
-  border-radius: 14px;
-  padding: 18px;
+  border-radius: 16px;
+  padding: 26px;
 
   transition: 0.25s;
 }
 
 .clan-card:hover {
   border-color: rgba(77,163,255,0.4);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
-/* LEFT IMAGE */
+/* BIGGER IMAGE */
 .clan-pfp {
-  width: 70px;
-  height: 70px;
-  border-radius: 16px;
+  width: 90px;
+  height: 90px;
+  border-radius: 20px;
   object-fit: cover;
-  box-shadow: 0 0 12px rgba(77,163,255,0.2);
 }
 
-/* MIDDLE INFO */
+/* INFO */
 .clan-info {
-  min-width: 180px;
+  min-width: 220px;
 }
 
 .clan-info h2 {
   margin: 0;
-  font-size: 18px;
+  font-size: 22px;
   color: #eaf1ff;
 }
 
 .clan-meta {
-  font-size: 13px;
+  font-size: 14px;
   color: #7f8bb3;
 }
 
-/* RIGHT DESCRIPTION */
+/* DESCRIPTION */
 .clan-desc {
   flex: 1;
-  font-size: 14px;
+  font-size: 15px;
   color: #cbd5f5;
-  line-height: 1.5;
-  color: #aab4d6;
+  line-height: 1.6;
+}
+
+/* JOIN BUTTON */
+.clan-btn {
+  background: #4da3ff;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.2s;
+}
+
+.clan-btn:hover {
+  background: #3b8be0;
+  transform: translateY(-1px);
 }
