@@ -319,3 +319,61 @@ body::after {
   color: #cbd5f5;
   line-height: 1.5;
 }
+
+.clan-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.clan-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  background: #0f172a;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 14px;
+  padding: 18px;
+
+  transition: 0.25s;
+}
+
+.clan-card:hover {
+  border-color: rgba(77,163,255,0.4);
+  transform: translateY(-2px);
+}
+
+/* LEFT IMAGE */
+.clan-pfp {
+  width: 70px;
+  height: 70px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 0 12px rgba(77,163,255,0.2);
+}
+
+/* MIDDLE INFO */
+.clan-info {
+  min-width: 180px;
+}
+
+.clan-info h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #eaf1ff;
+}
+
+.clan-meta {
+  font-size: 13px;
+  color: #7f8bb3;
+}
+
+/* RIGHT DESCRIPTION */
+.clan-desc {
+  flex: 1;
+  font-size: 14px;
+  color: #cbd5f5;
+  line-height: 1.5;
+  color: #aab4d6;
+}
