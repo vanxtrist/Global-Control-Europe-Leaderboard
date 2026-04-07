@@ -16,11 +16,12 @@
   </div>
 
   <div class="nav-center">
-    <a href="#">Clans</a>
-    <a href="#">Clan Lore</a>
-    <a href="#">Event Wins Leaderboard</a>
-  </div>
-
+  <a href="#" onclick="showPage('main')">Leaderboard</a>
+  <a href="#" onclick="showPage('clans')">Clans</a>
+  <a href="#" onclick="showPage('lore')">Clan Lore</a>
+  <a href="#" onclick="showPage('events')">Event Wins</a>
+</div>
+    
   <div class="nav-right">
     <a href="https://discord.gg/YOURCODE" target="_blank" rel="noopener noreferrer">
       Join the LB
@@ -28,7 +29,27 @@
   </div>
 </div>
 
-<div class="container" id="leaderboard"></div>
+<div id="main" class="page">
+  <div class="container" id="leaderboard"></div>
+</div>
+
+<div id="clans" class="page" style="display:none;">
+  <div class="container">
+    <h2>Clans Page</h2>
+  </div>
+</div>
+
+<div id="lore" class="page" style="display:none;">
+  <div class="container">
+    <h2>Clan Lore Page</h2>
+  </div>
+</div>
+
+<div id="events" class="page" style="display:none;">
+  <div class="container">
+    <h2>Event Wins Leaderboard</h2>
+  </div>
+</div>  
 
 <script>
 const data = [
@@ -154,5 +175,15 @@ data.forEach(item => {
 });
 </script>
 
+<script>
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(page => {
+    page.style.display = 'none';
+  });
+
+  document.getElementById(pageId).style.display = 'block';
+}
+</script>
+  
 </body>
 </html>
