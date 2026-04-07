@@ -224,3 +224,39 @@ body::after {
   font-weight: 600;
   letter-spacing: 0.3px;
 }
+
+/* CENTER NAV LINKS */
+.nav-center {
+  display: flex;
+  gap: 22px;
+}
+
+.nav-center a {
+  text-decoration: none;
+  color: #9aa4c7;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.2s;
+  position: relative;
+}
+
+/* hover effect */
+.nav-center a:hover {
+  color: white;
+}
+
+/* subtle underline on hover */
+.nav-center a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #4da3ff;
+  transition: 0.2s;
+}
+
+.nav-center a:hover::after {
+  width: 100%;
+}
