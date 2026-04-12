@@ -228,7 +228,7 @@ body::after {
 /* CENTER NAV LINKS */
 .nav-center {
   display: flex;
-  gap: 80px; /* bigger spacing */
+  gap: 40px; /* spacing between nav links */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -393,4 +393,59 @@ body::after {
 .clan-btn:hover {
   background: #3b8be0;
   transform: translateY(-1px);
+}
+
+/* CONTRIBUTORS */
+.contributors-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contributor-card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 28px;
+  transition: 0.25s;
+}
+
+.contributor-card:hover {
+  border-color: rgba(77,163,255,0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.contributor-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 18px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.contributor-info h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #eaf1ff;
+}
+
+.contributor-role {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4da3ff;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contributor-info p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #7f8bb3;
+  line-height: 1.5;
 }
