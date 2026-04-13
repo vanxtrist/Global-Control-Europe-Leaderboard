@@ -32,7 +32,8 @@
   <a href="https://discord.gg/TDZDh7Cm2" target="_blank" rel="noopener noreferrer">
     Join the LB
   </a>
-
+</div> <!-- CLOSE NAVBAR -->
+    
   <button class="updates-btn" onclick="toggleUpdates()">
     Updates
   </button>
@@ -885,23 +886,23 @@
   </script>
 
 <script>
-  function showPage(pageId) {
-    // hide all pages
-    document.querySelectorAll('.page').forEach(page => {
-      page.style.display = 'none';
-    });
+  function showPage(pageId, el) {
+  // hide all pages
+  document.querySelectorAll('.page').forEach(page => {
+    page.style.display = 'none';
+  });
 
-     // show selected page
-    document.getElementById(pageId).style.display = 'block';
+  // show selected page
+  document.getElementById(pageId).style.display = 'block';
 
-    // remove active from all buttons
-    document.querySelectorAll('.nav-center a').forEach(link => {
-      link.classList.remove('active');
-    });
+  // remove active from all buttons
+  document.querySelectorAll('.nav-center a').forEach(link => {
+    link.classList.remove('active');
+  });
 
-    // add active to clicked one
-    el.classList.add('active');
-  }
+  // add active to clicked one
+  el.classList.add('active');
+}
 
   function toggleUpdates() {
     const modal = document.getElementById("updatesModal");
