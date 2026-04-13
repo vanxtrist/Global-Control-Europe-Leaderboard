@@ -449,3 +449,74 @@ body::after {
   color: #7f8bb3;
   line-height: 1.5;
 }
+
+/* updates button */
+.updates-btn {
+  margin-top: 8px;
+  background: rgba(77,163,255,0.15);
+  border: 1px solid rgba(77,163,255,0.4);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.updates-btn:hover {
+  background: rgba(77,163,255,0.3);
+}
+
+/* modal background */
+.updates-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* modal box */
+.updates-box {
+  width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: #0f172a;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+/* header */
+.updates-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.updates-header h2 {
+  margin: 0;
+  color: #eaf1ff;
+}
+
+.close-btn {
+  cursor: pointer;
+  font-size: 18px;
+  color: #7f8bb3;
+}
+
+/* content */
+.updates-content h3 {
+  color: #4da3ff;
+  margin-top: 18px;
+}
+
+.updates-content ul {
+  margin: 5px 0 10px 20px;
+  color: #cbd5f5;
+  font-size: 14px;
+}
