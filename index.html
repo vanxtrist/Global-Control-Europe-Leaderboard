@@ -24,13 +24,16 @@
       <a href="#" onclick="showPage('contributors'); return false;">Contributors</a>
     </div>
 
-    <div class="nav-right">
-      <a href="https://discord.gg/TDZDh7Cm2" target="_blank" rel="noopener noreferrer">
-        Join the LB
-      </a>
-    </div>
-  </div>
+<div class="nav-right">
+  <a href="https://discord.gg/TDZDh7Cm2" target="_blank" rel="noopener noreferrer">
+    Join the LB
+  </a>
 
+  <button class="updates-btn" onclick="toggleUpdates()">
+    Updates
+  </button>
+</div>
+  
   <div id="main" class="page">
     <div class="container">
 
@@ -877,26 +880,89 @@
     });
   </script>
 
-  <script>
-    function showPage(pageId) {
-      // hide all pages
-      document.querySelectorAll('.page').forEach(page => {
-        page.style.display = 'none';
-      });
+<script>
+  function showPage(pageId) {
+    // hide all pages
+    document.querySelectorAll('.page').forEach(page => {
+      page.style.display = 'none';
+    });
 
-      // show selected page
-      document.getElementById(pageId).style.display = 'block';
+    // show selected page
+    document.getElementById(pageId).style.display = 'block';
 
-      // remove active from all buttons
-      document.querySelectorAll('.nav-center a').forEach(link => {
-        link.classList.remove('active');
-      });
+    // remove active from all buttons
+    document.querySelectorAll('.nav-center a').forEach(link => {
+      link.classList.remove('active');
+    });
 
-      // add active to clicked one
-      event.target.classList.add('active');
+    // add active to clicked one
+    event.target.classList.add('active');
+  }
+
+  //  Updates popup toggle
+  function toggleUpdates() {
+    const modal = document.getElementById("updatesModal");
+
+    if (modal.style.display === "flex") {
+      modal.style.display = "none";
+    } else {
+      modal.style.display = "flex";
     }
-  </script>
+  }
+</script>
 
 </body>
 
+<div id="updatesModal" class="updates-modal">
+  <div class="updates-box">
+    
+    <div class="updates-header">
+      <h2>Leaderboard Updates</h2>
+      <span onclick="toggleUpdates()" class="close-btn">✖</span>
+    </div>
+
+    <div class="updates-content">
+
+      <h3>LB Version 1.31 - 4/13/2026 - Hoody</h3>
+      <ul>
+        <li>Raze 1 win to 2</li>
+        <li>LB site optimized</li>
+        <li>Bondt 8th → 9th</li>
+        <li>Sai 9th → 8th</li>
+        <li>Update Info Added</li>
+      </ul>
+
+      <h3>LB Version 1.3 - 4/12/2026 - Enel</h3>
+      <ul>
+        <li>Expanded Event Wins leaderboard to Top 39</li>
+        <li>Added Roblox usernames to all players</li>
+        <li>Synced and recalculated ranks</li>
+      </ul>
+
+      <h3>LB Version 1.2 - 4/11/2026 - Enel</h3>
+      <ul>
+        <li>Shuljo placed at 6#</li>
+        <li>Ryaan placed at 7#</li>
+        <li>Bond and Sai moved to 8# and 9#</li>
+      </ul>
+
+      <h3>LB Version 1.1 - 4/10/2026 - Hoody</h3>
+      <ul>
+        <li>Mattie placed at #1</li>
+        <li>Sai and Bondt swapped</li>
+        <li>LB expanded to Top 11</li>
+      </ul>
+
+      <h3>LB Version 1.0 - 4/8/2026 - Hoody</h3>
+      <ul>
+        <li>Top 10 added</li>
+        <li>Bonekoko, Raze, Cevokud, Ryaan</li>
+        <li>Bondt, Sai, Shuljo, Baba, Rotgel</li>
+      </ul>
+
+    </div>
+
+  </div>
+</div>
+  
 </html>
