@@ -898,7 +898,7 @@
 
     const container = document.getElementById("leaderboard");
 
-    data.forEach(item => {
+    data.forEach((item, index) => {
       const card = document.createElement("div");
       card.className = "card";
 
@@ -909,7 +909,7 @@
 
   <div class="info">
     <div class="top-row">
-      <div class="rank">#${item.rank}</div>
+      <div class="rank">#${index + 1}</div>
       <div class="title ${item.gradient ? 'gradient' : ''}">
         ${item.title}
       </div>
