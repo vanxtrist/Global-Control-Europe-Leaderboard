@@ -17,11 +17,15 @@
     </div>
 
     <div class="nav-center">
-      <a href="#" class="active" onclick="showPage('main'); return false;">Leaderboard</a>
-      <a href="#" onclick="showPage('clans'); return false;">Clans</a>
-      <a href="#" onclick="showPage('lore'); return false;">Clan Lore</a>
-      <a href="#" onclick="showPage('events'); return false;">Event Wins Leaderboard</a>
-      <a href="#" onclick="showPage('contributors'); return false;">Contributors</a>
+<a href="#" class="active" onclick="showPage('main', this); return false;">Leaderboard</a>
+
+<a href="#" onclick="showPage('clans', this); return false;">Clans</a>
+
+<a href="#" onclick="showPage('lore', this); return false;">Clan Lore</a>
+
+<a href="#" onclick="showPage('events', this); return false;">Event Wins Leaderboard</a>
+
+<a href="#" onclick="showPage('contributors', this); return false;">Contributors</a>
     </div>
 
 <div class="nav-right">
@@ -887,7 +891,7 @@
       page.style.display = 'none';
     });
 
-    // show selected page
+     // show selected page
     document.getElementById(pageId).style.display = 'block';
 
     // remove active from all buttons
@@ -896,18 +900,13 @@
     });
 
     // add active to clicked one
-    event.target.classList.add('active');
+    el.classList.add('active');
   }
 
-  //  Updates popup toggle
   function toggleUpdates() {
     const modal = document.getElementById("updatesModal");
 
-    if (modal.style.display === "flex") {
-      modal.style.display = "none";
-    } else {
-      modal.style.display = "flex";
-    }
+    modal.style.display = (modal.style.display === "flex") ? "none" : "flex";
   }
 </script>
 
