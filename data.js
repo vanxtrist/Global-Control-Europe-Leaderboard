@@ -14,7 +14,7 @@ const eventData = [
     name: "Mattie",
     robloxUser: "matiteo01",
     clan: "Valhalla",
-    eventWins: 36,
+    eventWins: 37,
     img: "assets/images/mattie.jpg"
   },
   {
@@ -292,7 +292,7 @@ const skillData = [
     name: "Mattie",
     robloxUser: "mattiethebaddie",
     clan: "Valhalla",
-    eventWins: 35,
+    eventWins: 37,
     img: "assets/images/mattie.jpg"
   },
   {
