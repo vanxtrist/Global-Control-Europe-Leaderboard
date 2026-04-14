@@ -4,42 +4,80 @@
 <head>
   <meta charset="UTF-8">
   <title>Global CE Leaderboard</title>
+  <link rel="icon" type="image/png" href="assets/images/impact.png">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+
+
   <!-- NAVBAR -->
   <div class="navbar">
-    <div class="nav-left">
-      <span class="logo">🌐</span>
+    <div class="nav-left" id="navCenter">
+      <a href="#" class="active" onclick="showPage('main'); toggleMenu(); return false;">Leaderboards</a>
+      <a href="#" onclick="showPage('clans'); toggleMenu(); return false;">Clans</a>
+      <a href="#" onclick="showPage('lore'); toggleMenu(); return false;">Clan Lore</a>
+      <a href="#" onclick="showPage('updates'); toggleMenu(); return false;">Updates</a>
+      <a href="#" onclick="showPage('contributors'); toggleMenu(); return false;">Contributors</a>
+
+      <div class="mobile-extra-links" style="display: none;">
+        <a href="https://discord.gg/TDZDh7Cm2" target="_blank" rel="noopener noreferrer"
+          style="background: linear-gradient(135deg, #4da3ff, #3b82f6); padding: 8px 14px; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+          Join the LB</a>
+      </div>
+    </div>
+
+    <!-- Center Brand -->
+    <div class="nav-brand">
+      <img src="assets/images/impact.png" alt="Logo" class="nav-logo">
       <span class="title-text">Global CE Leaderboard</span>
     </div>
 
-    <div class="nav-center">
-      <a href="#" class="active" onclick="showPage('main'); return false;">Leaderboard</a>
-      <a href="#" onclick="showPage('clans'); return false;">Clans</a>
-      <a href="#" onclick="showPage('lore'); return false;">Clan Lore</a>
-      <a href="#" onclick="showPage('events'); return false;">Event Wins Leaderboard</a>
-      <a href="#" onclick="showPage('contributors'); return false;">Contributors</a>
+    <!-- Mobile Toggle -->
+    <div class="mobile-btn" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
 
-    <div class="nav-right">
-      <a href="https://discord.gg/TDZDh7Cm2" target="_blank" rel="noopener noreferrer">
+    <div class="nav-right" style="display: flex; gap: 10px; justify-content: flex-end;">
+      <a href="https://discord.gg/TDZDh7Cm2" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 8px; font-weight: 600; text-decoration: none; color: #e6ecff;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
         Join the LB
       </a>
     </div>
   </div>
 
+  <!-- FLOATING ADMIN LOGO -->
+  <a href="admin.html" class="floating-admin" title="Admin Panel">
+    <img src="assets/images/impact.png" alt="Admin">
+  </a>
+
   <div id="main" class="page">
     <div class="container">
 
-      <div class="page-header">
-        <h1>Most Skilled Players</h1>
-        <p>Top ranked players based on overall skill</p>
+      <div class="tabs-container">
+        <button class="tab-btn active" id="lb-skill-btn" onclick="switchLbTab('skill')">Overall Skill</button>
+        <button class="tab-btn" id="lb-event-btn" onclick="switchLbTab('event')">Event Wins</button>
       </div>
 
-      <div id="leaderboard"></div>
+      <div id="lb-skill-content" class="lb-content">
+        <div class="page-header">
+          <h1>Most Skilled Players</h1>
+          <p>Top ranked players based on overall skill</p>
+        </div>
+        <div id="leaderboard"></div>
+      </div>
+
+      <div id="lb-event-content" class="lb-content" style="display:none;">
+        <div class="page-header">
+          <h1>Event Wins Leaderboard</h1>
+          <p>Top players based on event victories</p>
+        </div>
+        <div id="event-leaderboard"></div>
+      </div>
 
     </div>
   </div>
@@ -324,18 +362,7 @@
     </div>
   </div>
 
-  <div id="events" class="page" style="display:none;">
-    <div class="container">
 
-      <div class="page-header">
-        <h1>Event Wins Leaderboard</h1>
-        <p>Top players based on event victories</p>
-      </div>
-
-      <div id="event-leaderboard"></div>
-
-    </div>
-  </div>
 
   <div id="contributors" class="page" style="display:none;">
     <div class="container">
@@ -351,7 +378,7 @@
           <img class="contributor-avatar" src="assets/images/hoody.jpg" alt="Hoody">
           <div class="contributor-info">
             <h2>Hoody</h2>
-            <div class="contributor-role">Creator</div>
+            <div class="contributor-role">CREATOR</div>
             <p>Creator of the Global CE Leaderboard website.</p>
           </div>
         </div>
@@ -360,8 +387,35 @@
           <img class="contributor-avatar" src="assets/images/enel.jpg" alt="Enel">
           <div class="contributor-info">
             <h2>Enel</h2>
-            <div class="contributor-role">Editor</div>
+            <div class="contributor-role">EDITOR</div>
             <p>Helps maintain the website, adds players and manages leaderboard updates.</p>
+          </div>
+        </div>
+
+        <div class="contributor-card">
+          <img class="contributor-avatar" src="assets/images/baba.jpg" alt="Babatunde">
+          <div class="contributor-info">
+            <h2>Babatunde</h2>
+            <div class="contributor-role">DISCORD HELPER</div>
+            <p>Helps maintain the Discord.</p>
+          </div>
+        </div>
+
+        <div class="contributor-card">
+          <img class="contributor-avatar" src="assets/images/raze.jpg" alt="Raze">
+          <div class="contributor-info">
+            <h2>Raze</h2>
+            <div class="contributor-role">LB MOD/HOSTER</div>
+            <p>Helps judge Leaderboard places and host games.</p>
+          </div>
+        </div>
+
+        <div class="contributor-card">
+          <img class="contributor-avatar" src="assets/images/ryaan.jpg" alt="Ryaan">
+          <div class="contributor-info">
+            <h2>Ryaan</h2>
+            <div class="contributor-role">LB MOD/HOSTER</div>
+            <p>Helps judge Leaderboard places and host games.</p>
           </div>
         </div>
 
@@ -369,7 +423,7 @@
           <img class="contributor-avatar" src="assets/images/sebast.jpg" alt="Sebast">
           <div class="contributor-info">
             <h2>Sebast</h2>
-            <div class="contributor-role">Researcher</div>
+            <div class="contributor-role">RESEARCHER</div>
             <p>Found all Roblox usernames of players on the leaderboard.</p>
           </div>
         </div>
@@ -378,582 +432,191 @@
     </div>
   </div>
 
-  <script>
-    const eventData = [
-      {
-        rank: 1,
-        title: "Mattie",
-        creator: "Roblox User: matiteo01",
-        verifier: "Clan: Valhalla",
-        points: "Event Wins: 36",
-        img: "assets/images/mattie.jpg"
-      },
-      {
-        rank: 2,
-        title: "Bonekoko",
-        creator: "Roblox User: Wouidzy",
-        verifier: "Clan: Valhalla",
-        points: "Event Wins: 19",
-        img: "assets/images/bonekoko.jpg"
-      },
-      {
-        rank: 3,
-        title: "Rotgel",
-        creator: "Roblox User: R0tgel",
-        verifier: "Clan: Unaffiliated",
-        points: "Event Wins: 19",
-        img: "assets/images/rotgel.jpg"
-      },
-      {
-        rank: 4,
-        title: "S29",
-        creator: "Roblox User: realspeccy",
-        verifier: "Clan: Valhalla",
-        points: "Event Wins: 16",
-        img: "assets/images/s29.jpg"
-      },
-      {
-        rank: 5,
-        title: "Mvv",
-        creator: "Roblox User: aevvre",
-        verifier: "Clan: Valhalla",
-        points: "Event Wins: 14",
-        img: "assets/images/m.jpg"
-      },
-      {
-        rank: 6,
-        title: "Floppa",
-        creator: "Roblox User: dafforiol44",
-        verifier: "Clan: Unaffiliated",
-        points: "Event Wins: 12",
-        img: "assets/images/floppa.jpg"
-      },
-      {
-        rank: 7,
-        title: "Boris",
-        creator: "Roblox User: Forest_ivan",
-        verifier: "Clan: Unaffiliated",
-        points: "Event Wins: 6",
-        img: "assets/images/boris.jpg"
-      },
-      {
-        rank: 8,
-        title: "Enel",
-        creator: "Roblox User: XxEnelxxx",
-        verifier: "Clan: Valhalla",
-        points: "Event Wins: 5",
-        img: "assets/images/enel.jpg"
-      },
-      {
-        rank: 9,
-        title: "Cevokud",
-        creator: "Roblox User: Cevokud",
-        verifier: "Clan: RoS",
-        points: "Event Wins: 4",
-        img: "assets/images/cevo.jpg"
-      },
-      {
-        rank: 10,
-        title: "Baba",
-        creator: "Roblox User: 121111deasd",
-        verifier: "Clan: Valhalla",
-        points: "Event Wins: 4",
-        img: "assets/images/baba.jpg"
-      },
-      {
-        rank: 13,
-        title: "Ryaan",
-        creator: "Roblox User: supermanzzxz3",
-        verifier: "Clan: Valhalla",
-        points: "Event Wins: 3",
-        img: "assets/images/ryaan.jpg"
-      },
-      {
-        rank: 12,
-        title: "Shuljo",
-        creator: "Roblox User: Pametansam",
-        verifier: "Clan: RoS",
-        points: "Event Wins: 2",
-        img: "assets/images/shuljo.jpg"
-      },
-      {
-        rank: 13,
-        title: "Rimu",
-        creator: "Roblox User: fhnrbnhrrb",
-        verifier: "Clan: Valhalla",
-        points: "Event Wins: 2",
-        img: "assets/images/rimu.jpg"
-      },
-      {
-        rank: 14,
-        title: "Poney",
-        creator: "Roblox User: Poneysw",
-        verifier: "Clan: Valhalla",
-        points: "Event Wins: 2",
-        img: "assets/images/poney.jpg"
-      },
-      {
-        rank: 15,
-        title: "Shadow",
-        creator: "Roblox User: powerface123455",
-        verifier: "Clan: Valhalla",
-        points: "Event Wins: 2",
-        img: "assets/images/shadow.jpg"
-      },
-      {
-        rank: 16,
-        title: "Sigmar",
-        creator: "Roblox User: HAMUMUGts",
-        verifier: "Clan: Unknown",
-        points: "Event Wins: 2",
-        img: "assets/images/sigmar.jpg"
-      },
-      {
-        rank: 17,
-        title: "Abraham",
-        creator: "Roblox User: Unknown",
-        verifier: "Clan: Unknown",
-        points: "Event Wins: 1",
-        img: "assets/images/abraham.jpg"
-      },
-      {
-        rank: 18,
-        title: "Ananas",
-        creator: "Roblox User: Ananasparon",
-        verifier: "Clan: RoS",
-        points: "Event Wins: 1",
-        img: "assets/images/ananas.jpg"
-      },
-      {
-        rank: 19,
-        title: "AnimeFlame",
-        creator: "Roblox User: canadalop",
-        verifier: "Clan: Unaffiliated",
-        points: "Event Wins: 1",
-        img: "assets/images/flame.jpg"
-      },
-      {
-        rank: 20,
-        title: "At_oom",
-        creator: "Roblox User: At_oom",
-        verifier: "Clan: Unknown",
-        points: "Event Wins: 1",
-        img: "assets/images/at_oom.jpg"
-      },
-      {
-        rank: 21,
-        title: "AyzakFozterr",
-        creator: "Roblox User: SubZero_TV1",
-        verifier: "Clan: Unknown",
-        points: "Event Wins: 1",
-        img: "assets/images/ayzak.jpg"
-      },
-      {
-        rank: 22,
-        title: "BondT",
-        creator: "Roblox User: lucky_jaguar668",
-        verifier: "Clan: Valhalla",
-        points: "Event Wins: 1",
-        img: "assets/images/bondt.jpg"
-      },
-      {
-        rank: 23,
-        title: "Ducksareoverrated",
-        creator: "Roblox User: ducksareoverrated",
-        verifier: "Clan: Unknown",
-        points: "Event Wins: 1",
-        img: "assets/images/ducksareoverrated.jpg"
-      },
-      {
-        rank: 24,
-        title: "Eleina",
-        creator: "Roblox User: Unknown",
-        verifier: "Clan: Unknown",
-        points: "Event Wins: 1",
-        img: "assets/images/eleina.jpg"
-      },
-      {
-        rank: 25,
-        title: "Georgy",
-        creator: "Roblox User: asxxascccoo",
-        verifier: "Clan: Unaffiliated",
-        points: "Event Wins: 1",
-        img: "assets/images/georgy.jpg"
-      },
-      {
-        rank: 26,
-        title: "Honeydewloon",
-        creator: "Roblox User: honeydewloon",
-        verifier: "Clan: Unknown",
-        points: "Event Wins: 1",
-        img: "assets/images/honey.jpg"
-      },
-      {
-        rank: 27,
-        title: "Loopy_33",
-        creator: "Roblox User: Loopy_33",
-        verifier: "Clan: Unknown",
-        points: "Event Wins: 1",
-        img: "assets/images/loopy.jpg"
-      },
-      {
-        rank: 28,
-        title: "Mana",
-        creator: "Roblox User: Unknown",
-        verifier: "Clan: Unknown",
-        points: "Event Wins: 1",
-        img: "assets/images/mana.jpg"
-      },
-      {
-        rank: 29,
-        title: "Nebula",
-        creator: "Roblox User: tymixz",
-        verifier: "Clan: RoS",
-        points: "Event Wins: 1",
-        img: "assets/images/nebula.jpg"
-      },
-      {
-        rank: 30,
-        title: "Nexus",
-        creator: "Roblox User: frostaken80",
-        verifier: "Clan: Valhalla",
-        points: "Event Wins: 1",
-        img: "assets/images/nexus.jpg"
-      },
-      {
-        rank: 31,
-        title: "Novarhia",
-        creator: "Roblox User: TTmobs1001",
-        verifier: "Clan: Unaffiliated",
-        points: "Event Wins: 1",
-        img: "assets/images/nova.jpg"
-      },
-      {
-        rank: 32,
-        title: "Raze",
-        creator: "Roblox User: gg_razegg",
-        verifier: "Clan: RoS",
-        points: "Event Wins: 1",
-        img: "assets/images/raze.jpg"
-      },
-      {
-        rank: 33,
-        title: "SGT_Saket",
-        creator: "Roblox User: SGT_Saket",
-        verifier: "Clan: RoS",
-        points: "Event Wins: 1",
-        img: "assets/images/saket.jpg"
-      },
-      {
-        rank: 34,
-        title: "Sai",
-        creator: "Roblox User: sai_zzzzzzz",
-        verifier: "Clan: RoS",
-        points: "Event Wins: 1",
-        img: "assets/images/sai.jpg"
-      },
+  <div id="updates" class="page" style="display:none;">
+    <div class="container">
 
-      {
-        rank: 35,
-        title: "Sinan",
-        creator: "Roblox User: sinan061214",
-        verifier: "Clan: Valhalla",
-        points: "Event Wins: 1",
-        img: "assets/images/sinan.png"
-      },
-      {
-        rank: 36,
-        title: "Superman",
-        creator: "Roblox User: SuperManRZ",
-        verifier: "Clan: Unknown",
-        points: "Event Wins: 1",
-        img: "assets/images/superman.jpg"
-      },
-      {
-        rank: 37,
-        title: "V4mp4t",
-        creator: "Roblox User: V4mp4t",
-        verifier: "Clan: Unknown",
-        points: "Event Wins: 1",
-        img: "assets/images/vamp.jpg"
-      },
-      {
-        rank: 38,
-        title: "Whisper",
-        creator: "Roblox User: whisper055",
-        verifier: "Clan: Unknown",
-        points: "Event Wins: 1",
-        img: "assets/images/whisper.jpg"
-      },
-      {
-        rank: 39,
-        title: "Zotvl",
-        creator: "Roblox User: Nimbus_98765432",
-        verifier: "Clan: Unknown",
-        points: "Event Wins: 1",
-        img: "assets/images/zotvl.jpg"
-      }
-    ];
+      <div class="page-header">
+        <h1>Update Log</h1>
+        <p>Recent changes to the Global CE Leaderboard</p>
+      </div>
 
-    const eventContainer = document.getElementById("event-leaderboard");
+      <div class="lore-container">
 
-    eventData.forEach(item => {
-      const card = document.createElement("div");
-      card.className = "card";
+        <div class="lore-card">
+          <h2>Version 1.3.2</h2>
+          <ul class="simple-updates">
+            <li><span class="up-updated">[Updated]</span> Redesigned the navigation bar and centered the logo</li>
+            <li><span class="up-added">[Added]</span> Discord join links added to the top menu</li>
+            <li><span class="up-updated">[Updated]</span> Merged 1v1 Skill and Event Wins leaderboards into tabs on the same page</li>
+            <li><span class="up-added">[Added]</span> Custom dark theme scrollbar</li>
+            <li><span class="up-updated">[Updated]</span> Redesigned the admin panel login screen</li>
+            <li><span class="up-added">[Added]</span> Smooth page transition animations</li>
+            <li><span class="up-fixed">[Fixed]</span> Removed default globe emojis from the header</li>
+          </ul>
+        </div>
 
-      card.innerHTML = `
-  <div class="thumb-wrap">
-    <img class="thumbnail" src="${item.img}">
-  </div>
+        <div class="lore-card">
+          <h2>Version 1.3.1</h2>
+          <ul class="simple-updates">
+            <li><span class="up-updated">[Updated]</span> Cevokud 4 wins > 3 wins</li>
+            <li><span class="up-updated">[Updated]</span> Sai and Bondt switched</li>
+            <li><span class="up-added">[Added]</span> Update info button placed on the website</li>
+            <li><span class="up-added">[Added]</span> New Contributors: Baba (Discord Helper), Raze (LB Mod/Host), Ryaan (LB Mod/Host)</li>
+          </ul>
+        </div>
 
-  <div class="info">
-    <div class="top-row">
-      <div class="rank">#${item.rank}</div>
-      <div class="title">${item.title}</div>
-    </div>
+        <div class="lore-card">
+          <h2>Version 1.3</h2>
+          <ul class="simple-updates">
+            <li><span class="up-fixed">[Fixed]</span> Converted all .webp image extensions to .jpg</li>
+            <li><span class="up-added">[Added]</span> Expanded Event Wins leaderboard to include all individual players
+              (Top 39)</li>
+            <li><span class="up-added">[Added]</span> Added Roblox Usernames to all event winners</li>
+            <li><span class="up-updated">[Updated]</span> Synced and recalculated all player ranks</li>
+          </ul>
+        </div>
 
-    <div class="meta">
-      <span class="creator">${item.creator}</span>
-      <span>|</span>
-      <span class="highlight">${item.verifier}</span>
-    </div>
-  </div>
+        <div class="lore-card">
+          <h2>Version 1.2</h2>
+          <ul class="simple-updates">
+            <li><span class="up-updated">[Updated]</span> Shuljo placed at #6</li>
+            <li><span class="up-updated">[Updated]</span> Ryaan placed at #7</li>
+            <li><span class="up-updated">[Updated]</span> Bond and Sai moved to #8 and #9</li>
+          </ul>
+        </div>
 
-  <div class="points">${item.points}</div>
-  `;
+        <div class="lore-card">
+          <h2>Version 1.1</h2>
+          <ul class="simple-updates">
+            <li><span class="up-updated">[Updated]</span> Mattie placed at #1</li>
+            <li><span class="up-updated">[Updated]</span> Sai and Bondt have been swapped</li>
+            <li><span class="up-added">[Added]</span> LB expanded to top 11</li>
+          </ul>
+        </div>
 
-      card.addEventListener("mousemove", e => {
-        const rect = card.getBoundingClientRect();
-        card.style.setProperty("--x", (e.clientX - rect.left) + "px");
-        card.style.setProperty("--y", (e.clientY - rect.top) + "px");
-      });
+        <div class="lore-card">
+          <h2>Version 1.0</h2>
+          <ul class="simple-updates">
+            <li><span class="up-added">[Added]</span> Top 10 established</li>
+          </ul>
+        </div>
 
-      eventContainer.appendChild(card);
-    });
-  </script>
-
-  <script>
-    const data = [
-      {
-        rank: 1,
-        title: "Mattie",
-        creator: "Roblox User: mattiethebaddie",
-        verifier: "Clan: Valhalla",
-        points: "Event Wins: 35",
-        img: "assets/images/mattie.jpg"
-      },
-      {
-        rank: 2,
-        title: "Bonekoko",
-        creator: "Roblox User: Wouidzy",
-        verifier: "Clan: Valhalla",
-        points: "Event Wins: 18",
-        img: "assets/images/bonekoko.jpg"
-      },
-      {
-        rank: 3,
-        title: "Raze",
-        creator: "Roblox User: gg_razegg",
-        verifier: "Clan: RoS",
-        points: "Event Wins: 1",
-        img: "assets/images/raze.jpg"
-      },
-      {
-        rank: 4,
-        title: "Cevokud",
-        creator: "Roblox User: Cevokud",
-        verifier: "Clan: RoS",
-        points: "Event Wins: 3",
-        img: "assets/images/cevo.jpg"
-      },
-      {
-        rank: 5,
-        title: "Enel",
-        creator: "Roblox User: XxEnelxxx",
-        verifier: "Clan: Valhalla",
-        points: "Event Wins: 5",
-        img: "assets/images/enel.jpg"
-      },
-      {
-        rank: 6,
-        title: "Shuljo",
-        creator: "Roblox User: Pametansam",
-        verifier: "Clan: RoS",
-        points: "Event Wins: 2",
-        img: "assets/images/shuljo.jpg"
-      },
-      {
-        rank: 7,
-        title: "Ryaan",
-        creator: "Roblox User: supermanzzxz3",
-        verifier: "Clan: Valhalla",
-        points: "Event Wins: 3",
-        img: "assets/images/ryaan.jpg"
-      },
-      {
-        rank: 8,
-        title: "Bondt",
-        creator: "Roblox User: lucky_jaguar668",
-        verifier: "Clan: Valhalla",
-        points: "Event Wins: 1",
-        img: "assets/images/bondt.jpg"
-      },
-      {
-        rank: 9,
-        title: "Sai",
-        creator: "Roblox User: sai_zzzzzzz",
-        verifier: "Clan: RoS",
-        points: "Event Wins: 1",
-        img: "assets/images/sai.jpg"
-      },
-      {
-        rank: 10,
-        title: "Babatunde",
-        creator: "Roblox User: 121111deasd",
-        verifier: "Clan: Valhalla",
-        points: "Event Wins: 3",
-        img: "assets/images/baba.jpg"
-      },
-      {
-        rank: 11,
-        title: "Rotgel",
-        creator: "Roblox User: R0TGEL",
-        verifier: "Clan: Valhalla",
-        points: "Event Wins: 19",
-        img: "assets/images/rotgel.jpg"
-      },
-      {
-        rank: 12,
-        title: "Unassigned",
-        creator: "Roblox User: —",
-        verifier: "Clan: —",
-        points: "Event Wins: —",
-        img: "assets/images/impact.png"
-      },
-      {
-        rank: 13,
-        title: "Unassigned",
-        creator: "Roblox User: —",
-        verifier: "Clan: —",
-        points: "Event Wins: —",
-        img: "assets/images/impact.png"
-      },
-      {
-        rank: 14,
-        title: "Unassigned",
-        creator: "Roblox User: —",
-        verifier: "Clan: —",
-        points: "Event Wins: —",
-        img: "assets/images/impact.png"
-      },
-      {
-        rank: 15,
-        title: "Unassigned",
-        creator: "Roblox User: —",
-        verifier: "Clan: —",
-        points: "Event Wins: —",
-        img: "assets/images/impact.png"
-      },
-      {
-        rank: 16,
-        title: "Unassigned",
-        creator: "Roblox User: —",
-        verifier: "Clan: —",
-        points: "Event Wins: —",
-        img: "assets/images/impact.png"
-      },
-      {
-        rank: 17,
-        title: "Unassigned",
-        creator: "Roblox User: —",
-        verifier: "Clan: —",
-        points: "Event Wins: —",
-        img: "assets/images/impact.png"
-      },
-      {
-        rank: 18,
-        title: "Unassigned",
-        creator: "Roblox User: —",
-        verifier: "Clan: —",
-        points: "Event Wins: —",
-        img: "assets/images/impact.png"
-      },
-      {
-        rank: 19,
-        title: "Unassigned",
-        creator: "Roblox User: —",
-        verifier: "Clan: —",
-        points: "Event Wins: —",
-        img: "assets/images/impact.png"
-      },
-      {
-        rank: 20,
-        title: "Unassigned",
-        creator: "Roblox User: —",
-        verifier: "Clan: —",
-        points: "Event Wins: —",
-        img: "assets/images/impact.png"
-      }
-    ];
-
-    const container = document.getElementById("leaderboard");
-
-    data.forEach(item => {
-      const card = document.createElement("div");
-      card.className = "card";
-
-      card.innerHTML = `
-  <div class="thumb-wrap">
-    <img class="thumbnail" src="${item.img}">
-  </div>
-
-  <div class="info">
-    <div class="top-row">
-      <div class="rank">#${item.rank}</div>
-      <div class="title ${item.gradient ? 'gradient' : ''}">
-        ${item.title}
       </div>
     </div>
+  </div>
+
+  <!-- Load player data from external file -->
+  <script src="data.js"></script>
+
+  <script>
+    // ── Render a leaderboard into a container ──
+    function renderLeaderboard(dataArray, containerId, isSkill) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = "";
+
+      dataArray.forEach((item, index) => {
+        const rank = index + 1;
+        const card = document.createElement("div");
+        card.className = "card";
+
+        card.innerHTML = `
+  <div class="thumb-wrap">
+    <img class="thumbnail" src="${item.img}" onerror="this.src='assets/images/impact.png'">
+  </div>
+
+  <div class="info">
+    <div class="top-row">
+      <div class="rank">#${rank}</div>
+      <div class="title">${item.name}</div>
+    </div>
 
     <div class="meta">
-      <span class="creator">${item.creator}</span>
+      <span class="creator">Roblox User: ${item.robloxUser}</span>
       <span>|</span>
-      <span class="highlight">${item.verifier}</span>
+      <span class="highlight">Clan: ${item.clan}</span>
     </div>
   </div>
 
-  <div class="points">${item.points}</div>
+  <div class="points">Event Wins: ${item.eventWins}</div>
 `;
 
-      /* mouse glow tracking */
-      card.addEventListener("mousemove", e => {
-        const rect = card.getBoundingClientRect();
-        card.style.setProperty("--x", (e.clientX - rect.left) + "px");
-        card.style.setProperty("--y", (e.clientY - rect.top) + "px");
+        /* mouse glow tracking */
+        card.addEventListener("mousemove", e => {
+          const rect = card.getBoundingClientRect();
+          card.style.setProperty("--x", (e.clientX - rect.left) + "px");
+          card.style.setProperty("--y", (e.clientY - rect.top) + "px");
+        });
+
+        container.appendChild(card);
       });
+    }
 
-      container.appendChild(card);
-    });
-  </script>
+    // Render both leaderboards
+    renderLeaderboard(eventData, "event-leaderboard", false);
+    renderLeaderboard(skillData, "leaderboard", true);
 
-  <script>
+    // ── Navigation Logic ──
     function showPage(pageId) {
-      // hide all pages
       document.querySelectorAll('.page').forEach(page => {
         page.style.display = 'none';
       });
 
-      // show selected page
       document.getElementById(pageId).style.display = 'block';
 
-      // remove active from all buttons
-      document.querySelectorAll('.nav-center a').forEach(link => {
+      document.querySelectorAll('.nav-left a').forEach(link => {
         link.classList.remove('active');
       });
 
-      // add active to clicked one
       event.target.classList.add('active');
     }
+
+    // ── Leaderboard Tabs Logic ──
+    function switchLbTab(tab) {
+      document.getElementById('lb-skill-btn').classList.remove('active');
+      document.getElementById('lb-event-btn').classList.remove('active');
+      document.getElementById('lb-skill-content').style.display = 'none';
+      document.getElementById('lb-event-content').style.display = 'none';
+
+      if (tab === 'skill') {
+        document.getElementById('lb-skill-btn').classList.add('active');
+        document.getElementById('lb-skill-content').style.display = 'block';
+      } else {
+        document.getElementById('lb-event-btn').classList.add('active');
+        document.getElementById('lb-event-content').style.display = 'block';
+      }
+    }
+
+    // Toggle Mobile Menu
+    function toggleMenu() {
+      const navLeft = document.getElementById('navCenter'); // keeping id navCenter so we don't break JS query if we didn't change it
+      navLeft.classList.toggle('mobile-active');
+
+      // Make extra links visible only in mobile drop down
+      const extraLinks = navLeft.querySelector('.mobile-extra-links');
+      if (window.innerWidth <= 900) {
+        extraLinks.style.display = 'flex';
+      } else {
+        extraLinks.style.display = 'none';
+      }
+    }
+
+    // Navbar Scroll
+
+    let lastScroll = window.scrollY;
+    const navbar = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+
+      // If we scroll down past 80px, hide navbar
+      if (currentScroll > lastScroll && currentScroll > 80) {
+        navbar.classList.add('nav-hidden');
+      } else {
+        // Scrolling up
+        navbar.classList.remove('nav-hidden');
+      }
+      lastScroll = currentScroll;
+    });
   </script>
 
 </body>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel — Global CE Leaderboard</title>
+  <link rel="icon" type="image/png" href="assets/images/impact.png">
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+  <!-- ═══ PASSWORD GATE ═══ -->
+  <div class="password-gate" id="passwordGate">
+    <div class="password-box">
+      <h2>Admin Access</h2>
+      <p>Enter the admin password to continue</p>
+      <input type="password" id="passwordInput" placeholder="Password..." autofocus>
+      <div class="error-msg" id="passwordError">Incorrect password.</div>
+      <button onclick="checkPassword()">Unlock</button>
+    </div>
+  </div>
+
+  <!-- ═══ ADMIN PANEL ═══ -->
+  <div class="admin-wrapper" id="adminPanel">
+
+    <!-- HEADER -->
+    <div class="admin-header">
+      <h1><span>Admin</span> Panel</h1>
+      <div class="header-actions">
+        <a href="index.html" class="btn btn-back">← Back to Site</a>
+        <button class="btn btn-success" onclick="exportData()">Export Data</button>
+      </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="events" onclick="switchTab('events', this)">
+        Event Wins Leaderboard
+      </button>
+      <button class="tab-btn" data-tab="skill" onclick="switchTab('skill', this)">
+        1v1 Skill Leaderboard
+      </button>
+    </div>
+
+    <!-- TOOLBAR -->
+    <div class="toolbar">
+      <div class="toolbar-left">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search players..." oninput="renderTable()">
+        <span class="player-count" id="playerCount"></span>
+      </div>
+      <button class="btn btn-primary" onclick="openAddModal()">+ Add Player</button>
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:40px"></th>
+            <th style="width:50px">#</th>
+            <th>Player</th>
+            <th>Roblox User</th>
+            <th>Clan</th>
+            <th>Event Wins</th>
+            <th>Image Path</th>
+            <th style="width:120px">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <div class="icon">🔍</div>
+        <p>No players found</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ADD/EDIT MODAL ═══ -->
+  <div class="modal-overlay" id="playerModal">
+    <div class="modal">
+      <h2 id="modalTitle">Add Player</h2>
+
+      <div class="form-group">
+        <label>Player Name</label>
+        <input type="text" id="formName" placeholder="e.g. Mattie">
+      </div>
+
+      <div class="form-group">
+        <label>Roblox Username</label>
+        <input type="text" id="formRoblox" placeholder="e.g. matiteo01">
+      </div>
+
+      <div class="form-group">
+        <label>Clan</label>
+        <select id="formClan">
+          <option value="Valhalla">Valhalla</option>
+          <option value="RoS">RoS</option>
+          <option value="Unaffiliated">Unaffiliated</option>
+          <option value="Unknown">Unknown</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Event Wins</label>
+        <input type="number" id="formWins" placeholder="0" min="0">
+      </div>
+
+      <div class="form-group">
+        <label>Image Path</label>
+        <input type="text" id="formImg" placeholder="assets/images/playername.jpg">
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+        <button class="btn btn-primary" id="modalSaveBtn" onclick="savePlayer()">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ CONFIRM DIALOG ═══ -->
+  <div class="confirm-overlay" id="confirmDialog">
+    <div class="confirm-box">
+      <h3>Delete Player?</h3>
+      <p id="confirmMsg">Are you sure you want to remove this player?</p>
+      <div class="confirm-actions">
+        <button class="btn btn-ghost" onclick="closeConfirm()">Cancel</button>
+        <button class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ EXPORT MODAL ═══ -->
+  <div class="modal-overlay" id="exportModal">
+    <div class="modal" style="width: 600px;">
+      <h2>Export Data</h2>
+      <p style="font-size: 13px; color: #7f8bb3; margin-bottom: 16px;">
+        Copy the content below and paste it into <strong>data.js</strong>, then commit & push to GitHub.
+      </p>
+      <textarea class="export-area" id="exportArea" readonly></textarea>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" onclick="closeExport()">Close</button>
+        <button class="btn btn-success" onclick="copyExport()">Copy to Clipboard</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ LOAD DATA ═══ -->
+  <script src="data.js"></script>
+
+  <script>
+    // ── STATE ──────────────────────────────
+    // Password is obfuscated via base64 to prevent casual snooping in the source code.
+    const ADMIN_PW_HASH = "SWFtaGVscGluZ2hvb2R5bWFrZXRoaXM="; // base64 for new password
+
+    let currentTab = "events";
+    let editingIndex = -1;  // -1 = adding new, >= 0 = editing
+
+    // Deep copy data so we don't mutate originals until export
+    let localEventData = JSON.parse(JSON.stringify(eventData));
+    let localSkillData = JSON.parse(JSON.stringify(skillData));
+
+    // ── PASSWORD ──────────────────────────
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value;
+      if (btoa(input) === ADMIN_PW_HASH) {
+        document.getElementById("passwordGate").style.display = "none";
+        document.getElementById("adminPanel").classList.add("visible");
+        renderTable();
+      } else {
+        document.getElementById("passwordError").style.display = "block";
+        document.getElementById("passwordInput").value = "";
+        document.getElementById("passwordInput").focus();
+      }
+    }
+
+    // Enter key on password input
+    document.getElementById("passwordInput").addEventListener("keydown", (e) => {
+      if (e.key === "Enter") checkPassword();
+    });
+
+    // ── TABS ──────────────────────────────
+    function switchTab(tab, btn) {
+      currentTab = tab;
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      document.getElementById("searchInput").value = "";
+      renderTable();
+    }
+
+    // ── GET CURRENT DATA ──────────────────
+    function getCurrentData() {
+      return currentTab === "events" ? localEventData : localSkillData;
+    }
+
+    function setCurrentData(data) {
+      if (currentTab === "events") {
+        localEventData = data;
+      } else {
+        localSkillData = data;
+      }
+    }
+
+    // ── RENDER TABLE ──────────────────────
+    function renderTable() {
+      const tbody = document.getElementById("tableBody");
+      const search = document.getElementById("searchInput").value.toLowerCase();
+      const data = getCurrentData();
+
+      const filtered = data.map((player, idx) => ({ ...player, _idx: idx }))
+        .filter(p =>
+          p.name.toLowerCase().includes(search) ||
+          p.robloxUser.toLowerCase().includes(search) ||
+          p.clan.toLowerCase().includes(search)
+        );
+
+      document.getElementById("playerCount").textContent = `${filtered.length} of ${data.length} players`;
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = "";
+        document.getElementById("emptyState").style.display = "block";
+        return;
+      }
+      document.getElementById("emptyState").style.display = "none";
+
+      tbody.innerHTML = filtered.map((player, displayIdx) => {
+        const clanClass = getClanClass(player.clan);
+        const rank = player._idx + 1;
+
+        return `
+          <tr draggable="true"
+              ondragstart="dragStart(event, ${player._idx})"
+              ondragover="dragOver(event)"
+              ondragenter="dragEnter(event)"
+              ondragleave="dragLeave(event)"
+              ondrop="drop(event, ${player._idx})"
+              ondragend="dragEnd(event)">
+            <td><span class="drag-handle" title="Drag to reorder">⠿</span></td>
+            <td><span class="rank-num">${rank}</span></td>
+            <td>
+              <div class="player-cell">
+                <img class="player-thumb" src="${player.img}" onerror="this.src='assets/images/impact.png'" alt="">
+                <span class="player-name">${player.name}</span>
+              </div>
+            </td>
+            <td style="color: #94a3b8;">${player.robloxUser}</td>
+            <td><span class="clan-badge ${clanClass}">${player.clan}</span></td>
+            <td><span class="wins-num">${player.eventWins}</span></td>
+            <td style="color: #64748b; font-size: 12px;">${player.img}</td>
+            <td>
+              <div class="actions-cell">
+                <button class="btn btn-ghost btn-sm" onclick="openEditModal(${player._idx})">Edit</button>
+                <button class="btn btn-danger btn-sm" onclick="confirmDelete(${player._idx})">Delete</button>
+              </div>
+            </td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    function getClanClass(clan) {
+      const map = {
+        "Valhalla": "clan-valhalla",
+        "RoS": "clan-ros",
+        "Unaffiliated": "clan-unaffiliated",
+        "Unknown": "clan-unknown"
+      };
+      return map[clan] || "clan-unknown";
+    }
+
+    // ── ADD PLAYER ────────────────────────
+    function openAddModal() {
+      editingIndex = -1;
+      document.getElementById("modalTitle").textContent = "Add Player";
+      document.getElementById("formName").value = "";
+      document.getElementById("formRoblox").value = "";
+      document.getElementById("formClan").value = "Valhalla";
+      document.getElementById("formWins").value = "";
+      document.getElementById("formImg").value = "assets/images/";
+      document.getElementById("playerModal").classList.add("show");
+      document.getElementById("formName").focus();
+    }
+
+    // ── EDIT PLAYER ───────────────────────
+    function openEditModal(idx) {
+      editingIndex = idx;
+      const data = getCurrentData();
+      const player = data[idx];
+
+      document.getElementById("modalTitle").textContent = "Edit Player";
+      document.getElementById("formName").value = player.name;
+      document.getElementById("formRoblox").value = player.robloxUser;
+      document.getElementById("formClan").value = player.clan;
+      document.getElementById("formWins").value = player.eventWins;
+      document.getElementById("formImg").value = player.img;
+      document.getElementById("playerModal").classList.add("show");
+      document.getElementById("formName").focus();
+    }
+
+    // ── SAVE PLAYER ───────────────────────
+    function savePlayer() {
+      const name = document.getElementById("formName").value.trim();
+      const robloxUser = document.getElementById("formRoblox").value.trim();
+      const clan = document.getElementById("formClan").value;
+      const eventWins = parseInt(document.getElementById("formWins").value) || 0;
+      const img = document.getElementById("formImg").value.trim();
+
+      if (!name) {
+        showToast("Player name is required", "error");
+        return;
+      }
+
+      const player = { name, robloxUser, clan, eventWins, img: img || "assets/images/impact.png" };
+      const data = getCurrentData();
+
+      if (editingIndex >= 0) {
+        data[editingIndex] = player;
+        showToast(`Updated ${name}`, "success");
+      } else {
+        data.push(player);
+        showToast(`Added ${name}`, "success");
+      }
+
+      setCurrentData(data);
+      closeModal();
+      renderTable();
+    }
+
+    function closeModal() {
+      document.getElementById("playerModal").classList.remove("show");
+    }
+
+    // ── DELETE PLAYER ─────────────────────
+    let deleteTarget = -1;
+
+    function confirmDelete(idx) {
+      deleteTarget = idx;
+      const data = getCurrentData();
+      document.getElementById("confirmMsg").textContent =
+        `Are you sure you want to remove "${data[idx].name}"?`;
+      document.getElementById("confirmDialog").classList.add("show");
+
+      document.getElementById("confirmDeleteBtn").onclick = () => {
+        const data = getCurrentData();
+        const removed = data.splice(deleteTarget, 1);
+        setCurrentData(data);
+        closeConfirm();
+        renderTable();
+        showToast(`Removed ${removed[0].name}`, "success");
+      };
+    }
+
+    function closeConfirm() {
+      document.getElementById("confirmDialog").classList.remove("show");
+    }
+
+    // ── DRAG & DROP REORDER ───────────────
+    let dragSourceIdx = null;
+
+    function dragStart(e, idx) {
+      dragSourceIdx = idx;
+      e.target.closest("tr").classList.add("dragging");
+      e.dataTransfer.effectAllowed = "move";
+    }
+
+    function dragOver(e) {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = "move";
+    }
+
+    function dragEnter(e) {
+      e.preventDefault();
+      const tr = e.target.closest("tr");
+      if (tr) tr.classList.add("drag-over");
+    }
+
+    function dragLeave(e) {
+      const tr = e.target.closest("tr");
+      if (tr) tr.classList.remove("drag-over");
+    }
+
+    function drop(e, targetIdx) {
+      e.preventDefault();
+      const tr = e.target.closest("tr");
+      if (tr) tr.classList.remove("drag-over");
+
+      if (dragSourceIdx === null || dragSourceIdx === targetIdx) return;
+
+      const data = getCurrentData();
+      const [moved] = data.splice(dragSourceIdx, 1);
+      data.splice(targetIdx, 0, moved);
+      setCurrentData(data);
+      renderTable();
+      showToast(`Moved ${moved.name} to #${targetIdx + 1}`, "success");
+    }
+
+    function dragEnd(e) {
+      document.querySelectorAll("tr").forEach(r => {
+        r.classList.remove("dragging", "drag-over");
+      });
+      dragSourceIdx = null;
+    }
+
+    // ── EXPORT ────────────────────────────
+    function exportData() {
+      const output = generateDataJS(localEventData, localSkillData);
+      document.getElementById("exportArea").value = output;
+      document.getElementById("exportModal").classList.add("show");
+    }
+
+    function generateDataJS(events, skills) {
+      let js = `/*\n`;
+      js += ` * ===========================\n`;
+      js += ` *  GLOBAL CE LEADERBOARD DATA\n`;
+      js += ` * ===========================\n`;
+      js += ` *\n`;
+      js += ` *  All player data lives here.\n`;
+      js += ` *  Edit via admin.html or directly in this file.\n`;
+      js += ` *  Ranks are auto-assigned based on array order & event wins.\n`;
+      js += ` */\n\n`;
+
+      js += `// ── EVENT WINS LEADERBOARD ──────────────────────────────\n`;
+      js += `const eventData = ${formatArray(events)};\n\n`;
+
+      js += `// ── 1v1 SKILL LEADERBOARD ──────────────────────────────\n`;
+      js += `// Order = rank (first entry = #1, second = #2, etc.)\n`;
+      js += `const skillData = ${formatArray(skills)};\n`;
+
+      return js;
+    }
+
+    function formatArray(arr) {
+      if (arr.length === 0) return "[]";
+
+      const items = arr.map(p => {
+        return `  {\n` +
+          `    name: ${JSON.stringify(p.name)},\n` +
+          `    robloxUser: ${JSON.stringify(p.robloxUser)},\n` +
+          `    clan: ${JSON.stringify(p.clan)},\n` +
+          `    eventWins: ${p.eventWins},\n` +
+          `    img: ${JSON.stringify(p.img)}\n` +
+          `  }`;
+      });
+
+      return `[\n${items.join(",\n")}\n]`;
+    }
+
+    function copyExport() {
+      const area = document.getElementById("exportArea");
+      navigator.clipboard.writeText(area.value).then(() => {
+        showToast("Copied to clipboard!", "success");
+      }).catch(() => {
+        area.select();
+        document.execCommand("copy");
+        showToast("Copied to clipboard!", "success");
+      });
+    }
+
+    function closeExport() {
+      document.getElementById("exportModal").classList.remove("show");
+    }
+
+    // ── TOAST NOTIFICATIONS ───────────────
+    function showToast(message, type = "success") {
+      const existing = document.querySelector(".toast");
+      if (existing) existing.remove();
+
+      const toast = document.createElement("div");
+      toast.className = `toast toast-${type}`;
+      toast.textContent = message;
+      document.body.appendChild(toast);
+
+      setTimeout(() => toast.remove(), 3000);
+    }
+
+    // ── KEYBOARD SHORTCUTS ────────────────
+    document.addEventListener("keydown", (e) => {
+      // Escape closes modals
+      if (e.key === "Escape") {
+        closeModal();
+        closeConfirm();
+        closeExport();
+      }
+    });
+  </script>
+
+</body>
+
+</html>
