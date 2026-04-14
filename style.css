@@ -104,6 +104,11 @@
   font-weight: 600;
 }
 
+/* Hide mobile extra links on desktop */
+.mobile-extra-links {
+  display: none !important;
+}
+
 /* RIGHT BUTTON */
 .nav-right a {
   text-decoration: none;
@@ -333,7 +338,7 @@ body::after {
   flex: 1;
 }
 
-.nav-left a {
+.nav-left > a {
   text-decoration: none;
   color: #e6ecff;
   font-size: 15px;
@@ -344,12 +349,12 @@ body::after {
 }
 
 /* hover effect */
-.nav-left a:hover {
+.nav-left > a:hover {
   color: #4da3ff;
 }
 
 /* subtle underline on hover */
-.nav-left a::after {
+.nav-left > a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -360,73 +365,104 @@ body::after {
   transition: 0.2s;
 }
 
-.nav-left a:hover::after,
-.nav-left a.active::after {
+.nav-left > a:hover::after,
+.nav-left > a.active::after {
   width: 100%;
 }
 
-.nav-left a.active {
+.nav-left > a.active {
   color: #4da3ff;
 }
-/* MOBILE NAV BTN */
+
+/* Hide mobile extra links on desktop */
+.mobile-extra-links {
+  display: none !important;
+}
 .mobile-btn {
   display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
   z-index: 1001;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.mobile-btn:hover {
+  background: rgba(255,255,255,0.05);
 }
 
 .mobile-btn span {
   width: 24px;
   height: 2px;
   background: white;
-  transition: 0.3s;
+  transition: all 0.3s ease;
   border-radius: 2px;
+}
+
+/* Animate hamburger to X when active */
+.mobile-active ~ .mobile-btn span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.mobile-active ~ .mobile-btn span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-active ~ .mobile-btn span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
 }
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 900px) {
   .navbar {
     padding: 0 16px;
+    height: 56px;
   }
 
   .nav-brand {
-    font-size: 15px;
+    font-size: 14px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .nav-brand .title-text {
-    display: none; /* Hide text on mobile, keep logo only */
+    display: none;
   }
 
   .nav-logo {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
   }
 
-  .nav-left {
-    position: absolute;
-    top: 64px;
-    left: 0;
-    width: 100%;
-    transform: none;
+  /* SAKRIJ NAV-LEFT KOMPLETNO NA MOBITELU */
+  .navbar .nav-left {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
     background: rgba(10, 15, 30, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
-    padding: 24px 20px;
-    gap: 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    display: none;
+    padding: 80px 20px 24px 20px;
+    gap: 8px;
+    border-right: 1px solid rgba(255,255,255,0.1);
     align-items: stretch;
-    z-index: 1000;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 999;
+    box-shadow: 4px 0 30px rgba(0,0,0,0.5);
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
   }
 
-  .nav-left.mobile-active {
-    display: flex;
+  .navbar .nav-left.mobile-active {
+    left: 0;
   }
 
-  .nav-left a {
+  /* STILIZUJ LINKOVE U SIDEBARU */
+  .navbar .nav-left a {
     padding: 14px 20px;
     font-size: 16px;
     text-align: left;
@@ -437,18 +473,37 @@ body::after {
     color: #e6ecff;
   }
 
-  .nav-left a:hover {
+  .navbar .nav-left a:hover {
     background: rgba(77,163,255,0.1);
     border-color: rgba(77,163,255,0.3);
   }
 
-  .nav-left a.active {
+  .navbar .nav-left a.active {
     background: rgba(77,163,255,0.15);
     border-color: rgba(77,163,255,0.4);
   }
 
-  .nav-left a::after {
-    display: none; /* Remove underline effect on mobile */
+  .navbar .nav-left a::after {
+    display: none;
+  }
+
+  /* DISCORD BUTTON U SIDEBARU */
+  .navbar .nav-left .mobile-extra-links {
+    display: flex !important;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 12px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .navbar .nav-left .mobile-extra-links a {
+    display: flex !important;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    font-size: 15px;
+    padding: 14px 20px;
   }
 
   .mobile-btn {
@@ -458,51 +513,70 @@ body::after {
   .nav-right {
     display: none !important;
   }
-  
-  .nav-left .mobile-extra-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin-top: 12px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
-
-  .nav-left .mobile-extra-links a {
-    width: 100%;
-    box-sizing: border-box;
-    justify-content: center;
-    font-size: 15px;
-    padding: 14px 20px;
-  }
 
   .container {
     width: 92%;
   }
 
   .card {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
+    flex-direction: row;
+    padding: 12px;
+    align-items: center;
+    margin-bottom: 10px;
   }
 
   .thumb-wrap {
-    margin-right: 0;
-    margin-bottom: 12px;
+    width: 60px;
+    height: 60px;
+    margin-right: 12px;
+    flex-shrink: 0;
+  }
+
+  .info {
+    flex: 1;
+    min-width: 0;
   }
 
   .top-row {
-    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .rank {
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+
+  .title {
+    font-size: 15px;
+    font-weight: 700;
   }
 
   .meta {
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    margin-top: 4px;
+  }
+
+  .meta span:not(.creator):not(.highlight) {
+    display: none;
+  }
+
+  .creator, .highlight {
+    font-size: 11px;
+    line-height: 1.3;
   }
 
   .points {
-    margin-left: 0;
-    margin-top: 10px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
   }
 
   .clan-card {
