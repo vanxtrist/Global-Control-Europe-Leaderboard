@@ -70,7 +70,7 @@ const eventData = [
     name: "Cevokud",
     robloxUser: "Cevokud",
     clan: "RoS",
-    eventWins: 3,
+    eventWins: 4,
     img: "assets/images/cevo.jpg"
   },
   {
@@ -86,13 +86,6 @@ const eventData = [
     clan: "Valhalla",
     eventWins: 3,
     img: "assets/images/ryaan.jpg"
-  },
-  {
-    name: "Shuljo",
-    robloxUser: "Pametansam",
-    clan: "RoS",
-    eventWins: 2,
-    img: "assets/images/shuljo.jpg"
   },
   {
     name: "Rimu",
@@ -123,11 +116,18 @@ const eventData = [
     img: "assets/images/sigmar.jpg"
   },
   {
-    name: "Abraham",
-    robloxUser: "Unknown",
-    clan: "Unknown",
-    eventWins: 1,
-    img: "assets/images/abraham.jpg"
+    name: "Raze",
+    robloxUser: "gg_razegg",
+    clan: "RoS",
+    eventWins: 2,
+    img: "assets/images/raze.jpg"
+  },
+  {
+    name: "Alexander",
+    robloxUser: "jickezn",
+    clan: "RoS",
+    eventWins: 2,
+    img: "assets/images/alex.jpg"
   },
   {
     name: "Ananas",
@@ -135,6 +135,13 @@ const eventData = [
     clan: "RoS",
     eventWins: 1,
     img: "assets/images/ananas.jpg"
+  },
+  {
+    name: "Shuljo",
+    robloxUser: "Pametansam",
+    clan: "RoS",
+    eventWins: 1,
+    img: "assets/images/shuljo.jpg"
   },
   {
     name: "AnimeFlame",
@@ -228,13 +235,6 @@ const eventData = [
     img: "assets/images/nova.jpg"
   },
   {
-    name: "Raze",
-    robloxUser: "gg_razegg",
-    clan: "RoS",
-    eventWins: 2,
-    img: "assets/images/raze.jpg"
-  },
-  {
     name: "SGT_Saket",
     robloxUser: "SGT_Saket",
     clan: "RoS",
@@ -290,17 +290,10 @@ const eventData = [
 const skillData = [
   {
     name: "Mattie",
-    robloxUser: "mattiethebaddie",
+    robloxUser: "matiteo01",
     clan: "Valhalla",
     eventWins: 37,
     img: "assets/images/mattie.jpg"
-  },
-  {
-    name: "Bonekoko",
-    robloxUser: "Wouidzy",
-    clan: "Valhalla",
-    eventWins: 18,
-    img: "assets/images/bonekoko.jpg"
   },
   {
     name: "Raze",
@@ -310,13 +303,19 @@ const skillData = [
     img: "assets/images/raze.jpg"
   },
   {
+    name: "Bonekoko",
+    robloxUser: "Wouidzy",
+    clan: "Valhalla",
+    eventWins: 19,
+    img: "assets/images/bonekoko.jpg"
+  },
+  {
     name: "Cevokud",
     robloxUser: "Cevokud",
     clan: "RoS",
     eventWins: 3,
     img: "assets/images/cevo.jpg"
   },
-
   {
     name: "Shuljo",
     robloxUser: "Pametansam",
@@ -355,8 +354,78 @@ const skillData = [
   {
     name: "Rotgel",
     robloxUser: "R0TGEL",
-    clan: "Valhalla",
+    clan: "Unaffiliated",
     eventWins: 19,
     img: "assets/images/rotgel.jpg"
+  },
+  {
+    name: "Poney",
+    robloxUser: "Poneysw",
+    clan: "Valhalla",
+    eventWins: 2,
+    img: "assets/images/poney.jpg"
+  },
+  {
+    name: "Aion",
+    robloxUser: "aion",
+    clan: "RoS",
+    eventWins: 0,
+    img: "assets/images/aion.jpg"
+  },
+  {
+    name: "Rimu",
+    robloxUser: "fhnrbnhrrb",
+    clan: "Valhalla",
+    eventWins: 2,
+    img: "assets/images/rimu.jpg"
+  },
+  {
+    name: "Sinan",
+    robloxUser: "sinan061214",
+    clan: "Valhalla",
+    eventWins: 1,
+    img: "assets/images/sinan.png"
+  },
+  {
+    name: "RastaClat",
+    robloxUser: "rastaclat",
+    clan: "RoS",
+    eventWins: 0,
+    img: "assets/images/rasta.jpg"
+  },
+  {
+    name: "Ananasparon",
+    robloxUser: "Ananasparon",
+    clan: "RoS",
+    eventWins: 1,
+    img: "assets/images/ananas.jpg"
+  },
+  {
+    name: "Alexandar",
+    robloxUser: "jickezn",
+    clan: "RoS",
+    eventWins: 2,
+    img: "assets/images/alex.jpg"
+  },
+  {
+    name: "Imesium",
+    robloxUser: "zaaypbibia",
+    clan: "Valhalla",
+    eventWins: 0,
+    img: "assets/images/imesium.jpg"
+  },
+  {
+    name: "Nebula",
+    robloxUser: "tymixz",
+    clan: "RoS",
+    eventWins: 1,
+    img: "assets/images/nebula.jpg"
+  },
+  {
+    name: "Turn",
+    robloxUser: "txrning_gxxd",
+    clan: "Unaffiliated",
+    eventWins: 0,
+    img: "assets/images/turn.jpg"
   }
 ];
