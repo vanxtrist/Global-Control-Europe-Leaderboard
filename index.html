@@ -69,6 +69,7 @@
       <div class="tabs-container">
         <button class="tab-btn active" id="lb-skill-btn" onclick="switchLbTab('skill')">Overall Skill</button>
         <button class="tab-btn" id="lb-event-btn" onclick="switchLbTab('event')">Event Wins</button>
+        <button class="tab-btn" id="lb-valhalla-btn" onclick="switchLbTab('valhalla')">Valhalla</button>
       </div>
 
       <div id="lb-skill-content" class="lb-content">
@@ -85,6 +86,14 @@
           <p>Top players based on event victories</p>
         </div>
         <div id="event-leaderboard"></div>
+      </div>
+
+      <div id="lb-valhalla-content" class="lb-content" style="display:none;">
+        <div class="page-header">
+          <h1>Valhalla Leaderboard</h1>
+          <p>Top players from Valhalla clan</p>
+        </div>
+        <div id="valhalla-leaderboard"></div>
       </div>
 
     </div>
@@ -564,6 +573,7 @@
     // Render both leaderboards
     renderLeaderboard(eventData, "event-leaderboard", false);
     renderLeaderboard(skillData, "leaderboard", true);
+    renderLeaderboard(valhallaData, "valhalla-leaderboard", false);
 
     // ── Navigation Logic ──
     function showPage(pageId) {
