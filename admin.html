@@ -35,14 +35,19 @@
     </div>
 
     <!-- TABS -->
-    <div class="tabs">
-      <button class="tab-btn active" data-tab="events" onclick="switchTab('events', this)">
-        Event Wins Leaderboard
-      </button>
-      <button class="tab-btn" data-tab="skill" onclick="switchTab('skill', this)">
-        1v1 Skill Leaderboard
-      </button>
-    </div>
+   <div class="tabs">
+  <button class="tab-btn active" data-tab="events" onclick="switchTab('events', this)">
+    Event Wins Leaderboard
+  </button>
+
+  <button class="tab-btn" data-tab="skill" onclick="switchTab('skill', this)">
+    1v1 Skill Leaderboard
+  </button>
+
+  <button class="tab-btn" data-tab="valhalla" onclick="switchTab('valhalla', this)">
+    Valhalla Leaderboard
+  </button>
+</div>
 
     <!-- TOOLBAR -->
     <div class="toolbar">
@@ -63,7 +68,7 @@
             <th>Player</th>
             <th>Roblox User</th>
             <th>Clan</th>
-            <th>Event Wins</th>
+            <th id="winsHeader">Event Wins</th>
             <th>Image Path</th>
             <th style="width:120px">Actions</th>
           </tr>
@@ -160,6 +165,7 @@
     // Deep copy data so we don't mutate originals until export
     let localEventData = JSON.parse(JSON.stringify(eventData));
     let localSkillData = JSON.parse(JSON.stringify(skillData));
+    let localValhallaData = JSON.parse(JSON.stringify(valhallaData));
 
     // ── PASSWORD ──────────────────────────
     function checkPassword() {
@@ -189,21 +195,34 @@
       renderTable();
     }
 
-    // ── GET CURRENT DATA ──────────────────
-    function getCurrentData() {
-      return currentTab === "events" ? localEventData : localSkillData;
+      // ── GET CURRENT DATA ──────────────────
+   function getCurrentData() {
+      if (currentTab === "events") return localEventData;
+      if (currentTab === "skill") return localSkillData;
+      if (currentTab === "valhalla") return localValhallaData;
     }
 
     function setCurrentData(data) {
-      if (currentTab === "events") {
-        localEventData = data;
-      } else {
-        localSkillData = data;
-      }
-    }
+  if (currentTab === "events") {
+    localEventData = data;
+  } else if (currentTab === "skill") {
+    localSkillData = data;
+  } else if (currentTab === "valhalla") {
+    localValhallaData = data;
+  }
+}
 
     // ── RENDER TABLE ──────────────────────
     function renderTable() {
+      const winsHeader = document.getElementById("winsHeader");
+
+if (currentTab === "skill") {
+  winsHeader.textContent = "Skill Points";
+} else if (currentTab === "valhalla") {
+  winsHeader.textContent = "Valhalla Wins";
+} else {
+  winsHeader.textContent = "Event Wins";
+}
       const tbody = document.getElementById("tableBody");
       const search = document.getElementById("searchInput").value.toLowerCase();
       const data = getCurrentData();
@@ -246,7 +265,11 @@
             </td>
             <td style="color: #94a3b8;">${player.robloxUser}</td>
             <td><span class="clan-badge ${clanClass}">${player.clan}</span></td>
-            <td><span class="wins-num">${player.eventWins}</span></td>
+            <td>
+            <span class="wins-num">
+            ${player.eventWins}
+            </span>
+            </td>
             <td style="color: #64748b; font-size: 12px;">${player.img}</td>
             <td>
               <div class="actions-cell">
@@ -404,12 +427,12 @@
 
     // ── EXPORT ────────────────────────────
     function exportData() {
-      const output = generateDataJS(localEventData, localSkillData);
+  const output = generateDataJS(localEventData, localSkillData, localValhallaData);
       document.getElementById("exportArea").value = output;
       document.getElementById("exportModal").classList.add("show");
     }
 
-    function generateDataJS(events, skills) {
+    function generateDataJS(events, skills, valhalla) {
       let js = `/*\n`;
       js += ` * ===========================\n`;
       js += ` *  GLOBAL CE LEADERBOARD DATA\n`;
@@ -426,6 +449,9 @@
       js += `// ── 1v1 SKILL LEADERBOARD ──────────────────────────────\n`;
       js += `// Order = rank (first entry = #1, second = #2, etc.)\n`;
       js += `const skillData = ${formatArray(skills)};\n`;
+
+      js += `// ── VALLHALLA LEADERBOARD ──────────────────────────────\n`;
+      js += `const valhallaData = ${formatArray(valhalla)};\n\n`;
 
       return js;
     }
