@@ -429,3 +429,8 @@ const skillData = [
     img: "assets/images/turn.jpg"
   }
 ];
+
+// ── VALLHALLA LEADERBOARD ──────────────────────────────
+const valhallaData = [
+  
+];
