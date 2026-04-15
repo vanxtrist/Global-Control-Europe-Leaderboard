@@ -6,7 +6,7 @@ Designed with a sleek, space-inspired dark theme and fully responsive architectu
 
 ## ✨ Features
 
-- **🏆 Centralized Standings:** Track top players across `1v1 Skill` and `Event Wins` seamlessly on a single page.
+- **🏆 Centralized Standings:** Track top players across `Overall Skill` and `Event Wins` seamlessly on a single page.
 - **🎨 Premium UI/UX:** Built with modern web standards, featuring glassmorphism elements, custom CSS animations, and highly polished layouts.
 - **🛡️ Integrated Admin Panel:** A secure, intuitive frontend interface (`/admin.html`) allowing authorized users to edit, add, or sort players dynamically.
 - **📱 Fully Responsive:** Clean viewing experience and a fully functional custom navigation menu on both desktop and mobile devices.
