@@ -165,7 +165,7 @@
     // Deep copy data so we don't mutate originals until export
     let localEventData = JSON.parse(JSON.stringify(eventData));
     let localSkillData = JSON.parse(JSON.stringify(skillData));
-    let localValhallaData = JSON.parse(JSON.stringify(valhallaData));
+    let localValhallaData = JSON.parse(JSON.stringify(valhallaData || []));
 
     // ── PASSWORD ──────────────────────────
     function checkPassword() {
