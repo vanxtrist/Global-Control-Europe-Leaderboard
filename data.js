@@ -373,11 +373,18 @@ const skillData = [
     img: "assets/images/aion.jpg"
   },
   {
-    name: "Rimu",
-    robloxUser: "fhnrbnhrrb",
-    clan: "Valhalla",
-    eventWins: 2,
-    img: "assets/images/rimu.jpg"
+    name: "Turn",
+    robloxUser: "txrning_gxxd",
+    clan: "Unaffiliated",
+    eventWins: 0,
+    img: "assets/images/turn.jpg"
+  },
+  {
+    name: "RastaClat",
+    robloxUser: "rastaclat",
+    clan: "RoS",
+    eventWins: 0,
+    img: "assets/images/rasta.jpg"
   },
   {
     name: "Sinan",
@@ -387,11 +394,11 @@ const skillData = [
     img: "assets/images/sinan.png"
   },
   {
-    name: "RastaClat",
-    robloxUser: "rastaclat",
-    clan: "RoS",
-    eventWins: 0,
-    img: "assets/images/rasta.jpg"
+    name: "Rimu",
+    robloxUser: "fhnrbnhrrb",
+    clan: "Valhalla",
+    eventWins: 2,
+    img: "assets/images/rimu.jpg"
   },
   {
     name: "Ananasparon",
@@ -420,17 +427,16 @@ const skillData = [
     clan: "RoS",
     eventWins: 1,
     img: "assets/images/nebula.jpg"
-  },
+  }
+];
+// ── VALLHALLA LEADERBOARD ──────────────────────────────
+const valhallaData = [
   {
-    name: "Turn",
-    robloxUser: "txrning_gxxd",
-    clan: "Unaffiliated",
-    eventWins: 0,
-    img: "assets/images/turn.jpg"
+    name: "Ryaan",
+    robloxUser: "ryan is bad at ce",
+    clan: "Valhalla",
+    eventWins: 67,
+    img: "assets/images/ryaan.jpg"
   }
 ];
 
-// ── VALLHALLA LEADERBOARD ──────────────────────────────
-const valhallaData = [
-  
-];
