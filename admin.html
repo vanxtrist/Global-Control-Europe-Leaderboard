@@ -196,11 +196,13 @@
     }
 
       // ── GET CURRENT DATA ──────────────────
-   function getCurrentData() {
-      if (currentTab === "events") return localEventData;
-      if (currentTab === "skill") return localSkillData;
-      if (currentTab === "valhalla") return localValhallaData;
-    }
+  function getCurrentData() {
+  if (currentTab === "events") return localEventData;
+  if (currentTab === "skill") return localSkillData;
+  if (currentTab === "valhalla") return localValhallaData;
+
+  return localEventData; // fallback safety
+}
 
     function setCurrentData(data) {
   if (currentTab === "events") {
