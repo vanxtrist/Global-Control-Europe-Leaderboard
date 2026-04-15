@@ -592,20 +592,29 @@
 
     // ── Leaderboard Tabs Logic ──
     function switchLbTab(tab) {
-      document.getElementById('lb-skill-btn').classList.remove('active');
-      document.getElementById('lb-event-btn').classList.remove('active');
-      document.getElementById('lb-skill-content').style.display = 'none';
-      document.getElementById('lb-event-content').style.display = 'none';
+  document.getElementById('lb-skill-btn').classList.remove('active');
+  document.getElementById('lb-event-btn').classList.remove('active');
+  document.getElementById('lb-valhalla-btn').classList.remove('active');
 
-      if (tab === 'skill') {
-        document.getElementById('lb-skill-btn').classList.add('active');
-        document.getElementById('lb-skill-content').style.display = 'block';
-      } else {
-        document.getElementById('lb-event-btn').classList.add('active');
-        document.getElementById('lb-event-content').style.display = 'block';
-      }
-    }
+  document.getElementById('lb-skill-content').style.display = 'none';
+  document.getElementById('lb-event-content').style.display = 'none';
+  document.getElementById('lb-valhalla-content').style.display = 'none';
 
+  if (tab === 'skill') {
+    document.getElementById('lb-skill-btn').classList.add('active');
+    document.getElementById('lb-skill-content').style.display = 'block';
+  }
+
+  else if (tab === 'event') {
+    document.getElementById('lb-event-btn').classList.add('active');
+    document.getElementById('lb-event-content').style.display = 'block';
+  }
+
+  else if (tab === 'valhalla') {
+    document.getElementById('lb-valhalla-btn').classList.add('active');
+    document.getElementById('lb-valhalla-content').style.display = 'block';
+  }
+}
     // Toggle Mobile Menu
     function toggleMenu() {
       const navLeft = document.getElementById('navCenter'); // keeping id navCenter so we don't break JS query if we didn't change it
