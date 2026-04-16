@@ -88,6 +88,13 @@ const eventData = [
     img: "assets/images/ryaan.jpg"
   },
   {
+    name: "Raze",
+    robloxUser: "gg_razegg",
+    clan: "RoS",
+    eventWins: 3,
+    img: "assets/images/raze.jpg"
+  },
+  {
     name: "Rimu",
     robloxUser: "fhnrbnhrrb",
     clan: "Valhalla",
@@ -114,13 +121,6 @@ const eventData = [
     clan: "Unknown",
     eventWins: 2,
     img: "assets/images/sigmar.jpg"
-  },
-  {
-    name: "Raze",
-    robloxUser: "gg_razegg",
-    clan: "RoS",
-    eventWins: 2,
-    img: "assets/images/raze.jpg"
   },
   {
     name: "Alexander",
@@ -299,15 +299,8 @@ const skillData = [
     name: "Raze",
     robloxUser: "gg_razegg",
     clan: "RoS",
-    eventWins: 2,
+    eventWins: 3,
     img: "assets/images/raze.jpg"
-  },
-  {
-    name: "Bonekoko",
-    robloxUser: "Wouidzy",
-    clan: "Valhalla",
-    eventWins: 19,
-    img: "assets/images/bonekoko.jpg"
   },
   {
     name: "Cevokud",
@@ -315,6 +308,13 @@ const skillData = [
     clan: "RoS",
     eventWins: 3,
     img: "assets/images/cevo.jpg"
+  },
+  {
+    name: "Bonekoko",
+    robloxUser: "Wouidzy",
+    clan: "Valhalla",
+    eventWins: 19,
+    img: "assets/images/bonekoko.jpg"
   },
   {
     name: "Shuljo",
@@ -432,13 +432,6 @@ const skillData = [
 // ── VALLHALLA LEADERBOARD ──────────────────────────────
 const valhallaData = [
   {
-    name: "Mattie",
-    robloxUser: "matiteo01",
-    clan: "Valhalla",
-    eventWins: 37,
-    img: "assets/images/mattie.jpg"
-  },
-  {
     name: "Bonekoko",
     robloxUser: "Wouidzy",
     clan: "Valhalla",
@@ -446,11 +439,11 @@ const valhallaData = [
     img: "assets/images/bonekoko.jpg"
   },
   {
-    name: "Ryaan",
-    robloxUser: "supermanzzxz3",
+    name: "Mattie",
+    robloxUser: "matiteo01",
     clan: "Valhalla",
-    eventWins: 3,
-    img: "assets/images/ryaan.jpg"
+    eventWins: 37,
+    img: "assets/images/mattie.jpg"
   },
   {
     name: "Bondt",
@@ -460,11 +453,11 @@ const valhallaData = [
     img: "assets/images/bondt.jpg"
   },
   {
-    name: "Babatunde",
-    robloxUser: "121111deasd",
+    name: "Ryaan",
+    robloxUser: "supermanzzxz3",
     clan: "Valhalla",
-    eventWins: 4,
-    img: "assets/images/baba.jpg"
+    eventWins: 3,
+    img: "assets/images/ryaan.jpg"
   },
   {
     name: "Poney",
@@ -474,6 +467,13 @@ const valhallaData = [
     img: "assets/images/poney.jpg"
   },
   {
+    name: "Babatunde",
+    robloxUser: "121111deasd",
+    clan: "Valhalla",
+    eventWins: 4,
+    img: "assets/images/baba.jpg"
+  },
+  {
     name: "Turn",
     robloxUser: "txrning_gxxd",
     clan: "Valhalla",
@@ -481,11 +481,11 @@ const valhallaData = [
     img: "assets/images/turn.jpg"
   },
   {
-    name: "Sinan",
-    robloxUser: "sinan061214",
+    name: "Shadow",
+    robloxUser: "powerface123455",
     clan: "Valhalla",
-    eventWins: 1,
-    img: "assets/images/sinan.png"
+    eventWins: 2,
+    img: "assets/images/shadow.jpg"
   },
   {
     name: "Rimu",
@@ -495,11 +495,11 @@ const valhallaData = [
     img: "assets/images/rimu.jpg"
   },
   {
-    name: "Shadow",
-    robloxUser: "powerface123455",
+    name: "Sinan",
+    robloxUser: "sinan061214",
     clan: "Valhalla",
-    eventWins: 2,
-    img: "assets/images/shadow.jpg"
+    eventWins: 1,
+    img: "assets/images/sinan.png"
   }
 ];
 
