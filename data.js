@@ -296,11 +296,11 @@ const skillData = [
     img: "assets/images/mattie.jpg"
   },
   {
-    name: "Raze",
-    robloxUser: "gg_razegg",
-    clan: "RoS",
-    eventWins: 3,
-    img: "assets/images/raze.jpg"
+    name: "Bonekoko",
+    robloxUser: "Wouidzy",
+    clan: "Valhalla",
+    eventWins: 19,
+    img: "assets/images/bonekoko.jpg"
   },
   {
     name: "Cevokud",
@@ -310,11 +310,11 @@ const skillData = [
     img: "assets/images/cevo.jpg"
   },
   {
-    name: "Bonekoko",
-    robloxUser: "Wouidzy",
-    clan: "Valhalla",
-    eventWins: 19,
-    img: "assets/images/bonekoko.jpg"
+    name: "Raze",
+    robloxUser: "gg_razegg",
+    clan: "RoS",
+    eventWins: 3,
+    img: "assets/images/raze.jpg"
   },
   {
     name: "Shuljo",
