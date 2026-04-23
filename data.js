@@ -81,6 +81,13 @@ const eventData = [
     img: "assets/images/baba.jpg"
   },
   {
+    name: "Poney",
+    robloxUser: "Poneysw",
+    clan: "Valhalla",
+    eventWins: 4,
+    img: "assets/images/poney.jpg"
+  },
+  {
     name: "Ryaan",
     robloxUser: "supermanzzxz3",
     clan: "Valhalla",
@@ -100,13 +107,6 @@ const eventData = [
     clan: "Valhalla",
     eventWins: 2,
     img: "assets/images/rimu.jpg"
-  },
-  {
-    name: "Poney",
-    robloxUser: "Poneysw",
-    clan: "Valhalla",
-    eventWins: 2,
-    img: "assets/images/poney.jpg"
   },
   {
     name: "Shadow",
