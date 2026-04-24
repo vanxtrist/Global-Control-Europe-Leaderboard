@@ -503,3 +503,17 @@ const valhallaData = [
   }
 ];
 
+const tiers = [
+  {
+    tier: "S",
+    players: ["Mattie", "Bonekoko", "Cevokud"]
+  },
+  {
+    tier: "A",
+    players: ["Player 4", "Player 5"]
+  },
+  {
+    tier: "B",
+    players: ["Player 6"]
+  }
+];
