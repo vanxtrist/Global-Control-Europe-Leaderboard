@@ -1166,20 +1166,21 @@ body::after {
 /* ROW (LOCKED ALIGNMENT FIX) */
 #tiers-container .card {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 18px;
 
-  padding: 20px 26px;
-  background: rgba(15, 20, 35, 0.78);
+  padding: 14px 18px;
+  margin-bottom: 10px;
 
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  border-radius: 0; /* IMPORTANT: removes card feel */
+  border-radius: 12px;
+  background: linear-gradient(90deg, #0c1624, #0a1a2f);
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
 /* PFP (CENTERED PERFECTLY) */
 .thumb-wrap {
-  width: 90px;
-  height: 90px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1187,10 +1188,10 @@ body::after {
 }
 
 #tiers-container img {
-  width: 90px;
-  height: 90px;
+  width: 44px;
+  height: 44px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
 /* INFO BLOCK */
@@ -1203,42 +1204,51 @@ body::after {
 
 /* NAME */
 #tiers-container .title {
-  font-size: 30px;
-  font-weight: 900;
-  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#tiers-container .info .meta {
+  font-size: 13px;
+  opacity: 0.7;
 }
 
 .region {
-  font-size: 26px;
-  font-weight: 900;
-  padding: 10px 14px;
-  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 8px;
 }
 
 .region.na {
-  background: rgba(255, 80, 80, 0.18);
-  color: #ff6b6b;
+  background: #1f3f5f;
+  color: #4cb3ff;
 }
 
 .region.eu {
-  background: rgba(80, 255, 120, 0.18);
-  color: #4ade80;
+  background: #1f5f3a;
+  color: #4cff9a;
 }
 
 /* HT1 / TIER (STRONG VISUAL ANCHOR) */
-.tier-tag {
-  font-style: italic;
-  text-transform: uppercase;
+.tier-badge {
+  min-width: 70px;
+  padding: 8px 12px;
+  border-radius: 10px;
 
-  font-size: 52px;   /* MUCH bigger */
-  font-weight: 900;
-  color: #4da3ff;
-
-  letter-spacing: 4px;
-  line-height: 1;
-
-  text-shadow: 0 0 12px rgba(77,163,255,0.25);
+  font-weight: 800;
+  text-align: center;
 }
+
+/* COLORS */
+.ht1 { background: #f5b942; color: #000; }
+.lt1 { background: #ff8c42; }
+.ht2 { background: #3ecf6d; }
+.lt2 { background: #a56eff; }
+.ht3 { background: #4fa3ff; }
+.lt3 { background: #ff5c5c; }
+.ht4 { background: #3ed1cf; }
+.lt4 { background: #c77dff; }
 
 /* POINTS */
 #tiers-container .points {
