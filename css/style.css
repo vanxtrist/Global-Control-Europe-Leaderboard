@@ -1144,84 +1144,87 @@ body::after {
 
 #tiers-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 0; /* we use lines instead */
+  width: 95%;
+  margin: 0 auto;
 }
 
-/* big single leaderboard box */
-.tiers-box {
-  width: 100%;
-  max-width: 950px;
-  background: rgba(15, 16, 25, 0.95);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 18px;
-  overflow: hidden;
-}
-
-/* each row */
-.tier-row {
+/* HEADER LABELS */
+.tier-header-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 22px 26px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  transition: 0.2s;
+  padding: 0 20px 10px 20px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
 }
 
-.tier-row:last-child {
-  border-bottom: none;
-}
-
-.tier-row:hover {
-  background: rgba(255,255,255,0.04);
-}
-
-/* LEFT SIDE */
-.tier-left {
+/* EACH ROW */
+#tiers-container .card {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 22px 26px; /* taller */
+  min-height: 85px;   /* taller rows */
+
+  background: rgba(20, 22, 35, 0.85);
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.06); /* line separators */
+
+  border-radius: 0; /* remove card feel */
 }
 
-/* NAME (BIG — as you wanted) */
-.tier-name {
-  font-size: 22px;
+/* hover */
+#tiers-container .card:hover {
+  background: rgba(35, 38, 60, 0.95);
+}
+
+/* LEFT AVATAR */
+#tiers-container .thumb-wrap {
+  width: 58px;
+  height: 58px;
+}
+
+/* PLAYER INFO BLOCK */
+#tiers-container .info {
+  flex: 1;
+  margin-left: 16px;
+}
+
+/* PLAYER NAME (BIG) */
+#tiers-container .title {
+  font-size: 20px;   /* bigger */
   font-weight: 800;
   color: #ffffff;
-  letter-spacing: 0.2px;
 }
 
-/* CLAN UNDER NAME */
-.tier-clan {
-  font-size: 13px;
-  opacity: 0.7;
+/* REGION / META */
+#tiers-container .meta {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
   margin-top: 4px;
 }
 
-/* RIGHT SIDE */
-.tier-right {
-  text-align: right;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 4px;
-}
-
-/* TIER BADGE */
-.tier-badge {
+/* TIER LABEL (LEFT OF NAME STYLE) */
+.tier-tag {
+  font-style: italic;
+  text-transform: uppercase;
   font-size: 14px;
   font-weight: 800;
-  padding: 6px 12px;
+  color: #4da3ff;
+  margin-right: 10px;
+  letter-spacing: 1px;
+}
+
+/* POINTS / RIGHT SIDE */
+#tiers-container .points {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 12px;
   border-radius: 10px;
-  background: rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.05);
 }
-
-/* REGION / EXTRA INFO */
-.tier-region {
-  font-size: 12px;
-  opacity: 0.6;
-}
-
-/* Tier colors */
-.rank.ht1 { background: #ff3b3b33; color: #ff4d4d; }
-.rank.ht2 { background: #ff9f1c33; color: #ffb020; }
-.rank.lt1 { background: #3b82f633; color: #60a5fa; }
-.rank.lt2 { background: #9ca3af33; color: #cbd5e1; }
