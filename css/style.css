@@ -1245,3 +1245,24 @@ body::after {
   background: rgba(80, 255, 120, 0.15);
   color: #4ade80;
 }
+
+.tiers-icons {
+  display: flex;
+  gap: 8px;
+}
+
+.tier-icon {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  color: #e6ecff;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.2s;
+}
+
+.tier-icon:hover {
+  background: rgba(77,163,255,0.15);
+  border-color: rgba(77,163,255,0.4);
+}
