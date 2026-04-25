@@ -676,19 +676,19 @@ function renderTiers() {
   const box = document.createElement("div");
   box.className = "tiers-box";
 
-  tiers.forEach((player, index) => {
+  tiers.forEach(player => {
     const row = document.createElement("div");
     row.className = "tier-row";
 
     row.innerHTML = `
       <div class="tier-left">
-        <div class="tier-name">${player.name ?? "Unknown"}</div>
-        <div class="tier-clan">${player.clan ?? "No Clan"}</div>
+        <div class="tier-name">${player.name}</div>
+        <div class="tier-clan">${player.clan}</div>
       </div>
 
       <div class="tier-right">
-        <div class="tier-badge">${player.tier ?? "N/A"}</div>
-        <div class="tier-region">${player.region ?? "?"}</div>
+        <div class="tier-badge">${player.tier}</div>
+        <div class="tier-region">${player.region}</div>
       </div>
     `;
 
@@ -697,6 +697,7 @@ function renderTiers() {
 
   container.appendChild(box);
 }
+    
 // run it
 document.addEventListener("DOMContentLoaded", () => {
   showPage('main');   // 👈 ADD THIS
