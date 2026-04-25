@@ -673,40 +673,35 @@ function renderTiers() {
   const container = document.getElementById("tiers-container");
   container.innerHTML = "";
 
-  skillData.forEach(player => {
-    const card = document.createElement("div");
-    card.className = "card";
+  const box = document.createElement("div");
+  box.className = "tiers-box";
 
-    card.innerHTML = `
-      <div class="thumb-wrap">
-        <img class="thumbnail" src="${player.img}" onerror="this.src='assets/images/impact.png'">
+  tiers.forEach((player, index) => {
+    const row = document.createElement("div");
+    row.className = "tier-row";
+
+    row.innerHTML = `
+      <div class="tier-left">
+        <div class="tier-name">${player.name ?? "Unknown"}</div>
+        <div class="tier-clan">${player.clan ?? "No Clan"}</div>
       </div>
 
-      <div class="info">
-        <div class="top-row">
-          <div class="rank">${player.tier}</div>
-          <div class="title">${player.name}</div>
-        </div>
-
-        <div class="meta">
-          <span>Roblox: ${player.robloxUser}</span>
-          <span>|</span>
-          <span class="highlight">${player.clan}</span>
-        </div>
+      <div class="tier-right">
+        <div class="tier-badge">${player.tier ?? "N/A"}</div>
+        <div class="tier-region">${player.region ?? "?"}</div>
       </div>
-
-      <div class="points">${player.region}</div>
     `;
 
-    container.appendChild(card);
+    box.appendChild(row);
   });
+
+  container.appendChild(box);
 }
 // run it
 document.addEventListener("DOMContentLoaded", () => {
   showPage('main');   // 👈 ADD THIS
   renderTiers();
 });
-
     
   </script>
 
