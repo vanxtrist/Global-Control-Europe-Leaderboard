@@ -503,34 +503,32 @@ const valhallaData = [
   }
 ];
 
-
 const tiers = [
   {
-  {
-  name: "Mattie",
-  robloxUser: "matiteo01",
-  clan: "Valhalla",
-  tier: "HT1",
-  region: "NA",
-  eventWins: 36,
-  img: "assets/images/mattie.jpg"
-  },  
-  {
-  name: "Mattie",
-  robloxUser: "matiteo01",
-  clan: "Valhalla",
-  tier: "HT1",
-  region: "NA",
-  eventWins: 35,
-  img: "assets/images/mattie.jpg"
+    name: "Mattie",
+    robloxUser: "matiteo01",
+    clan: "Valhalla",
+    tier: "HT1",
+    region: "NA",
+    eventWins: 36,
+    img: "assets/images/mattie.jpg"
   },
   {
-  name: "Mattie",
-  robloxUser: "matiteo01",
-  clan: "Valhalla",
-  tier: "HT1",
-  region: "NA",
-  eventWins: 34,
-  img: "assets/images/mattie.jpg"
+    name: "Mattie",
+    robloxUser: "matiteo01",
+    clan: "Valhalla",
+    tier: "HT1",
+    region: "NA",
+    eventWins: 35,
+    img: "assets/images/mattie.jpg"
+  },
+  {
+    name: "Mattie",
+    robloxUser: "matiteo01",
+    clan: "Valhalla",
+    tier: "HT1",
+    region: "NA",
+    eventWins: 34,
+    img: "assets/images/mattie.jpg"
   }
 ];
