@@ -523,23 +523,43 @@
     </div>
   </div>
 
-<div id="tiers" class="page" style="display:none;">
-  <div class="container">
+<div id="tiers-container">
 
-    <div class="page-header">
-      <h1>Control Europe Tiers</h1>
-      <p>Top players ranked by performance</p>
+  <div class="tier-header-row">
+    <span>#</span>
+    <span>PLAYER</span>
+    <span>REGION</span>
+    <span>TIERS</span>
+  </div>
+
+  <div class="card">
+    <!-- LEFT -->
+    <div style="display:flex; align-items:center;">
+      <div class="thumb-wrap">
+        <img class="thumbnail" src="assets/images/mattie.jpg">
+      </div>
+
+      <div class="info">
+        <div class="top-row">
+          <span class="rank">#1</span>
+          <span class="title">Mattie</span>
+        </div>
+        <div class="meta">Valhalla</div>
+      </div>
     </div>
 
-      <div class="tier-header-row">
-    <span>REGION</span>
-    <span>TIER</span>
-    <span>PLAYER</span>
+    <!-- RIGHT -->
+    <div style="display:flex; align-items:center; gap:20px;">
+      <span class="region na">NA</span>
+
+      <div class="tiers-icons">
+        <div class="tier-icon">HT1</div>
+        <div class="tier-icon">LT1</div>
+        <div class="tier-icon">HT2</div>
+      </div>
+    </div>
   </div>
 
-    <div id="tiers-container"></div>
-
-  </div>
 </div>
 
   <!-- Load player data from external file -->
