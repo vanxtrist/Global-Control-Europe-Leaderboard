@@ -1146,9 +1146,8 @@ body::after {
 #tiers-container {
   display: flex;
   flex-direction: column;
-  gap: 0;
   width: 88%;
-  margin: 40px auto 0 auto; /* pushes board DOWN */
+  margin: 40px auto 0 auto;
 }
 
 /* HEADER LABELS (FIX SMUSHING) */
@@ -1167,12 +1166,12 @@ body::after {
 #tiers-container .card {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* IMPORTANT FIX */
   gap: 18px;
 
   padding: 20px 26px;
   background: rgba(15, 20, 35, 0.75);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+
+  border-bottom: 1px solid rgba(255,255,255,0.06); /* keeps "board line" */
 }
 
 /* PFP (CENTERED PERFECTLY) */
@@ -1207,15 +1206,13 @@ body::after {
   color: #fff;
 }
 
-/* REGION (FINAL BIG VERSION) */
 .region {
-  font-size: 24px;
-  font-weight: 800;
+  font-size: 26px;
+  font-weight: 900;
   padding: 10px 14px;
   border-radius: 10px;
 }
 
-/* NA / EU */
 .region.na {
   background: rgba(255, 80, 80, 0.18);
   color: #ff6b6b;
@@ -1230,11 +1227,15 @@ body::after {
 .tier-tag {
   font-style: italic;
   text-transform: uppercase;
-  font-size: 38px; /* BIGGER like you wanted */
+
+  font-size: 52px;   /* MUCH bigger */
   font-weight: 900;
   color: #4da3ff;
-  letter-spacing: 3px;
+
+  letter-spacing: 4px;
   line-height: 1;
+
+  text-shadow: 0 0 12px rgba(77,163,255,0.25);
 }
 
 /* POINTS */
@@ -1246,9 +1247,8 @@ body::after {
   background: rgba(255,255,255,0.05);
 }
 
-/* CLEAN CONNECTED LOOK */
-#tiers-container .card:last-child {
-  border-bottom: none;
+#tiers-container .card:first-child {
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
 
 .tiers-icons {
