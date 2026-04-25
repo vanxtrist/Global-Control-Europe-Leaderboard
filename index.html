@@ -671,28 +671,87 @@
 
 
   
+Perfect — you gave everything I need. We’re gonna do this clean + controlled so nothing breaks.
+
+Right now your system is simple (which is good), so we’ll extend it, not rewrite it.
+
+🔥 WHAT WE’RE DOING (CLEAR)
+
+For the tiers page ONLY:
+
+Replace #1, #2… → HT1, LT1…
+Show:
+Player
+Clan (with icon later)
+Region (we’ll add this)
+Remove the current S/A/B tier grouping system
+✅ STEP 1 — UPDATE YOUR DATA (data.js)
+
+Right now your players don’t have tiers or regions, so we add them.
+
+🔁 Add these fields to EACH player:
+tier: "HT1",
+region: "NA"
+✅ Example (DO THIS FORMAT)
+{
+  name: "Mattie",
+  robloxUser: "matiteo01",
+  clan: "Valhalla",
+  tier: "HT1",
+  region: "NA",
+  eventWins: 37,
+  img: "assets/images/mattie.jpg"
+}
+
+👉 Do this for:
+
+skillData (MOST IMPORTANT for tiers page)
+You can ignore eventData for now if you want
+✅ STEP 2 — DELETE OLD TIERS SYSTEM
+
+In data.js, DELETE this completely:
+
+const tiers = [...]
+✅ STEP 3 — REBUILD TIERS PAGE RENDER
+
+Now go to your index.html
+
+🔍 FIND THIS FUNCTION:
+function renderTiers() {
+❌ DELETE EVERYTHING inside it
+✅ REPLACE WITH THIS:
 function renderTiers() {
   const container = document.getElementById("tiers-container");
   container.innerHTML = "";
 
-  tiers.forEach(tier => {
-    const div = document.createElement("div");
-    div.className = "tier-card";
+  skillData.forEach(player => {
+    const card = document.createElement("div");
+    card.className = "card";
 
-    div.innerHTML = `
-      <div class="tier-header" style="border-left: 5px solid ${tier.color}; padding-left:10px;">
-        <h2>${tier.name}</h2>
-        <p>${tier.description}</p>
+    card.innerHTML = `
+      <div class="thumb-wrap">
+        <img class="thumbnail" src="${player.img}" onerror="this.src='assets/images/impact.png'">
       </div>
-      <div class="tier-players">
-        ${tier.players.map(p => `<span class="tier-player">${p}</span>`).join("")}
+
+      <div class="info">
+        <div class="top-row">
+          <div class="rank">${player.tier}</div>
+          <div class="title">${player.name}</div>
+        </div>
+
+        <div class="meta">
+          <span>Roblox: ${player.robloxUser}</span>
+          <span>|</span>
+          <span class="highlight">${player.clan}</span>
+        </div>
       </div>
+
+      <div class="points">${player.region}</div>
     `;
 
-    container.appendChild(div);
+    container.appendChild(card);
   });
 }
-
 // run it
 document.addEventListener("DOMContentLoaded", () => {
   showPage('main');   // 👈 ADD THIS
