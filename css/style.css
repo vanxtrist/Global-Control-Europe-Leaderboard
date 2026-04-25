@@ -1162,25 +1162,27 @@ body::after {
   text-transform: uppercase;
 }
 
-/* ROW */
+
+/* ROW (LOCKED ALIGNMENT FIX) */
 #tiers-container .card {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start; /* IMPORTANT FIX */
+  gap: 18px;
 
   padding: 20px 26px;
   background: rgba(15, 20, 35, 0.75);
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
-/* PFP FIX (CENTER ALIGNMENT) */
+/* PFP (CENTERED PERFECTLY) */
 .thumb-wrap {
   width: 90px;
   height: 90px;
-  margin-right: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 #tiers-container img {
@@ -1188,13 +1190,11 @@ body::after {
   height: 90px;
   object-fit: cover;
   border-radius: 12px;
-  display: block;
 }
 
 /* INFO BLOCK */
 #tiers-container .info {
   flex: 1;
-  margin-left: 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1204,19 +1204,18 @@ body::after {
 #tiers-container .title {
   font-size: 30px;
   font-weight: 900;
-  letter-spacing: 0.5px;
   color: #fff;
 }
 
-/* REGION (BIGGER + CLEANER) */
+/* REGION (FINAL BIG VERSION) */
 .region {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 800;
   padding: 10px 14px;
   border-radius: 10px;
 }
 
-/* NA / EU COLORS */
+/* NA / EU */
 .region.na {
   background: rgba(255, 80, 80, 0.18);
   color: #ff6b6b;
@@ -1227,11 +1226,11 @@ body::after {
   color: #4ade80;
 }
 
-/* HT1 / TIER (BIGGER, MORE DOMINANT) */
+/* HT1 / TIER (STRONG VISUAL ANCHOR) */
 .tier-tag {
   font-style: italic;
   text-transform: uppercase;
-  font-size: 34px;
+  font-size: 38px; /* BIGGER like you wanted */
   font-weight: 900;
   color: #4da3ff;
   letter-spacing: 3px;
@@ -1247,26 +1246,9 @@ body::after {
   background: rgba(255,255,255,0.05);
 }
 
-/* CONNECTED ROWS LOOK (cleaner stack) */
+/* CLEAN CONNECTED LOOK */
 #tiers-container .card:last-child {
   border-bottom: none;
-}
-/* REGION (NA / EU) BIGGER */
-.region {
-  font-size: 20px;
-  font-weight: 700;
-  padding: 8px 12px;
-  border-radius: 8px;
-}
-
-.region.na {
-  background: rgba(255, 80, 80, 0.15);
-  color: #ff6b6b;
-}
-
-.region.eu {
-  background: rgba(80, 255, 120, 0.15);
-  color: #4ade80;
 }
 
 .tiers-icons {
