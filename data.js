@@ -504,7 +504,6 @@ const valhallaData = [
 ];
 
 const tiers = [
- const tiers = [
   { name: "Mattie", tier: "HT1", region: "NA", img: "assets/images/mattie.jpg" },
   { name: "Bonekoko", tier: "LT1", region: "EU", img: "assets/images/bonekoko.jpg" },
   { name: "Rotgel", tier: "HT2", region: "EU", img: "assets/images/rotgel.jpg" },
