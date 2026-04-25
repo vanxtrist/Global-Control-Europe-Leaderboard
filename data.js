@@ -1,4 +1,4 @@
-/*
+  /*
  * ===========================
  *  GLOBAL CE LEADERBOARD DATA
  * ===========================
@@ -530,5 +530,68 @@ const tiers = [
     region: "NA",
     eventWins: 34,
     img: "assets/images/mattie.jpg"
+  },
+  {
+    name: "Mattie",
+    robloxUser: "matiteo01",
+    clan: "Valhalla",
+    tier: "HT1",
+    region: "NA",
+    eventWins: 33,
+    img: "assets/images/mattie.jpg"
+  },
+  {
+    name: "Mattie",
+    robloxUser: "matiteo01",
+    clan: "Valhalla",
+    tier: "HT1",
+    region: "NA",
+    eventWins: 32,
+    img: "assets/images/mattie.jpg"
+  },
+  {
+    name: "Mattie",
+    robloxUser: "matiteo01",
+    clan: "Valhalla",
+    tier: "HT1",
+    region: "NA",
+    eventWins: 31,
+    img: "assets/images/mattie.jpg"
+  },
+  {
+    name: "Mattie",
+    robloxUser: "matiteo01",
+    clan: "Valhalla",
+    tier: "HT1",
+    region: "NA",
+    eventWins: 30,
+    img: "assets/images/mattie.jpg"
+  },
+  {
+    name: "Mattie",
+    robloxUser: "matiteo01",
+    clan: "Valhalla",
+    tier: "HT1",
+    region: "NA",
+    eventWins: 29,
+    img: "assets/images/mattie.jpg"
+  },
+  {
+    name: "Mattie",
+    robloxUser: "matiteo01",
+    clan: "Valhalla",
+    tier: "HT1",
+    region: "NA",
+    eventWins: 28,
+    img: "assets/images/mattie.jpg"
+  },
+  {
+    name: "Mattie",
+    robloxUser: "matiteo01",
+    clan: "Valhalla",
+    tier: "HT1",
+    region: "NA",
+    eventWins: 27,
+    img: "assets/images/mattie.jpg"
   }
-];
+  ];
