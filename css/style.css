@@ -1173,3 +1173,85 @@ body::after {
   font-size: 14px;
   color: white;
 }
+
+/* ───── TIERS LAYOUT ───── */
+
+#tiers-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Tier card becomes a row */
+#tiers-container .card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: rgba(20, 22, 35, 0.9);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: 0.2s;
+}
+
+#tiers-container .card:hover {
+  transform: translateY(-2px);
+  background: rgba(30, 32, 50, 0.95);
+}
+
+/* LEFT SIDE */
+#tiers-container .thumb-wrap {
+  width: 45px;
+  height: 45px;
+}
+
+#tiers-container .thumbnail {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* MIDDLE INFO */
+#tiers-container .info {
+  flex: 1;
+  margin-left: 14px;
+}
+
+#tiers-container .title {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+}
+
+#tiers-container .meta {
+  font-size: 12px;
+  opacity: 0.7;
+  display: flex;
+  gap: 6px;
+}
+
+/* RIGHT SIDE */
+#tiers-container .points {
+  font-weight: 700;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+}
+
+/* TIER BADGE (rank label) */
+#tiers-container .rank {
+  font-weight: 800;
+  padding: 6px 10px;
+  border-radius: 10px;
+  margin-right: 10px;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* Tier colors */
+.rank.ht1 { background: #ff3b3b33; color: #ff4d4d; }
+.rank.ht2 { background: #ff9f1c33; color: #ffb020; }
+.rank.lt1 { background: #3b82f633; color: #60a5fa; }
+.rank.lt2 { background: #9ca3af33; color: #cbd5e1; }
