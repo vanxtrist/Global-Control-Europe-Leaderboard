@@ -670,42 +670,29 @@ function renderTiers() {
   const container = document.getElementById("tiers-container");
   container.innerHTML = "";
 
-  // HEADER
-  const header = document.createElement("div");
-  header.className = "tier-header-row";
-  header.innerHTML = `
-    <span>TIER</span>
-    <span>PLAYER</span>
-    <span>REGION</span>
-    <span>CLAN</span>
-  `;
-  container.appendChild(header);
-
   tiers.forEach(item => {
     const row = document.createElement("div");
-    row.className = "card"; // MUST match your CSS
+    row.className = "player-row";
 
     row.innerHTML = `
-      <!-- LEFT SIDE -->
-      <div class="thumb-wrap">
-        <img src="${item.img}" onerror="this.src='assets/images/impact.png'">
+      <!-- TIER BADGE (LEFT) -->
+      <div class="tier-badge ${item.tier.toLowerCase()}">
+        ${item.tier}
       </div>
+
+      <!-- AVATAR -->
+      <img class="avatar" src="${item.img}" 
+        onerror="this.src='assets/images/impact.png'">
 
       <!-- PLAYER INFO -->
-      <div class="info">
-        <div class="title">${item.name}</div>
-        <div class="clan">${item.clan}</div>
+      <div class="player-info">
+        <div class="name">${item.name}</div>
+        <div class="title">Control Europe Master</div>
       </div>
 
-      <!-- RIGHT SIDE -->
-      <div class="right">
-        <div class="region ${item.region.toLowerCase()}">
-          ${item.region}
-        </div>
-
-        <div class="tier-tag">
-          ${item.tier}
-        </div>
+      <!-- REGION (RIGHT) -->
+      <div class="region ${item.region.toLowerCase()}">
+        ${item.region}
       </div>
     `;
 
