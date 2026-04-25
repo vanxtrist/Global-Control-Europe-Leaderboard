@@ -1148,6 +1148,7 @@ body::after {
   flex-direction: column;
   width: 88%;
   margin: 40px auto 0 auto;
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 /* HEADER LABELS (FIX SMUSHING) */
@@ -1169,9 +1170,10 @@ body::after {
   gap: 18px;
 
   padding: 20px 26px;
-  background: rgba(15, 20, 35, 0.75);
+  background: rgba(15, 20, 35, 0.78);
 
-  border-bottom: 1px solid rgba(255,255,255,0.06); /* keeps "board line" */
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-radius: 0; /* IMPORTANT: removes card feel */
 }
 
 /* PFP (CENTERED PERFECTLY) */
@@ -1278,4 +1280,11 @@ body::after {
   height: 90px;
   object-fit: cover;
   border-radius: 12px;
+}
+
+#tiers-container .right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
