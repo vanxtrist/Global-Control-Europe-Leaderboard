@@ -683,31 +683,34 @@ function renderTiers() {
 
   tiers.forEach(player => {
     const row = document.createElement("div");
-    row.className = "card";
+    card.className = "tier-row";
 
-    row.innerHTML = `
-      <div style="display:flex; align-items:center; gap:15px;">
-        
-        <!-- TIER BADGE (REPLACES #1 #2 #3) -->
-        <div class="tier-badge">${player.tier}</div>
+card.innerHTML = `
+  <div class="tier-left">
 
-        <div class="thumb-wrap">
-          <img class="thumbnail" src="${player.img}" 
-               onerror="this.src='assets/images/impact.png'">
-        </div>
+    <!-- TIER BADGE -->
+    <div class="tier-badge ${item.tierClass}">
+      ${item.tier}
+    </div>
 
-        <div class="info">
-          <div class="title">${player.name}</div>
-          <div class="meta">${player.clan}</div>
-        </div>
+    <!-- AVATAR -->
+    <img class="avatar" src="${item.img}" 
+         onerror="this.src='assets/images/impact.png'">
+
+    <!-- PLAYER INFO -->
+    <div class="player-info">
+      <div class="player-name">${item.name}</div>
+      <div class="player-clan">
+        ${item.clan}
       </div>
+    </div>
+  </div>
 
-      <div style="display:flex; align-items:center; gap:20px;">
-        <span class="region ${player.region.toLowerCase()}">
-          ${player.region}
-        </span>
-      </div>
-    `;
+  <!-- REGION -->
+  <div class="region ${item.region.toLowerCase()}">
+    ${item.region}
+  </div>
+`;
 
     container.appendChild(row);
   });
