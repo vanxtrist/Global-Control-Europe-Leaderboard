@@ -590,7 +590,7 @@
     renderTiers();
 
     // ── Navigation Logic ──
-    function showPage(pageId) {
+  function showPage(pageId, el) {
   document.querySelectorAll('.page').forEach(page => {
     page.style.display = 'none';
   });
@@ -600,6 +600,8 @@
   document.querySelectorAll('.nav-left a').forEach(link => {
     link.classList.remove('active');
   });
+
+  if (el) el.classList.add('active');
 }
     
 
