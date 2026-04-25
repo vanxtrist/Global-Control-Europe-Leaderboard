@@ -585,17 +585,16 @@
 
     // ── Navigation Logic ──
     function showPage(pageId) {
-      document.querySelectorAll('.page').forEach(page => {
-        page.style.display = 'none';
-      });
+  document.querySelectorAll('.page').forEach(page => {
+    page.style.display = 'none';
+  });
 
-      document.getElementById(pageId).style.display = 'block';
+  document.getElementById(pageId).style.display = 'block';
 
-      document.querySelectorAll('.nav-left a').forEach(link => {
-        link.classList.remove('active');
-      });
-
-      event.target.classList.add('active');
+  document.querySelectorAll('.nav-left a').forEach(link => {
+    link.classList.remove('active');
+  });
+}
     }
 
     // ── Leaderboard Tabs Logic ──
