@@ -1172,11 +1172,6 @@ body::after {
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
-#tiers-container .title {
-  font-size: 18px;
-  font-weight: 700;
-}
-
 #tiers-container .meta {
   font-size: 12px;
   color: rgba(255,255,255,0.5);
@@ -1188,11 +1183,12 @@ body::after {
   margin-left: 16px;
 }
 
-/* PLAYER NAME (BIG) */
+/* PLAYER NAME (BIGGER) */
 #tiers-container .title {
-  font-size: 20px;   /* bigger */
-  font-weight: 800;
+  font-size: 28px;
+  font-weight: 900;
   color: #ffffff;
+  letter-spacing: 0.5px;
 }
 
 /* REGION / META */
@@ -1202,15 +1198,14 @@ body::after {
   margin-top: 4px;
 }
 
-/* TIER LABEL (LEFT OF NAME STYLE) */
+/* TIER TAG (HT1) BIG + MATCH PFP SIZE VISUALLY */
 .tier-tag {
   font-style: italic;
   text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 800;
+  font-size: 28px;
+  font-weight: 900;
   color: #4da3ff;
-  margin-right: 10px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 /* POINTS / RIGHT SIDE */
@@ -1222,10 +1217,11 @@ body::after {
   background: rgba(255,255,255,0.05);
 }
 
+/* REGION (NA / EU) BIGGER */
 .region {
-  font-size: 12px;
+  font-size: 20px;
   font-weight: 700;
-  padding: 6px 10px;
+  padding: 8px 12px;
   border-radius: 8px;
 }
 
@@ -1258,4 +1254,12 @@ body::after {
 .tier-icon:hover {
   background: rgba(77,163,255,0.15);
   border-color: rgba(77,163,255,0.4);
+}
+
+/* PFP SIZE (MAKE IT MATCH HT1 VISUAL WEIGHT) */
+#tiers-container img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
 }
