@@ -504,12 +504,12 @@ const valhallaData = [
 ];
 
 const tiers = [
-  { name: "Mattie", tier: "HT1", region: "NA", img: "assets/images/mattie.jpg" },
-  { name: "Bonekoko", tier: "LT1", region: "EU", img: "assets/images/bonekoko.jpg" },
-  { name: "Rotgel", tier: "HT2", region: "EU", img: "assets/images/rotgel.jpg" },
-  { name: "S29", tier: "LT2", region: "NA", img: "assets/images/s29.jpg" },
-  { name: "Mvv", tier: "HT3", region: "EU", img: "assets/images/m.jpg" },
-  { name: "Floppa", tier: "LT3", region: "NA", img: "assets/images/floppa.jpg" },
-  { name: "Boris", tier: "HT4", region: "EU", img: "assets/images/boris.jpg" },
-  { name: "Enel", tier: "LT4", region: "NA", img: "assets/images/enel.jpg" }
+  { name: "Mattie", clan: "Valhalla", tier: "HT1", region: "NA", img: "assets/images/mattie.jpg" },
+  { name: "Bonekoko", clan: "Valhalla", tier: "LT1", region: "EU", img: "assets/images/bonekoko.jpg" },
+  { name: "Rotgel", clan: "Valhalla", tier: "HT2", region: "EU", img: "assets/images/rotgel.jpg" },
+  { name: "S29", clan: "Valhalla", tier: "LT2", region: "NA", img: "assets/images/s29.jpg" },
+  { name: "Mvv", clan: "Valhalla", tier: "HT3", region: "EU", img: "assets/images/m.jpg" },
+  { name: "Floppa", clan: "Valhalla", tier: "LT3", region: "NA", img: "assets/images/floppa.jpg" },
+  { name: "Boris", clan: "Valhalla", tier: "HT4", region: "EU", img: "assets/images/boris.jpg" },
+  { name: "Enel", clan: "Valhalla", tier: "LT4", region: "NA", img: "assets/images/enel.jpg" }
 ];
