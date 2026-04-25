@@ -1164,14 +1164,15 @@ body::after {
   padding: 18px 22px;
   border-radius: 14px;
 
-  background: linear-gradient(90deg, #0b1c2c, #0a1624);
+  /* NEW BACKGROUND */
+  background: linear-gradient(135deg, rgba(10, 18, 40, 0.95), rgba(5, 10, 25, 0.95));
+
   border: 1px solid rgba(255,255,255,0.05);
 
   transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
 }
-
 /* subtle glow hover */
 .player-row::before {
   content: "";
