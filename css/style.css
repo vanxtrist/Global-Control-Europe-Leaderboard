@@ -1163,30 +1163,23 @@ body::after {
 
 /* EACH ROW */
 #tiers-container .card {
-  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 
-  padding: 22px 26px; /* taller */
-  min-height: 85px;   /* taller rows */
-
-  background: rgba(20, 22, 35, 0.85);
-  border: none;
-  border-bottom: 1px solid rgba(255,255,255,0.06); /* line separators */
-
-  border-radius: 0; /* remove card feel */
+  padding: 18px 24px;
+  background: rgba(15, 20, 35, 0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
-/* hover */
-#tiers-container .card:hover {
-  background: rgba(35, 38, 60, 0.95);
+#tiers-container .title {
+  font-size: 18px;
+  font-weight: 700;
 }
 
-/* LEFT AVATAR */
-#tiers-container .thumb-wrap {
-  width: 58px;
-  height: 58px;
+#tiers-container .meta {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
 }
 
 /* PLAYER INFO BLOCK */
