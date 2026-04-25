@@ -1142,112 +1142,82 @@ body::after {
   }
 }
 
-.tier-card {
-  background: #111;
-  margin: 15px 0;
-  padding: 15px;
-  border-radius: 10px;
-}
-
-.tier-header h2 {
-  margin: 0;
-  color: white;
-}
-
-.tier-header p {
-  margin: 5px 0 0;
-  color: #aaa;
-}
-
-.tier-players {
-  margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.tier-player {
-  background: #222;
-  padding: 5px 10px;
-  border-radius: 6px;
-  font-size: 14px;
-  color: white;
-}
-
-/* ───── TIERS LAYOUT ───── */
-
 #tiers-container {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  justify-content: center;
 }
 
-/* Tier card becomes a row */
-#tiers-container .card {
+/* big single leaderboard box */
+.tiers-box {
+  width: 100%;
+  max-width: 950px;
+  background: rgba(15, 16, 25, 0.95);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+/* each row */
+.tier-row {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 14px 18px;
-  border-radius: 14px;
-  background: rgba(20, 22, 35, 0.9);
-  border: 1px solid rgba(255,255,255,0.06);
+  align-items: center;
+  padding: 22px 26px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   transition: 0.2s;
 }
 
-#tiers-container .card:hover {
-  transform: translateY(-2px);
-  background: rgba(30, 32, 50, 0.95);
+.tier-row:last-child {
+  border-bottom: none;
+}
+
+.tier-row:hover {
+  background: rgba(255,255,255,0.04);
 }
 
 /* LEFT SIDE */
-#tiers-container .thumb-wrap {
-  width: 45px;
-  height: 45px;
-}
-
-#tiers-container .thumbnail {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-/* MIDDLE INFO */
-#tiers-container .info {
-  flex: 1;
-  margin-left: 14px;
-}
-
-#tiers-container .title {
-  font-size: 16px;
-  font-weight: 700;
-  color: white;
-}
-
-#tiers-container .meta {
-  font-size: 12px;
-  opacity: 0.7;
+.tier-left {
   display: flex;
-  gap: 6px;
+  flex-direction: column;
+}
+
+/* NAME (BIG — as you wanted) */
+.tier-name {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+}
+
+/* CLAN UNDER NAME */
+.tier-clan {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-top: 4px;
 }
 
 /* RIGHT SIDE */
-#tiers-container .points {
-  font-weight: 700;
+.tier-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+/* TIER BADGE */
+.tier-badge {
   font-size: 14px;
-  padding: 6px 10px;
+  font-weight: 800;
+  padding: 6px 12px;
   border-radius: 10px;
   background: rgba(255,255,255,0.06);
 }
 
-/* TIER BADGE (rank label) */
-#tiers-container .rank {
-  font-weight: 800;
-  padding: 6px 10px;
-  border-radius: 10px;
-  margin-right: 10px;
-  min-width: 60px;
-  text-align: center;
+/* REGION / EXTRA INFO */
+.tier-region {
+  font-size: 12px;
+  opacity: 0.6;
 }
 
 /* Tier colors */
