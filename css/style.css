@@ -1142,73 +1142,103 @@ body::after {
   }
 }
 
+/* TIER PAGE WRAPPER */
 #tiers-container {
   display: flex;
   flex-direction: column;
-  gap: 0; /* we use lines instead */
-  width: 95%;
-  margin: 0 auto;
+  gap: 0;
+  width: 88%;
+  margin: 40px auto 0 auto; /* pushes board DOWN */
 }
 
-/* HEADER LABELS */
+/* HEADER LABELS (FIX SMUSHING) */
 .tier-header-row {
   display: flex;
   justify-content: space-between;
-  padding: 0 20px 10px 20px;
-  font-size: 11px;
+  padding: 0 26px 16px 26px;
+  font-size: 13px;
   letter-spacing: 3px;
-  color: rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.3);
   text-transform: uppercase;
 }
 
-/* EACH ROW */
+/* ROW */
 #tiers-container .card {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
-  padding: 18px 24px;
-  background: rgba(15, 20, 35, 0.7);
+  padding: 20px 26px;
+  background: rgba(15, 20, 35, 0.75);
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
-#tiers-container .meta {
-  font-size: 12px;
-  color: rgba(255,255,255,0.5);
+/* PFP FIX (CENTER ALIGNMENT) */
+.thumb-wrap {
+  width: 90px;
+  height: 90px;
+  margin-right: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* PLAYER INFO BLOCK */
+#tiers-container img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* INFO BLOCK */
 #tiers-container .info {
   flex: 1;
-  margin-left: 16px;
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* PLAYER NAME (BIGGER) */
+/* NAME */
 #tiers-container .title {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 900;
-  color: #ffffff;
   letter-spacing: 0.5px;
+  color: #fff;
 }
 
-/* REGION / META */
-#tiers-container .meta {
-  font-size: 12px;
-  color: rgba(255,255,255,0.5);
-  margin-top: 4px;
+/* REGION (BIGGER + CLEANER) */
+.region {
+  font-size: 22px;
+  font-weight: 800;
+  padding: 10px 14px;
+  border-radius: 10px;
 }
 
-/* TIER TAG (HT1) BIG + MATCH PFP SIZE VISUALLY */
+/* NA / EU COLORS */
+.region.na {
+  background: rgba(255, 80, 80, 0.18);
+  color: #ff6b6b;
+}
+
+.region.eu {
+  background: rgba(80, 255, 120, 0.18);
+  color: #4ade80;
+}
+
+/* HT1 / TIER (BIGGER, MORE DOMINANT) */
 .tier-tag {
   font-style: italic;
   text-transform: uppercase;
-  font-size: 28px;
+  font-size: 34px;
   font-weight: 900;
   color: #4da3ff;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  line-height: 1;
 }
 
-/* POINTS / RIGHT SIDE */
+/* POINTS */
 #tiers-container .points {
   font-size: 14px;
   font-weight: 700;
@@ -1217,6 +1247,10 @@ body::after {
   background: rgba(255,255,255,0.05);
 }
 
+/* CONNECTED ROWS LOOK (cleaner stack) */
+#tiers-container .card:last-child {
+  border-bottom: none;
+}
 /* REGION (NA / EU) BIGGER */
 .region {
   font-size: 20px;
