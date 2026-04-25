@@ -526,11 +526,15 @@
 <div id="tiers" class="page" style="display:none;">
   <div class="container">
 
+    <!-- (optional header) -->
+    <div class="page-header">
+      <h1>Tiers</h1>
+    </div>
+
     <div id="tiers-container"></div>
 
   </div>
 </div>
-
 
 
   <!-- Load player data from external file -->
@@ -583,6 +587,7 @@
     renderLeaderboard(eventData, "event-leaderboard", false);
     renderLeaderboard(skillData, "leaderboard", true);
     renderLeaderboard(valhallaData, "valhalla-leaderboard", false);
+    renderTiers();
 
     // ── Navigation Logic ──
     function showPage(pageId) {
