@@ -96,6 +96,14 @@
         <div id="valhalla-leaderboard"></div>
       </div>
 
+      <!-- ✅ TIERS SECTION -->
+<div class="page-header">
+  <h1>Control Europe Tiers</h1>
+  <p>Top players ranked by performance</p>
+</div>
+
+<div id="tiers-container"></div>
+
     </div>
   </div>
 
@@ -657,6 +665,53 @@
       // Prevent body scroll when modal is open
       document.body.style.overflow = isVisible ? 'hidden' : 'auto';
     }
+
+
+    const tiers = [
+  {
+    name: "S Tier",
+    description: "Top players",
+    color: "gold",
+    players: ["Rotgel", "Player2", "Player3"]
+  },
+  {
+    name: "A Tier",
+    description: "Very strong players",
+    color: "orange",
+    players: ["UserA", "UserB"]
+  },
+  {
+    name: "B Tier",
+    description: "Solid players",
+    color: "gray",
+    players: ["UserX", "UserY"]
+  }
+];
+
+function renderTiers() {
+  const container = document.getElementById("tiers-container");
+  container.innerHTML = "";
+
+  tiers.forEach(tier => {
+    const div = document.createElement("div");
+    div.className = "tier-card";
+
+    div.innerHTML = `
+      <div class="tier-header" style="border-left: 5px solid ${tier.color}; padding-left:10px;">
+        <h2>${tier.name}</h2>
+        <p>${tier.description}</p>
+      </div>
+      <div class="tier-players">
+        ${tier.players.map(p => `<span class="tier-player">${p}</span>`).join("")}
+      </div>
+    `;
+
+    container.appendChild(div);
+  });
+}
+
+// run it
+renderTiers();
   </script>
 
   <!-- UPDATES MODAL (PREMIUM) -->
