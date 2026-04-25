@@ -1141,3 +1141,35 @@ body::after {
     font-size: 13px;
   }
 }
+
+.tier-card {
+  background: #111;
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.tier-header h2 {
+  margin: 0;
+  color: white;
+}
+
+.tier-header p {
+  margin: 5px 0 0;
+  color: #aaa;
+}
+
+.tier-players {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tier-player {
+  background: #222;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: white;
+}
