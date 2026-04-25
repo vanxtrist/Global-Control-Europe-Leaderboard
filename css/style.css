@@ -1326,4 +1326,8 @@ body::after {
   margin-top: 2px;
   letter-spacing: 0.3px;
   }
+  #tiers.page {
+  background: radial-gradient(circle at top, rgba(77,163,255,0.15), transparent 60%),
+              linear-gradient(180deg, rgba(5,10,25,0.95), rgba(0,0,0,0.98));
+  }
 }
