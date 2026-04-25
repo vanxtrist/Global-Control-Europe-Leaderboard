@@ -1142,28 +1142,30 @@ body::after {
   }
 }
 
-/* TIER PAGE WRAPPER */
+/* =========================
+   TIER PAGE WRAPPER
+   ========================= */
+
 #tiers-container {
   display: flex;
   flex-direction: column;
   width: 88%;
-  margin: 40px auto 0 auto;
+  margin: 40px auto 0;
   border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-/* HEADER LABELS (FIX SMUSHING) */
-.tier-header-row {
+/* HEADER ROW */
+#tiers-container .tier-header-row {
   display: flex;
   justify-content: space-between;
-  padding: 0 26px 16px 26px;
+  padding: 0 26px 16px;
   font-size: 13px;
   letter-spacing: 3px;
   color: rgba(255,255,255,0.3);
   text-transform: uppercase;
 }
 
-
-/* ROW (LOCKED ALIGNMENT FIX) */
+/* CARD ROW */
 #tiers-container .card {
   display: flex;
   justify-content: space-between;
@@ -1177,24 +1179,34 @@ body::after {
   border: 1px solid rgba(255,255,255,0.05);
 }
 
-/* PFP (CENTERED PERFECTLY) */
-.thumb-wrap {
-  width: 44px;
-  height: 44px;
+#tiers-container .card:first-child {
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* =========================
+   PFP / THUMB
+   ========================= */
+
+#tiers-container .thumb-wrap {
+  width: 90px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 
-#tiers-container img {
-  width: 44px;
-  height: 44px;
+#tiers-container .thumb-wrap img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
-/* INFO BLOCK */
+/* =========================
+   INFO SECTION
+   ========================= */
+
 #tiers-container .info {
   flex: 1;
   display: flex;
@@ -1202,55 +1214,69 @@ body::after {
   justify-content: center;
 }
 
-/* NAME */
 #tiers-container .title {
   font-size: 18px;
   font-weight: 600;
 }
 
-#tiers-container .info .meta {
+#tiers-container .meta {
   font-size: 13px;
   opacity: 0.7;
 }
 
-.region {
+#tiers-container .clan {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 4px;
+}
+
+/* =========================
+   REGION BADGES
+   ========================= */
+
+#tiers-container .region {
   font-size: 14px;
   font-weight: 700;
   padding: 6px 12px;
   border-radius: 8px;
 }
 
-.region.na {
+#tiers-container .region.na {
   background: #1f3f5f;
   color: #4cb3ff;
 }
 
-.region.eu {
+#tiers-container .region.eu {
   background: #1f5f3a;
   color: #4cff9a;
 }
 
-/* HT1 / TIER (STRONG VISUAL ANCHOR) */
-.tier-badge {
+/* =========================
+   TIER BADGES
+   ========================= */
+
+#tiers-container .tier-badge {
   min-width: 70px;
   padding: 8px 12px;
   border-radius: 10px;
-
   font-weight: 800;
   text-align: center;
 }
 
 /* COLORS */
-.ht1 { background: #f5b942; color: #000; }
-.lt1 { background: #ff8c42; }
-.ht2 { background: #3ecf6d; }
-.lt2 { background: #a56eff; }
-.ht3 { background: #4fa3ff; }
-.lt3 { background: #ff5c5c; }
-.ht4 { background: #3ed1cf; }
-.lt4 { background: #c77dff; }
+#tiers-container .ht1 { background: #f5b942; color: #000; }
+#tiers-container .lt1 { background: #ff8c42; }
+#tiers-container .ht2 { background: #3ecf6d; }
+#tiers-container .lt2 { background: #a56eff; }
+#tiers-container .ht3 { background: #4fa3ff; }
+#tiers-container .lt3 { background: #ff5c5c; }
+#tiers-container .ht4 { background: #3ed1cf; }
+#tiers-container .lt4 { background: #c77dff; }
 
-/* POINTS */
+/* =========================
+   POINTS
+   ========================= */
+
 #tiers-container .points {
   font-size: 14px;
   font-weight: 700;
@@ -1259,16 +1285,27 @@ body::after {
   background: rgba(255,255,255,0.05);
 }
 
-#tiers-container .card:first-child {
-  border-top: 1px solid rgba(255,255,255,0.06);
+/* =========================
+   RIGHT SIDE
+   ========================= */
+
+#tiers-container .right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.tiers-icons {
+/* =========================
+   ICONS
+   ========================= */
+
+#tiers-container .tiers-icons {
   display: flex;
   gap: 8px;
 }
 
-.tier-icon {
+#tiers-container .tier-icon {
   font-size: 11px;
   font-weight: 700;
   padding: 6px 8px;
@@ -1279,28 +1316,7 @@ body::after {
   transition: 0.2s;
 }
 
-.tier-icon:hover {
+#tiers-container .tier-icon:hover {
   background: rgba(77,163,255,0.15);
   border-color: rgba(77,163,255,0.4);
-}
-
-/* PFP SIZE (MAKE IT MATCH HT1 VISUAL WEIGHT) */
-#tiers-container img {
-  width: 90px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-#tiers-container .right {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.clan {
-  font-size: 14px;
-  color: rgba(255,255,255,0.5);
-  margin-top: 4px;
 }
