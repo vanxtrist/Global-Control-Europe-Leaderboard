@@ -504,94 +504,13 @@ const valhallaData = [
 ];
 
 const tiers = [
-  {
-    name: "Mattie",
-    robloxUser: "matiteo01",
-    clan: "Valhalla",
-    tier: "HT1",
-    region: "NA",
-    eventWins: 36,
-    img: "assets/images/mattie.jpg"
-  },
-  {
-    name: "Mattie",
-    robloxUser: "matiteo01",
-    clan: "Valhalla",
-    tier: "HT1",
-    region: "NA",
-    eventWins: 35,
-    img: "assets/images/mattie.jpg"
-  },
-  {
-    name: "Mattie",
-    robloxUser: "matiteo01",
-    clan: "Valhalla",
-    tier: "HT1",
-    region: "NA",
-    eventWins: 34,
-    img: "assets/images/mattie.jpg"
-  },
-  {
-    name: "Mattie",
-    robloxUser: "matiteo01",
-    clan: "Valhalla",
-    tier: "HT1",
-    region: "NA",
-    eventWins: 33,
-    img: "assets/images/mattie.jpg"
-  },
-  {
-    name: "Mattie",
-    robloxUser: "matiteo01",
-    clan: "Valhalla",
-    tier: "HT1",
-    region: "NA",
-    eventWins: 32,
-    img: "assets/images/mattie.jpg"
-  },
-  {
-    name: "Mattie",
-    robloxUser: "matiteo01",
-    clan: "Valhalla",
-    tier: "HT1",
-    region: "NA",
-    eventWins: 31,
-    img: "assets/images/mattie.jpg"
-  },
-  {
-    name: "Mattie",
-    robloxUser: "matiteo01",
-    clan: "Valhalla",
-    tier: "HT1",
-    region: "NA",
-    eventWins: 30,
-    img: "assets/images/mattie.jpg"
-  },
-  {
-    name: "Mattie",
-    robloxUser: "matiteo01",
-    clan: "Valhalla",
-    tier: "HT1",
-    region: "NA",
-    eventWins: 29,
-    img: "assets/images/mattie.jpg"
-  },
-  {
-    name: "Mattie",
-    robloxUser: "matiteo01",
-    clan: "Valhalla",
-    tier: "HT1",
-    region: "NA",
-    eventWins: 28,
-    img: "assets/images/mattie.jpg"
-  },
-  {
-    name: "Mattie",
-    robloxUser: "matiteo01",
-    clan: "Valhalla",
-    tier: "HT1",
-    region: "NA",
-    eventWins: 27,
-    img: "assets/images/mattie.jpg"
-  }
-  ];
+ const tiers = [
+  { name: "Mattie", tier: "HT1", region: "NA", img: "assets/images/mattie.jpg" },
+  { name: "Bonekoko", tier: "LT1", region: "EU", img: "assets/images/bonekoko.jpg" },
+  { name: "Rotgel", tier: "HT2", region: "EU", img: "assets/images/rotgel.jpg" },
+  { name: "S29", tier: "LT2", region: "NA", img: "assets/images/s29.jpg" },
+  { name: "Mvv", tier: "HT3", region: "EU", img: "assets/images/m.jpg" },
+  { name: "Floppa", tier: "LT3", region: "NA", img: "assets/images/floppa.jpg" },
+  { name: "Boris", tier: "HT4", region: "EU", img: "assets/images/boris.jpg" },
+  { name: "Enel", tier: "LT4", region: "NA", img: "assets/images/enel.jpg" }
+];
