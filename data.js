@@ -506,15 +506,31 @@ const valhallaData = [
 
 const tiers = [
   {
-    tier: "S",
-    players: ["Mattie", "Bonekoko", "Cevokud"]
+  {
+  name: "Mattie",
+  robloxUser: "matiteo01",
+  clan: "Valhalla",
+  tier: "HT1",
+  region: "NA",
+  eventWins: 36,
+  img: "assets/images/mattie.jpg"
+  },  
+  {
+  name: "Mattie",
+  robloxUser: "matiteo01",
+  clan: "Valhalla",
+  tier: "HT1",
+  region: "NA",
+  eventWins: 35,
+  img: "assets/images/mattie.jpg"
   },
   {
-    tier: "A",
-    players: ["Player 4", "Player 5"]
-  },
-  {
-    tier: "B",
-    players: ["Player 6"]
+  name: "Mattie",
+  robloxUser: "matiteo01",
+  clan: "Valhalla",
+  tier: "HT1",
+  region: "NA",
+  eventWins: 34,
+  img: "assets/images/mattie.jpg"
   }
 ];
