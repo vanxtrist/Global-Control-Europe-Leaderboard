@@ -1,4 +1,4 @@
-  /*
+ /*
  * ===========================
  *  GLOBAL CE LEADERBOARD DATA
  * ===========================
@@ -140,7 +140,7 @@ const eventData = [
     name: "Shuljo",
     robloxUser: "Pametansam",
     clan: "RoS",
-    eventWins: 1,
+    eventWins: 2,
     img: "assets/images/shuljo.jpg"
   },
   {
@@ -296,18 +296,18 @@ const skillData = [
     img: "assets/images/mattie.jpg"
   },
   {
+    name: "Shuljo",
+    robloxUser: "Pametansam",
+    clan: "Rebellion",
+    eventWins: 2,
+    img: "assets/images/shuljo.jpg"
+  },
+  {
     name: "Bonekoko",
     robloxUser: "Wouidzy",
     clan: "Valhalla",
     eventWins: 19,
     img: "assets/images/bonekoko.jpg"
-  },
-  {
-    name: "Shuljo",
-    robloxUser: "Pametansam",
-    clan: "Rebellion",
-    eventWins: 1,
-    img: "assets/images/shuljo.jpg"
   },
   {
     name: "Cevokud",
@@ -502,6 +502,7 @@ const valhallaData = [
     img: "assets/images/sinan.png"
   }
 ];
+
 
 const tiers = [
   { name: "Mattie", clan: "Valhalla", tier: "HT1", region: "NA", img: "assets/images/mattie.jpg" },
