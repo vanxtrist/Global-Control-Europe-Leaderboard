@@ -292,7 +292,7 @@ const skillData = [
     name: "Mattie",
     robloxUser: "matiteo01",
     clan: "Valhalla",
-    eventWins: 37,
+    eventWins: 38,
     img: "assets/images/mattie.jpg"
   },
   {
@@ -502,6 +502,7 @@ const valhallaData = [
     img: "assets/images/sinan.png"
   }
 ];
+
 
 
 const tiers = [
