@@ -111,7 +111,7 @@ const eventData = [
   {
     name: "Ananas",
     robloxUser: "Ananasparon",
-    clan: "RoS",
+    clan: "Rebellion",
     eventWins: 2,
     img: "assets/images/ananas.jpg"
   },
@@ -132,14 +132,14 @@ const eventData = [
   {
     name: "Alexander",
     robloxUser: "jickezn",
-    clan: "RoS",
+    clan: "Rebellion",
     eventWins: 2,
     img: "assets/images/alex.jpg"
   },
   {
     name: "Shuljo",
     robloxUser: "Pametansam",
-    clan: "RoS",
+    clan: "Rebellion",
     eventWins: 2,
     img: "assets/images/shuljo.jpg"
   },
@@ -333,14 +333,14 @@ const skillData = [
   {
     name: "Pawani",
     robloxUser: "SGT_Saket",
-    clan: "Valhalla",
+    clan: "RoS",
     eventWins: 1,
     img: "assets/images/pawani.jpg"
   },
   {
     name: "Turn",
     robloxUser: "txrning_gxxd",
-    clan: "Unaffiliated",
+    clan: "Rebellion",
     eventWins: 0,
     img: "assets/images/turn.jpg"
   },
@@ -502,6 +502,7 @@ const valhallaData = [
     img: "assets/images/sinan.png"
   }
 ];
+
 
 
 
