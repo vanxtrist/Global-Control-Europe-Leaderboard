@@ -1,4 +1,4 @@
- /*
+/*
  * ===========================
  *  GLOBAL CE LEADERBOARD DATA
  * ===========================
@@ -14,7 +14,7 @@ const eventData = [
     name: "Mattie",
     robloxUser: "matiteo01",
     clan: "Valhalla",
-    eventWins: 37,
+    eventWins: 38,
     img: "assets/images/mattie.jpg"
   },
   {
@@ -144,6 +144,13 @@ const eventData = [
     img: "assets/images/shuljo.jpg"
   },
   {
+    name: "Pawani",
+    robloxUser: "SGT_Saket",
+    clan: "RoS",
+    eventWins: 1,
+    img: "assets/images/saket.jpg"
+  },
+  {
     name: "AnimeFlame",
     robloxUser: "canadalop",
     clan: "Unaffiliated",
@@ -233,13 +240,6 @@ const eventData = [
     clan: "Unaffiliated",
     eventWins: 1,
     img: "assets/images/nova.jpg"
-  },
-  {
-    name: "Pawani",
-    robloxUser: "SGT_Saket",
-    clan: "RoS",
-    eventWins: 1,
-    img: "assets/images/saket.jpg"
   },
   {
     name: "Sai",
@@ -334,8 +334,8 @@ const skillData = [
     name: "Pawani",
     robloxUser: "SGT_Saket",
     clan: "Valhalla",
-    eventWins: 0,
-    img: "assets/images/saket.jpg"
+    eventWins: 1,
+    img: "assets/images/pawani.jpg"
   },
   {
     name: "Turn",
@@ -380,6 +380,13 @@ const skillData = [
     img: "assets/images/ananas.jpg"
   },
   {
+    name: "Nav",
+    robloxUser: "Yaqoob273",
+    clan: "Rebellion",
+    eventWins: 0,
+    img: "assets/images/nav.jpg"
+  },
+  {
     name: "Alexandar",
     robloxUser: "jickezn",
     clan: "Rebellion",
@@ -420,13 +427,6 @@ const skillData = [
     clan: "Valhalla",
     eventWins: 0,
     img: "assets/images/aydan.jpg"
-  },
-  {
-    name: "Nav",
-    robloxUser: "Yaqoob273",
-    clan: "Rebellion",
-    eventWins: 0,
-    img: "assets/images/nav.jpg"
   }
 ];
 // ── VALLHALLA LEADERBOARD ──────────────────────────────
