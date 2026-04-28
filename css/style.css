@@ -1149,9 +1149,12 @@ body::after {
 #tiers-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
-  width: 95%;
-  margin: 40px auto;
+  gap: 22px;
+
+  width: 100%;
+  max-width: 1600px;
+  margin: 30px auto;
+  padding: 0 20px;
 }
 
 /* COLUMN */
@@ -1159,6 +1162,7 @@ body::after {
   background: rgba(15, 23, 42, 0.9);
   border-radius: 14px;
   overflow: hidden;
+  min-height: 75vh;
   border: 1px solid rgba(255,255,255,0.05);
 }
 
@@ -1181,8 +1185,8 @@ body::after {
 .tier-player {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 10px;
+  gap: 12px;
+  padding: 12px 14px;
   border-bottom: 1px solid rgba(255,255,255,0.05);
   transition: 0.2s;
 }
@@ -1193,21 +1197,20 @@ body::after {
 
 /* DISCORD AVATAR */
 .tier-player img {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  object-fit: cover;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
 }
 
 /* NAME */
 .tier-player span {
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 /* CLAN */
 .tier-player .clan {
+  font-size: 13px;
+  font-weight: 600;
   color: #34d399;
-  font-size: 11px;
-  margin-left: auto;
 }
