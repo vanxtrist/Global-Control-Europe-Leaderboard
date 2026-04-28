@@ -725,6 +725,8 @@ function renderTiers() {
 
      const tierNumber = parseInt(player.tier.replace(/\D/g, "")) || 1;
 
+const isHigh = tierNumber <= 2; // Tier 1–2 = high (you can change this later)
+
 const arrowSymbol = isHigh ? "⬆" : "⬇";
 
 const arrowsHTML = `
