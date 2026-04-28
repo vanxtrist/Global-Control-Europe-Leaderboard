@@ -442,7 +442,6 @@ const player = {
 
     // ── EXPORT ────────────────────────────
     function exportData() {
- function exportData() {
   const output = generateDataJS(
     localEventData,
     localSkillData,
@@ -481,21 +480,23 @@ const player = {
     }
 
     function formatArray(arr) {
-      if (arr.length === 0) return "[]";
+  if (arr.length === 0) return "[]";
 
-      const items = arr.map(p => {
-        return `  {\n` +
-          `    name: ${JSON.stringify(p.name)},\n` +
-          `    robloxUser: ${JSON.stringify(p.robloxUser)},\n` +
-          `    clan: ${JSON.stringify(p.clan)},\n` +
-          `    tier: ${JSON.stringify(p.tier || "")},
-          `    eventWins: ${p.eventWins},\n` +
-          `    img: ${JSON.stringify(p.img)}\n` +
-          `  }`;
-      });
+  const items = arr.map(p => {
+    return `  {
+    name: ${JSON.stringify(p.name)},
+    robloxUser: ${JSON.stringify(p.robloxUser)},
+    clan: ${JSON.stringify(p.clan)},
+    tier: ${JSON.stringify(p.tier || "")},
+    eventWins: ${p.eventWins},
+    img: ${JSON.stringify(p.img)}
+  }`;
+  });
 
-      return `[\n${items.join(",\n")}\n]`;
-    }
+  return `[
+${items.join(",\n")}
+]`;
+}
 
     function copyExport() {
       const area = document.getElementById("exportArea");
