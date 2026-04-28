@@ -239,8 +239,15 @@ if (currentTab === "skill") {
 }
       const tbody = document.getElementById("tableBody");
       const search = document.getElementById("searchInput").value.toLowerCase();
-      const data = getCurrentData();
+      let data = getCurrentData();
 
+if (currentTab === "tiers") {
+  const order = ["HT1","LT1","HT2","LT2","HT3","LT3","HT4","LT4","HT5","LT5"];
+
+  data.sort((a, b) => {
+    return order.indexOf(a.tier) - order.indexOf(b.tier);
+  });
+}
       const filtered = data.map((player, idx) => ({ ...player, _idx: idx }))
         .filter(p =>
           p.name.toLowerCase().includes(search) ||
@@ -278,7 +285,9 @@ if (currentTab === "skill") {
               </div>
             </td>
             <td style="color: #94a3b8;">${player.robloxUser}</td>
-            <td><span class="clan-badge ${clanClass}">${player.clan}</span></td>
+           <td>
+            ${getTierPower(player.tier)}
+            </td>    
            <td>
             ${isTierTab ? player.tier : player.eventWins}
           </td>
@@ -374,6 +383,16 @@ const player = {
       closeModal();
       renderTable();
     }
+
+    function getTierPower(tier) {
+  if (!tier) return "";
+
+  const isHigh = tier.startsWith("HT");
+
+  return isHigh
+    ? `<span style="color:#22c55e; font-weight:700;">HIGH</span>`
+    : `<span style="color:#f97316; font-weight:700;">LOW</span>`;
+}
 
     function closeModal() {
       document.getElementById("playerModal").classList.remove("show");
