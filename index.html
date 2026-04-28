@@ -552,7 +552,7 @@
       <h1>Tiers</h1>
     </div>
 
-    <div id="tiers-container"></div>
+    <div id="tiers-grid"></div>
 
   </div>
 </div>
@@ -695,38 +695,45 @@
     }
 
 function renderTiers() {
-  return; // TEMP DISABLE TIERS
-  const container = document.getElementById("tiers-container");
+  const container = document.getElementById("tiers-grid");
   container.innerHTML = "";
 
-  tiers.forEach(item => {
-    const row = document.createElement("div");
-    row.className = "player-row";
+  const tierMap = {
+    1: [],
+    2: [],
+    3: [],
+    4: [],
+    5: []
+  };
 
-    row.innerHTML = `
-      <!-- TIER BADGE (LEFT) -->
-      <div class="tier-badge ${item.tier.toLowerCase()}">
-        ${item.tier}
-      </div>
+  tiers.forEach(p => {
+    const num = p.tier.replace(/\D/g, "");
+    tierMap[num].push(p);
+  });
 
-      <!-- AVATAR -->
-      <img class="avatar" src="${item.img}" 
-        onerror="this.src='assets/images/impact.png'">
+  for (let i = 1; i <= 5; i++) {
+    const col = document.createElement("div");
+    col.className = "tier-column";
 
-      <!-- PLAYER INFO -->
-      <div class="player-info">
-        <div class="name">${item.name}</div>
-       <div class="clan-name">${item.clan || "No Clan"}</div>
-      </div>
-
-      <!-- REGION (RIGHT) -->
-      <div class="region ${item.region.toLowerCase()}">
-        ${item.region}
-      </div>
+    col.innerHTML = `
+      <div class="tier-header t${i}">🏆 Tier ${i}</div>
     `;
 
-    container.appendChild(row);
-  });
+    tierMap[i].forEach(player => {
+      const row = document.createElement("div");
+      row.className = "tier-player";
+
+      row.innerHTML = `
+        <img src="${player.img}" />
+        <span>${player.name}</span>
+        <span class="clan">${player.clan}</span>
+      `;
+
+      col.appendChild(row);
+    });
+
+    container.appendChild(col);
+  }
 }
     
 // run it
