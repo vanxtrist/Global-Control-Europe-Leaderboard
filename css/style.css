@@ -1213,3 +1213,56 @@ body::after {
   font-weight: 600;
   color: #34d399;
 }
+
+/* TIER PLAYER STRUCTURE UPGRADE */
+.tier-player {
+  justify-content: space-between; /* pushes arrows right */
+}
+
+/* LEFT SIDE (name + clan stacked) */
+.tier-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+/* NAME */
+.tier-info .name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #eaf1ff;
+}
+
+/* CLAN (slightly smaller + styled) */
+.tier-info .clan {
+  font-size: 12px;
+  color: #34d399;
+  margin-top: 2px;
+}
+
+/* RIGHT SIDE ARROWS */
+.tier-arrows {
+  display: flex;
+  gap: 3px;
+  margin-left: 10px;
+}
+
+/* SINGLE ARROW */
+.arrow {
+  font-size: 14px;
+  color: #4da3ff;
+  opacity: 0.9;
+  transition: 0.2s;
+}
+
+/* OPTIONAL: make HT1 (2 arrows) pop more */
+.tier-arrows .arrow:nth-child(2) {
+  opacity: 1;
+}
+
+/* subtle hover effect */
+.tier-player:hover .arrow {
+  transform: translateY(-1px);
+  color: #88b0ff;
+}
