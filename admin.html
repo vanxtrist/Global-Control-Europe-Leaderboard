@@ -47,6 +47,10 @@
   <button class="tab-btn" data-tab="valhalla" onclick="switchTab('valhalla', this)">
     Valhalla Leaderboard
   </button>
+
+ <button class="tab-btn" data-tab="tiers" onclick="switchTab('tiers', this)">
+    Tiers
+  </button>
 </div>
 
     <!-- TOOLBAR -->
@@ -166,6 +170,7 @@
     let localEventData = JSON.parse(JSON.stringify(eventData));
     let localSkillData = JSON.parse(JSON.stringify(skillData));
     let localValhallaData = JSON.parse(JSON.stringify(valhallaData || []));
+    let localTiersData = JSON.parse(JSON.stringify(tiers || []));
 
     // ── PASSWORD ──────────────────────────
     function checkPassword() {
@@ -200,20 +205,18 @@
   if (currentTab === "events") return localEventData;
   if (currentTab === "skill") return localSkillData;
   if (currentTab === "valhalla") return localValhallaData;
+  if (currentTab === "tiers") return localTiersData;
 
-  return localEventData; // fallback safety
+  return localEventData;
+}
+   function setCurrentData(data) {
+  if (currentTab === "events") localEventData = data;
+  else if (currentTab === "skill") localSkillData = data;
+  else if (currentTab === "valhalla") localValhallaData = data;
+  else if (currentTab === "tiers") localTiersData = data;
 }
 
-    function setCurrentData(data) {
-  if (currentTab === "events") {
-    localEventData = data;
-  } else if (currentTab === "skill") {
-    localSkillData = data;
-  } else if (currentTab === "valhalla") {
-    localValhallaData = data;
-  }
-}
-
+    
     // ── RENDER TABLE ──────────────────────
     function renderTable() {
       const winsHeader = document.getElementById("winsHeader");
@@ -321,6 +324,7 @@ if (currentTab === "skill") {
       document.getElementById("formImg").value = player.img;
       document.getElementById("playerModal").classList.add("show");
       document.getElementById("formName").focus();
+      document.getElementById("formTier").value = player.tier || "LT5";
     }
 
     // ── SAVE PLAYER ───────────────────────
@@ -336,7 +340,16 @@ if (currentTab === "skill") {
         return;
       }
 
-      const player = { name, robloxUser, clan, eventWins, img: img || "assets/images/impact.png" };
+     const tier = document.getElementById("formTier")?.value || "LT5";
+
+const player = {
+  name,
+  robloxUser,
+  clan,
+  tier,
+  eventWins,
+  img: img || "assets/images/impact.png"
+};
       const data = getCurrentData();
 
       if (editingIndex >= 0) {
@@ -429,12 +442,18 @@ if (currentTab === "skill") {
 
     // ── EXPORT ────────────────────────────
     function exportData() {
-  const output = generateDataJS(localEventData, localSkillData, localValhallaData);
+ function exportData() {
+  const output = generateDataJS(
+    localEventData,
+    localSkillData,
+    localValhallaData,
+    localTiersData
+  );
       document.getElementById("exportArea").value = output;
       document.getElementById("exportModal").classList.add("show");
     }
 
-    function generateDataJS(events, skills, valhalla) {
+  function generateDataJS(events, skills, valhalla, tiersData) {
       let js = `/*\n`;
       js += ` * ===========================\n`;
       js += ` *  GLOBAL CE LEADERBOARD DATA\n`;
@@ -455,6 +474,9 @@ if (currentTab === "skill") {
       js += `// ── VALLHALLA LEADERBOARD ──────────────────────────────\n`;
       js += `const valhallaData = ${formatArray(valhalla)};\n\n`;
 
+      js += `// ── TIERS ──────────────────────────────\n`;
+      js += `const tiers = ${formatArray(tiersData)};\n\n`;
+
       return js;
     }
 
@@ -466,6 +488,7 @@ if (currentTab === "skill") {
           `    name: ${JSON.stringify(p.name)},\n` +
           `    robloxUser: ${JSON.stringify(p.robloxUser)},\n` +
           `    clan: ${JSON.stringify(p.clan)},\n` +
+          `    tier: ${JSON.stringify(p.tier || "")},
           `    eventWins: ${p.eventWins},\n` +
           `    img: ${JSON.stringify(p.img)}\n` +
           `  }`;
