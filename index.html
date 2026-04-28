@@ -738,12 +738,9 @@ row.innerHTML = `
   
   <div class="tier-info">
     <span class="name">${player.name}</span>
-    <span class="clan">${player.clan}</span>
   </div>
 
-  <div class="tier-arrows">
-    ${'<span class="arrow">⌃</span>'.repeat(arrows)}
-  </div>
+ ${arrowsHTML}
 `;
 
       col.appendChild(row);
