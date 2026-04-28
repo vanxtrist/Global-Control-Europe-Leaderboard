@@ -723,7 +723,15 @@ function renderTiers() {
       const row = document.createElement("div");
       row.className = "tier-player";
 
-     const arrows = player.subTier === "HT1" ? 2 : 1;
+     const tierNumber = parseInt(player.tier.replace(/\D/g, "")) || 1;
+
+const arrowSymbol = isHigh ? "⬆" : "⬇";
+
+const arrowsHTML = `
+  <div class="tier-arrows">
+    ${(`<span class="arrow">${arrowSymbol}</span>`).repeat(tierNumber)}
+  </div>
+`;
 
 row.innerHTML = `
   <img src="${player.img}" />
