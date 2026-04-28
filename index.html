@@ -723,11 +723,20 @@ function renderTiers() {
       const row = document.createElement("div");
       row.className = "tier-player";
 
-      row.innerHTML = `
-        <img src="${player.img}" />
-        <span>${player.name}</span>
-        <span class="clan">${player.clan}</span>
-      `;
+     const arrows = player.subTier === "HT1" ? 2 : 1;
+
+row.innerHTML = `
+  <img src="${player.img}" />
+  
+  <div class="tier-info">
+    <span class="name">${player.name}</span>
+    <span class="clan">${player.clan}</span>
+  </div>
+
+  <div class="tier-arrows">
+    ${'<span class="arrow">⌃</span>'.repeat(arrows)}
+  </div>
+`;
 
       col.appendChild(row);
     });
