@@ -16,12 +16,42 @@
   <!-- NAVBAR -->
   <div class="navbar">
     <div class="nav-left" id="navCenter">
-      <a href="#" onclick="showPage('main', this); toggleMenu(); return false;">Leaderboards</a>
-      <a href="#" onclick="showPage('tiers'); toggleMenu(); return false;">Tiers</a>
-      <a href="#" onclick="showPage('clans'); toggleMenu(); return false;">Clans</a>
-      <a href="#" onclick="showPage('lore'); toggleMenu(); return false;">Clan Lore</a>
-      <a href="#" onclick="toggleUpdates(); toggleMenu(); return false;">Updates</a>
-      <a href="#" onclick="showPage('contributors'); toggleMenu(); return false;">Contributors</a>
+      <a href="#" onclick="showPage('main', this); toggleMenu(); return false;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+          <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+        </svg>
+        Leaderboards
+      </a>
+      <a href="#" onclick="showPage('tiers'); toggleMenu(); return false;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+        </svg>
+        Tiers
+      </a>
+      <a href="#" onclick="showPage('clans'); toggleMenu(); return false;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+          <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+        </svg>
+        Clans
+      </a>
+      <a href="#" onclick="showPage('lore'); toggleMenu(); return false;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+          <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/>
+        </svg>
+        Clan Lore
+      </a>
+      <a href="#" onclick="toggleUpdates(); toggleMenu(); return false;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+        Updates
+      </a>
+      <a href="#" onclick="showPage('contributors'); toggleMenu(); return false;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </svg>
+        Contributors
+      </a>
       
 
       <div class="mobile-extra-links" style="display: none;">
@@ -696,60 +726,103 @@
 
 function renderTiers() {
   const container = document.getElementById("tiers-grid");
+  if (!container) return;
+  
   container.innerHTML = "";
 
-  const tierMap = {
-    1: [],
-    2: [],
-    3: [],
-    4: [],
-    5: []
+  // Group players by tier number, then by H/L
+  const tierGroups = {
+    '1': { H: [], L: [] },
+    '2': { H: [], L: [] },
+    '3': { H: [], L: [] },
+    '4': { H: [], L: [] },
+    '5': { H: [], L: [] }
   };
 
-  tiers.forEach(p => {
-    const num = p.tier.replace(/\D/g, "");
-    tierMap[num].push(p);
+  tiers.forEach(player => {
+    const tierNum = player.tier.replace(/[HLT]/g, '');
+    const tierType = player.tier.startsWith('HT') ? 'H' : 'L';
+    if (tierGroups[tierNum]) {
+      tierGroups[tierNum][tierType].push(player);
+    }
   });
 
-  for (let i = 1; i <= 5; i++) {
-    const col = document.createElement("div");
-    col.className = "tier-column";
+  // Render each tier column (always show all 5 tiers)
+  ['1', '2', '3', '4', '5'].forEach((tierNum) => {
+    const highPlayers = tierGroups[tierNum].H;
+    const lowPlayers = tierGroups[tierNum].L;
 
-    col.innerHTML = `
-      <div class="tier-header t${i}">🏆 Tier ${i}</div>
+    const tierColumn = document.createElement('div');
+    tierColumn.className = 'tier-column';
+
+    // Custom SVG icons for each tier
+    const tierIcons = [
+      '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5m14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>',
+      '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 2l-2 4h16L18 2H6m-2.2 6L12 22l8.2-14H3.8z"/></svg>',
+      '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6.2 2.44L18.1 14.34L20.22 12.22L21.63 13.63L19.16 16.1L22.34 19.28C22.73 19.67 22.73 20.3 22.34 20.69L21.63 21.4C21.24 21.79 20.61 21.79 20.22 21.4L17.04 18.22L14.56 20.7L13.15 19.29L15.27 17.17L3.37 5.27V2.44H6.2M15.89 10L20.63 5.26V2.44H17.8L13.06 7.18L15.89 10M10.94 15L8.11 12.13L5.9 14.34L3.78 12.22L2.37 13.63L4.84 16.1L1.66 19.28C1.27 19.67 1.27 20.3 1.66 20.69L2.37 21.4C2.76 21.79 3.39 21.79 3.78 21.4L6.96 18.22L9.44 20.7L10.85 19.29L8.73 17.17L10.94 15Z"/></svg>',
+      '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>',
+      '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m0 2c4.4 0 8 3.6 8 8s-3.6 8-8 8-8-3.6-8-8 3.6-8 8-8m0 3c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5m0 2c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3 1.3-3 3-3m0 2c-.6 0-1 .4-1 1s.4 1 1 1 1-.4 1-1-.4-1-1-1z"/></svg>'
+    ];
+    const tierColors = ['#f59e0b', '#94a3b8', '#f97316', '#64748b', '#475569'];
+    const tierIndex = parseInt(tierNum) - 1;
+    
+    tierColumn.innerHTML = `
+      <div class="tier-header" style="background: linear-gradient(135deg, ${tierColors[tierIndex]}, ${tierColors[tierIndex]}99);">
+        <span class="tier-icon">${tierIcons[tierIndex]}</span>
+        <span class="tier-title">Tier ${tierNum}</span>
+      </div>
+      <div class="tier-players-container">
+        <div class="tier-section high-tier"></div>
+        <div class="tier-section low-tier"></div>
+      </div>
     `;
 
-    tierMap[i].forEach(player => {
-      const row = document.createElement("div");
-      row.className = "tier-player";
+    const highContainer = tierColumn.querySelector('.high-tier');
+    const lowContainer = tierColumn.querySelector('.low-tier');
 
-     const tierNumber = parseInt(player.tier.replace(/\D/g, "")) || 1;
+    // Render HIGH tier players
+    if (highPlayers.length > 0) {
+      highPlayers.forEach(player => {
+        const playerCard = document.createElement('div');
+        playerCard.className = 'tier-player-card high-tier-player';
 
-const isHigh = tierNumber <= 2; // Tier 1–2 = high (you can change this later)
+        playerCard.innerHTML = `
+          <img src="${player.img}" alt="${player.name}" class="tier-player-avatar" onerror="this.src='assets/images/impact.png'">
+          <div class="tier-player-info">
+            <div class="tier-player-name">${player.name}</div>
+          </div>
+          <div class="tier-arrow up">⌃</div>
+        `;
 
-const arrowSymbol = isHigh ? "⬆" : "⬇";
+        highContainer.appendChild(playerCard);
+      });
+    }
 
-const arrowsHTML = `
-  <div class="tier-arrows">
-    ${(`<span class="arrow">${arrowSymbol}</span>`).repeat(tierNumber)}
-  </div>
-`;
+    // Render LOW tier players
+    if (lowPlayers.length > 0) {
+      lowPlayers.forEach(player => {
+        const playerCard = document.createElement('div');
+        playerCard.className = 'tier-player-card low-tier-player';
 
-row.innerHTML = `
-  <img src="${player.img}" />
-  
-  <div class="tier-info">
-    <span class="name">${player.name}</span>
-  </div>
+        playerCard.innerHTML = `
+          <img src="${player.img}" alt="${player.name}" class="tier-player-avatar" onerror="this.src='assets/images/impact.png'">
+          <div class="tier-player-info">
+            <div class="tier-player-name">${player.name}</div>
+          </div>
+          <div class="tier-arrow down">⌄</div>
+        `;
 
- ${arrowsHTML}
-`;
+        lowContainer.appendChild(playerCard);
+      });
+    }
 
-      col.appendChild(row);
-    });
+    // Show empty state if no players at all
+    if (highPlayers.length === 0 && lowPlayers.length === 0) {
+      tierColumn.querySelector('.tier-players-container').innerHTML = '<div style="padding: 20px; text-align: center; color: #64748b; font-size: 13px;">No players yet</div>';
+    }
 
-    container.appendChild(col);
-  }
+    container.appendChild(tierColumn);
+  });
 }
     
 // run it
