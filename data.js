@@ -1,4 +1,4 @@
-/*/*
+/*
  * ===========================
  *  GLOBAL CE LEADERBOARD DATA
  * ===========================
@@ -338,8 +338,8 @@ const skillData = [
   {
     name: "Shuljo",
     robloxUser: "Pametansam",
-    clan: "Rebellion",
-    tier: "",
+    clan: "Valhalla",
+    tier: "LT5",
     eventWins: 2,
     img: "assets/images/shuljo.jpg"
   },
