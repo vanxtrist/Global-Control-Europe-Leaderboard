@@ -356,7 +356,7 @@ const skillData = [
     robloxUser: "aevvre",
     clan: "Valhalla",
     tier: "LT5",
-    eventWins: 0,
+    eventWins: 14,
     img: "assets/images/m.jpg"
   },
   {
@@ -511,7 +511,7 @@ const valhallaData = [
     robloxUser: "aevvre",
     clan: "Valhalla",
     tier: "LT5",
-    eventWins: 0,
+    eventWins: 14,
     img: "assets/images/m.jpg"
   },
   {
