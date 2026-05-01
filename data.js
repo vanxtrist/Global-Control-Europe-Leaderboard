@@ -448,20 +448,20 @@ const skillData = [
     img: "assets/images/baba.jpg"
   },
   {
-    name: "Nav",
-    robloxUser: "Yaqoob273",
-    clan: "Rebellion",
-    tier: "",
-    eventWins: 0,
-    img: "assets/images/nav.jpg"
-  },
-  {
     name: "Rotgel",
     robloxUser: "R0TGEL",
     clan: "Unaffiliated",
     tier: "",
     eventWins: 19,
     img: "assets/images/rotgel.jpg"
+  },
+  {
+    name: "Nav",
+    robloxUser: "Yaqoob273",
+    clan: "Rebellion",
+    tier: "",
+    eventWins: 0,
+    img: "assets/images/nav.jpg"
   },
   {
     name: "Sinan",
