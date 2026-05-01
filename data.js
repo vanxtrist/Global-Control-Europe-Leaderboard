@@ -77,8 +77,8 @@ const eventData = [
   {
     name: "Cevokud",
     robloxUser: "Cevokud",
-    clan: "RoS",
-    tier: "",
+    clan: "Unaffiliated",
+    tier: "LT5",
     eventWins: 4,
     img: "assets/images/cevo.jpg"
   },
@@ -109,8 +109,8 @@ const eventData = [
   {
     name: "Raze",
     robloxUser: "gg_razegg",
-    clan: "RoS",
-    tier: "",
+    clan: "Unaffiliated",
+    tier: "LT5",
     eventWins: 3,
     img: "assets/images/raze.jpg"
   },
@@ -125,8 +125,8 @@ const eventData = [
   {
     name: "Ananas",
     robloxUser: "Ananasparon",
-    clan: "Rebellion",
-    tier: "",
+    clan: "Unaffiliated",
+    tier: "LT5",
     eventWins: 2,
     img: "assets/images/ananas.jpg"
   },
@@ -165,8 +165,8 @@ const eventData = [
   {
     name: "Pawani",
     robloxUser: "SGT_Saket",
-    clan: "RoS",
-    tier: "",
+    clan: "Unaffiliated",
+    tier: "LT5",
     eventWins: 1,
     img: "assets/images/saket.jpg"
   },
@@ -253,8 +253,8 @@ const eventData = [
   {
     name: "Nebula",
     robloxUser: "tymixz",
-    clan: "RoS",
-    tier: "",
+    clan: "Unaffiliated",
+    tier: "LT5",
     eventWins: 1,
     img: "assets/images/nebula.jpg"
   },
@@ -277,8 +277,8 @@ const eventData = [
   {
     name: "Sai",
     robloxUser: "sai_zzzzzzz",
-    clan: "RoS",
-    tier: "",
+    clan: "Unaffiliated",
+    tier: "LT5",
     eventWins: 1,
     img: "assets/images/sai.jpg"
   },
@@ -356,7 +356,7 @@ const skillData = [
     robloxUser: "aevvre",
     clan: "Valhalla",
     tier: "LT5",
-    eventWins: 14,
+    eventWins: 0,
     img: "assets/images/m.jpg"
   },
   {
@@ -511,7 +511,7 @@ const valhallaData = [
     robloxUser: "aevvre",
     clan: "Valhalla",
     tier: "LT5",
-    eventWins: 14,
+    eventWins: 0,
     img: "assets/images/m.jpg"
   },
   {
