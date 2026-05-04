@@ -459,7 +459,7 @@ const skillData = [
     name: "Rotgel",
     robloxUser: "R0TGEL",
     clan: "Unaffiliated",
-    tier: "",
+    tier: "LT5",
     eventWins: 19,
     img: "assets/images/rotgel.jpg"
   },
@@ -483,7 +483,7 @@ const skillData = [
     name: "Nav",
     robloxUser: "Yaqoob273",
     clan: "Rebellion",
-    tier: "",
+    tier: "LT5",
     eventWins: 0,
     img: "assets/images/nav.jpg"
   }
@@ -727,6 +727,14 @@ const tiers = [
     img: "assets/images/sai.jpg"
   },
   {
+    name: "Real Flash",
+    robloxUser: "",
+    clan: "Valhalla",
+    tier: "LT3",
+    eventWins: 0,
+    img: "assets/images/realflash.jpg"
+  },
+  {
     name: "S29",
     robloxUser: "",
     clan: "Valhalla",
@@ -804,7 +812,7 @@ const tiers = [
     clan: "Valhalla",
     tier: "LT4",
     eventWins: 0,
-    img: "assets/images/realflash.png"
+    img: "assets/images/realflash.jpg"
   },
   {
     name: "Rastaclat",
@@ -855,6 +863,14 @@ const tiers = [
     img: "assets/images/rimu.jpg"
   },
   {
+    name: "Prime Andrew",
+    robloxUser: "",
+    clan: "Valhalla",
+    tier: "HT5",
+    eventWins: 0,
+    img: "assets/images/primeandrew.jpg"
+  },
+  {
     name: "Chama",
     robloxUser: "",
     clan: "Valhalla",
@@ -893,14 +909,6 @@ const tiers = [
     tier: "LT5",
     eventWins: 0,
     img: "assets/images/raga.jpg"
-  },
-  {
-    name: "Prime Andrew",
-    robloxUser: "primea",
-    clan: "Valhalla",
-    tier: "LT5",
-    eventWins: 0,
-    img: "assets/images/primeandrew.jpg"
   }
 ];
 
