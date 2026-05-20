@@ -336,52 +336,20 @@ const skillData = [
     img: "assets/images/shuljo.jpg"
   },
   {
+    name: "M.",
+    robloxUser: "aevvre",
+    clan: "Valhalla",
+    tier: "LT5",
+    eventWins: 14,
+    img: "assets/images/m.jpg"
+  },
+  {
     name: "Mattie",
     robloxUser: "matiteo01",
     clan: "Valhalla",
     tier: "",
     eventWins: 38,
     img: "assets/images/mattie.jpg"
-  },
-  {
-    name: "M.",
-    robloxUser: "aevvre",
-    clan: "Valhalla",
-    tier: "LT5",
-    eventWins: 0,
-    img: "assets/images/m.jpg"
-  },
-  {
-    name: "Bonekoko",
-    robloxUser: "Wouidzy",
-    clan: "Valhalla",
-    tier: "",
-    eventWins: 19,
-    img: "assets/images/bonekoko.jpg"
-  },
-  {
-    name: "Ryaan",
-    robloxUser: "supermanzzxz3",
-    clan: "Valhalla",
-    tier: "",
-    eventWins: 3,
-    img: "assets/images/ryaan.jpg"
-  },
-  {
-    name: "Cevokud",
-    robloxUser: "Cevokud",
-    clan: "Unaffiliated",
-    tier: "LT5",
-    eventWins: 3,
-    img: "assets/images/cevo.jpg"
-  },
-  {
-    name: "Changv",
-    robloxUser: "tyduong",
-    clan: "Valhalla",
-    tier: "LT5",
-    eventWins: 0,
-    img: "assets/images/changv.jpg"
   },
   {
     name: "Sai",
@@ -392,28 +360,20 @@ const skillData = [
     img: "assets/images/sai.jpg"
   },
   {
-    name: "Bondt",
-    robloxUser: "lucky_jaguar668",
-    clan: "Valhalla",
-    tier: "",
-    eventWins: 1,
-    img: "assets/images/bondt.jpg"
-  },
-  {
-    name: "Turn",
-    robloxUser: "txrning_gxxd",
-    clan: "Rebellion",
-    tier: "LT5",
-    eventWins: 0,
-    img: "assets/images/turn.jpg"
-  },
-  {
     name: "Aion",
     robloxUser: "aion",
     clan: "Unaffiliated",
     tier: "LT5",
     eventWins: 0,
     img: "assets/images/aion.jpg"
+  },
+  {
+    name: "Ryaan",
+    robloxUser: "supermanzzxz3",
+    clan: "Valhalla",
+    tier: "",
+    eventWins: 3,
+    img: "assets/images/ryaan.jpg"
   },
   {
     name: "Pawani",
@@ -424,12 +384,68 @@ const skillData = [
     img: "assets/images/pawani.jpg"
   },
   {
+    name: "Changv",
+    robloxUser: "tyduong",
+    clan: "Valhalla",
+    tier: "LT5",
+    eventWins: 0,
+    img: "assets/images/changv.jpg"
+  },
+  {
+    name: "Bonekoko",
+    robloxUser: "Wouidzy",
+    clan: "Valhalla",
+    tier: "",
+    eventWins: 19,
+    img: "assets/images/bonekoko.jpg"
+  },
+  {
+    name: "Cevokud",
+    robloxUser: "Cevokud",
+    clan: "Unaffiliated",
+    tier: "LT5",
+    eventWins: 3,
+    img: "assets/images/cevo.jpg"
+  },
+  {
+    name: "Raze",
+    robloxUser: "gg_razegg",
+    clan: "Unaffiliated",
+    tier: "LT5",
+    eventWins: 0,
+    img: "assets/images/raze.jpg"
+  },
+  {
+    name: "Bondt",
+    robloxUser: "lucky_jaguar668",
+    clan: "Valhalla",
+    tier: "",
+    eventWins: 1,
+    img: "assets/images/bondt.jpg"
+  },
+  {
     name: "Poney",
     robloxUser: "Poneysw",
     clan: "Valhalla",
     tier: "",
     eventWins: 2,
     img: "assets/images/poney.jpg"
+  },
+  {
+    name: "Rastaclat",
+    robloxUser: "?",
+    clan: "Valhalla",
+    tier: "LT5",
+    eventWins: 0,
+    img: "assets/images/rasta.jpg"
+  },
+  {
+    name: "Turn",
+    robloxUser: "txrning_gxxd",
+    clan: "Rebellion",
+    tier: "LT5",
+    eventWins: 0,
+    img: "assets/images/turn.jpg"
   },
   {
     name: "Alexandar",
@@ -440,28 +456,20 @@ const skillData = [
     img: "assets/images/alex.jpg"
   },
   {
+    name: "Infantrator",
+    robloxUser: "cattohugedad",
+    clan: "Rebellion",
+    tier: "LT5",
+    eventWins: 0,
+    img: "assets/images/catto.jpg"
+  },
+  {
     name: "Ananasparon",
     robloxUser: "Ananasparon",
     clan: "Rebellion",
     tier: "",
     eventWins: 2,
     img: "assets/images/ananas.jpg"
-  },
-  {
-    name: "Babatunde",
-    robloxUser: "121111deasd",
-    clan: "Valhalla",
-    tier: "",
-    eventWins: 3,
-    img: "assets/images/baba.jpg"
-  },
-  {
-    name: "Rotgel",
-    robloxUser: "R0TGEL",
-    clan: "Unaffiliated",
-    tier: "LT5",
-    eventWins: 19,
-    img: "assets/images/rotgel.jpg"
   },
   {
     name: "Sinan",
@@ -472,20 +480,12 @@ const skillData = [
     img: "assets/images/sinan.png"
   },
   {
-    name: "Infantrator",
-    robloxUser: "cattohugedad",
-    clan: "Rebellion",
-    tier: "LT5",
-    eventWins: 0,
-    img: "assets/images/catto.jpg"
-  },
-  {
-    name: "Nav",
-    robloxUser: "Yaqoob273",
-    clan: "Rebellion",
-    tier: "LT5",
-    eventWins: 0,
-    img: "assets/images/nav.jpg"
+    name: "Babatunde",
+    robloxUser: "121111deasd",
+    clan: "Valhalla",
+    tier: "",
+    eventWins: 3,
+    img: "assets/images/baba.jpg"
   }
 ];
 // ── VALLHALLA LEADERBOARD ──────────────────────────────
@@ -499,6 +499,14 @@ const valhallaData = [
     img: "assets/images/m.jpg"
   },
   {
+    name: "Aion",
+    robloxUser: "aion",
+    clan: "Valhalla",
+    tier: "LT5",
+    eventWins: 0,
+    img: "assets/images/aion.jpg"
+  },
+  {
     name: "Mattie",
     robloxUser: "matiteo01",
     clan: "Valhalla",
@@ -507,12 +515,20 @@ const valhallaData = [
     img: "assets/images/mattie.jpg"
   },
   {
-    name: "Bonekoko",
-    robloxUser: "Wouidzy",
+    name: "Pawani",
+    robloxUser: "SGT_Saket",
     clan: "Valhalla",
-    tier: "",
-    eventWins: 19,
-    img: "assets/images/bonekoko.jpg"
+    tier: "LT5",
+    eventWins: 0,
+    img: "assets/images/pawani.jpg"
+  },
+  {
+    name: "Ryaan",
+    robloxUser: "supermanzzxz3",
+    clan: "Valhalla",
+    tier: "LT5",
+    eventWins: 0,
+    img: "assets/images/ryaan.jpg"
   },
   {
     name: "Bondt",
@@ -523,14 +539,6 @@ const valhallaData = [
     img: "assets/images/bondt.jpg"
   },
   {
-    name: "Changv",
-    robloxUser: "tyduong",
-    clan: "Valhalla",
-    tier: "LT5",
-    eventWins: 2,
-    img: "assets/images/changv.jpg"
-  },
-  {
     name: "Poney",
     robloxUser: "Poneysw",
     clan: "Valhalla",
@@ -539,12 +547,20 @@ const valhallaData = [
     img: "assets/images/poney.jpg"
   },
   {
+    name: "Rastaclat",
+    robloxUser: "?",
+    clan: "Valhalla",
+    tier: "LT5",
+    eventWins: 0,
+    img: "assets/images/rasta.jpg"
+  },
+  {
     name: "Real Flash",
     robloxUser: "Rel_Flash",
     clan: "Valhalla",
     tier: "LT5",
     eventWins: 1,
-    img: "assets/images/realflash.png"
+    img: "assets/images/realflash.jpg"
   },
   {
     name: "Babatunde",
@@ -553,22 +569,6 @@ const valhallaData = [
     tier: "",
     eventWins: 4,
     img: "assets/images/baba.jpg"
-  },
-  {
-    name: "Rimu",
-    robloxUser: "fhnrbnhrrb",
-    clan: "Valhalla",
-    tier: "",
-    eventWins: 2,
-    img: "assets/images/rimu.jpg"
-  },
-  {
-    name: "Imesium",
-    robloxUser: "zaaypbibia",
-    clan: "Valhalla",
-    tier: "LT5",
-    eventWins: 0,
-    img: "assets/images/imesium.jpg"
   }
 ];
 
@@ -578,17 +578,9 @@ const tiers = [
     name: "Shuljo",
     robloxUser: "",
     clan: "Rebellion",
-    tier: "HT1",
+    tier: "LT1",
     eventWins: 0,
     img: "assets/images/shuljo.jpg"
-  },
-  {
-    name: "Mattie",
-    robloxUser: undefined,
-    clan: "Valhalla",
-    tier: "HT1",
-    eventWins: undefined,
-    img: "assets/images/mattie.jpg"
   },
   {
     name: "M.",
@@ -599,12 +591,12 @@ const tiers = [
     img: "assets/images/m.jpg"
   },
   {
-    name: "Bonekoko",
+    name: "Mattie",
     robloxUser: "undefined",
     clan: "Valhalla",
-    tier: "LT1",
+    tier: "HT2",
     eventWins: 0,
-    img: "assets/images/bonekoko.jpg"
+    img: "assets/images/mattie.jpg"
   },
   {
     name: "Ryaan",
@@ -615,28 +607,28 @@ const tiers = [
     img: "assets/images/ryaan.jpg"
   },
   {
-    name: "Cevokud",
+    name: "Aion",
     robloxUser: "",
-    clan: "Unaffiliated",
-    tier: "LT2",
+    clan: "Valhalla",
+    tier: "HT2",
     eventWins: 0,
-    img: "assets/images/cevo.jpg"
+    img: "assets/images/aion.jpg"
   },
   {
-    name: "Raze",
+    name: "Sai",
     robloxUser: "",
+    clan: "Valhalla",
+    tier: "HT2",
+    eventWins: 0,
+    img: "assets/images/sai.jpg"
+  },
+  {
+    name: "Bonekoko",
+    robloxUser: "undefined",
     clan: "Valhalla",
     tier: "LT2",
     eventWins: 0,
-    img: "assets/images/raze.jpg"
-  },
-  {
-    name: "Bondt",
-    robloxUser: "",
-    clan: "Valhalla",
-    tier: "LT2",
-    eventWins: 0,
-    img: "assets/images/bondt.jpg"
+    img: "assets/images/bonekoko.jpg"
   },
   {
     name: "Changv",
@@ -647,36 +639,36 @@ const tiers = [
     img: "assets/images/changv.jpg"
   },
   {
-    name: "Aion",
-    robloxUser: "",
-    clan: "Valhalla",
-    tier: "HT3",
-    eventWins: 0,
-    img: "assets/images/aion.jpg"
-  },
-  {
-    name: "Turn",
-    robloxUser: "",
-    clan: "Valhalla",
-    tier: "HT3",
-    eventWins: 0,
-    img: "assets/images/turn.jpg"
-  },
-  {
-    name: "Floppa",
-    robloxUser: "",
-    clan: "Valhalla",
-    tier: "HT3",
-    eventWins: 0,
-    img: "assets/images/floppa.jpg"
-  },
-  {
     name: "Pawani",
     robloxUser: "",
     clan: "Valhalla",
-    tier: "HT3",
+    tier: "LT2",
     eventWins: 0,
     img: "assets/images/pawani.jpg"
+  },
+  {
+    name: "Bondt",
+    robloxUser: "",
+    clan: "Valhalla",
+    tier: "HT3",
+    eventWins: 0,
+    img: "assets/images/bondt.jpg"
+  },
+  {
+    name: "Raze",
+    robloxUser: "",
+    clan: "Valhalla",
+    tier: "HT3",
+    eventWins: 0,
+    img: "assets/images/raze.jpg"
+  },
+  {
+    name: "Cevokud",
+    robloxUser: "",
+    clan: "Unaffiliated",
+    tier: "HT3",
+    eventWins: 0,
+    img: "assets/images/cevo.jpg"
   },
   {
     name: "Poney",
@@ -687,20 +679,12 @@ const tiers = [
     img: "assets/images/poney.jpg"
   },
   {
-    name: "Enel",
+    name: "Floppa",
     robloxUser: "",
     clan: "Valhalla",
     tier: "LT3",
     eventWins: 0,
-    img: "assets/images/enel.jpg"
-  },
-  {
-    name: "Rotgel",
-    robloxUser: "",
-    clan: "Valhalla",
-    tier: "LT3",
-    eventWins: 0,
-    img: "assets/images/rotgel.jpg"
+    img: "assets/images/floppa.jpg"
   },
   {
     name: "Alexander",
@@ -719,20 +703,28 @@ const tiers = [
     img: "assets/images/ananas.jpg"
   },
   {
-    name: "Sai",
+    name: "Rastaclat",
     robloxUser: "",
     clan: "Valhalla",
     tier: "LT3",
     eventWins: 0,
-    img: "assets/images/sai.jpg"
+    img: "assets/images/rasta.jpg"
   },
   {
-    name: "Real Flash",
+    name: "Turn",
     robloxUser: "",
     clan: "Valhalla",
     tier: "HT4",
     eventWins: 0,
-    img: "assets/images/realflash.jpg"
+    img: "assets/images/turn.jpg"
+  },
+  {
+    name: "Enel",
+    robloxUser: "",
+    clan: "Valhalla",
+    tier: "HT4",
+    eventWins: 0,
+    img: "assets/images/enel.jpg"
   },
   {
     name: "Sinan",
@@ -743,12 +735,36 @@ const tiers = [
     img: "assets/images/sinan.png"
   },
   {
+    name: "Catto",
+    robloxUser: "",
+    clan: "Valhalla",
+    tier: "HT4",
+    eventWins: 0,
+    img: "assets/images/catto.jpg"
+  },
+  {
     name: "Babatunde",
     robloxUser: "",
     clan: "Valhalla",
     tier: "HT4",
     eventWins: 0,
     img: "assets/images/baba.jpg"
+  },
+  {
+    name: "Exify",
+    robloxUser: "",
+    clan: "Valhalla",
+    tier: "HT4",
+    eventWins: 0,
+    img: "assets/images/primeandrew.jpg"
+  },
+  {
+    name: "Real Flash",
+    robloxUser: "",
+    clan: "Valhalla",
+    tier: "HT4",
+    eventWins: 0,
+    img: "assets/images/realflash.jpg"
   },
   {
     name: "S29",
@@ -762,17 +778,9 @@ const tiers = [
     name: "Imesium",
     robloxUser: "",
     clan: "Valhalla",
-    tier: "HT4",
-    eventWins: 0,
-    img: "assets/images/imesium.jpg"
-  },
-  {
-    name: "Fshy",
-    robloxUser: "",
-    clan: "Valhalla",
     tier: "LT4",
     eventWins: 0,
-    img: "assets/images/fshy.jpg"
+    img: "assets/images/imesium.jpg"
   },
   {
     name: "Boris",
@@ -781,22 +789,6 @@ const tiers = [
     tier: "LT4",
     eventWins: 0,
     img: "assets/images/boris.jpg"
-  },
-  {
-    name: "Nav",
-    robloxUser: "",
-    clan: "Valhalla",
-    tier: "LT4",
-    eventWins: 0,
-    img: "assets/images/nav.jpg"
-  },
-  {
-    name: "Rastaclat",
-    robloxUser: "",
-    clan: "Valhalla",
-    tier: "LT4",
-    eventWins: 0,
-    img: "assets/images/rasta.jpg"
   },
   {
     name: "Shadow",
@@ -815,12 +807,28 @@ const tiers = [
     img: "assets/images/vini.jpg"
   },
   {
-    name: "Exify",
+    name: "Jayden",
     robloxUser: "",
     clan: "Valhalla",
     tier: "LT4",
     eventWins: 0,
-    img: "assets/images/primeandrew.jpg"
+    img: "assets/images/realflash.jpg"
+  },
+  {
+    name: "Fshy",
+    robloxUser: "",
+    clan: "Valhalla",
+    tier: "HT5",
+    eventWins: 0,
+    img: "assets/images/fshy.jpg"
+  },
+  {
+    name: "Nav",
+    robloxUser: "",
+    clan: "Valhalla",
+    tier: "HT5",
+    eventWins: 0,
+    img: "assets/images/nav.jpg"
   },
   {
     name: "Nexus",
@@ -837,22 +845,6 @@ const tiers = [
     tier: "HT5",
     eventWins: 0,
     img: "assets/images/aydan.jpg"
-  },
-  {
-    name: "Jayden",
-    robloxUser: "",
-    clan: "Valhalla",
-    tier: "HT5",
-    eventWins: 0,
-    img: "assets/images/realflash.jpg"
-  },
-  {
-    name: "Catto",
-    robloxUser: "",
-    clan: "Valhalla",
-    tier: "HT5",
-    eventWins: 0,
-    img: "assets/images/catto.jpg"
   },
   {
     name: "Rimu",
@@ -877,6 +869,14 @@ const tiers = [
     tier: "HT5",
     eventWins: 0,
     img: "assets/images/zane.jpg"
+  },
+  {
+    name: "Rotgel",
+    robloxUser: "",
+    clan: "Valhalla",
+    tier: "HT5",
+    eventWins: 0,
+    img: "assets/images/rotgel.jpg"
   },
   {
     name: "Heavy",
@@ -935,3 +935,4 @@ const tiers = [
     img: "assets/images/raga.jpg"
   }
 ];
+
